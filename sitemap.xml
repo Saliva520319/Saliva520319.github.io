@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/06/something0/</loc>
+    
+    <lastmod>2016-09-06T14:52:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/06/JavaScript0/</loc>
+    
+    <lastmod>2016-09-06T14:17:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2016-09-06T14:07:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/05/meeting/</loc>
+    
+    <lastmod>2016-09-06T13:52:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/05/bagproblem/</loc>
+    
+    <lastmod>2016-09-06T07:44:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/05/stack/</loc>
+    
+    <lastmod>2016-09-06T07:20:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/06/PrioQueue0/</loc>
+    
+    <lastmod>2016-09-06T07:10:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/06/PrioQueue1/</loc>
+    
+    <lastmod>2016-09-06T07:09:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/index.html</loc>
+    
+    <lastmod>2016-09-04T17:08:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2016-09-04T17:07:23.000Z</lastmod>
+    
+  </url>
+  
+</urlset>

@@ -1,21 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Saliva&#39;s Home</title>
   
+  <link href="/atom.xml" rel="self"/>
   
+  <link href="http://yoursite.com/"/>
+  <updated>2016-09-06T14:52:52.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Saliva</name>
     
-    <entry>
-      <title><![CDATA[杂]]></title>
-      <url>http://yoursite.com/2016/09/06/something0/</url>
-      <content type="html"><![CDATA[<p>知乎上看到的鲁迅的东西。</p>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>杂</title>
+    <link href="http://yoursite.com/2016/09/06/something0/"/>
+    <id>http://yoursite.com/2016/09/06/something0/</id>
+    <published>2016-09-06T14:42:40.000Z</published>
+    <updated>2016-09-06T14:52:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>知乎上看到的鲁迅的东西。</p>
 <a id="more"></a>
 <blockquote><p>我独自远行，不但没有你，并且再没有别的影在黑暗里。<br>只有我被黑暗吞没，那世界全属于我自己。</p>
 <footer><strong>鲁迅</strong></footer></blockquote>]]></content>
-    </entry>
     
-    <entry>
-      <title><![CDATA[JavaScript复制]]></title>
-      <url>http://yoursite.com/2016/09/06/JavaScript0/</url>
-      <content type="html"><![CDATA[<h3 id="代码段"><a href="#代码段" class="headerlink" title="代码段"></a>代码段</h3><p>看到网上的JavaScript代码带一个复制的小按键，好奇就把相关的代码段整理了一下。</p>
+    <summary type="html">
+    
+      &lt;p&gt;知乎上看到的鲁迅的东西。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="无关紧要" scheme="http://yoursite.com/categories/%E6%97%A0%E5%85%B3%E7%B4%A7%E8%A6%81/"/>
+    
+    
+      <category term="随想" scheme="http://yoursite.com/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+      <category term="私人" scheme="http://yoursite.com/tags/%E7%A7%81%E4%BA%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript复制</title>
+    <link href="http://yoursite.com/2016/09/06/JavaScript0/"/>
+    <id>http://yoursite.com/2016/09/06/JavaScript0/</id>
+    <published>2016-09-06T07:53:50.000Z</published>
+    <updated>2016-09-06T14:17:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="代码段"><a href="#代码段" class="headerlink" title="代码段"></a>代码段</h3><p>看到网上的JavaScript代码带一个复制的小按键，好奇就把相关的代码段整理了一下。</p>
 <a id="more"></a>
 <ol>
 <li>复制文本框内容</li>
@@ -34,12 +68,28 @@
 <li>代码段来源于互联网,作者1： <a href="http://my.csdn.net/jin367411763,&#39;作者的CSDN博客地址&#39;" target="_blank" rel="external"><em>jin367411763</em></a>，作者2: <a href="http://www.cnblogs.com/tylerdonet/,&#39;作者的cnblogs地址&#39;" target="_blank" rel="external"><em>Tyler’s Blog</em></a></li>
 </ul>
 ]]></content>
-    </entry>
     
-    <entry>
-      <title><![CDATA[优先队列的堆实现]]></title>
-      <url>http://yoursite.com/2016/09/06/PrioQueue1/</url>
-      <content type="html"><![CDATA[<h2 id="优先队列的堆实现"><a href="#优先队列的堆实现" class="headerlink" title="优先队列的堆实现"></a>优先队列的堆实现</h2><hr>
+    <summary type="html">
+    
+      &lt;h3 id=&quot;代码段&quot;&gt;&lt;a href=&quot;#代码段&quot; class=&quot;headerlink&quot; title=&quot;代码段&quot;&gt;&lt;/a&gt;代码段&lt;/h3&gt;&lt;p&gt;看到网上的JavaScript代码带一个复制的小按键，好奇就把相关的代码段整理了一下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript代码段" scheme="http://yoursite.com/tags/JavaScript%E4%BB%A3%E7%A0%81%E6%AE%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>优先队列的堆实现</title>
+    <link href="http://yoursite.com/2016/09/06/PrioQueue1/"/>
+    <id>http://yoursite.com/2016/09/06/PrioQueue1/</id>
+    <published>2016-09-06T02:53:30.000Z</published>
+    <updated>2016-09-06T07:09:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="优先队列的堆实现"><a href="#优先队列的堆实现" class="headerlink" title="优先队列的堆实现"></a>优先队列的堆实现</h2><hr>
 <h3 id="堆及其性质"><a href="#堆及其性质" class="headerlink" title="堆及其性质"></a>堆及其性质</h3><ol>
 <li>采用树形结构实现优先队列的一种有效技术成为 <strong>堆</strong>，节点数据的存储满足堆序。<ul>
 <li>从根到任何一个叶节点，节点数据优先级递减</li>
@@ -80,12 +130,49 @@
 <li>程序出自《<strong>数据结构与算法Python语言描述</strong>》</li>
 </ul>
 ]]></content>
-    </entry>
     
-    <entry>
-      <title><![CDATA[优先队列的连续列表实现]]></title>
-      <url>http://yoursite.com/2016/09/06/PrioQueue0/</url>
-      <content type="html"><![CDATA[<h2 id="优先队列的连续列表实现"><a href="#优先队列的连续列表实现" class="headerlink" title="优先队列的连续列表实现"></a>优先队列的连续列表实现</h2><hr>
+    <summary type="html">
+    
+      &lt;h2 id=&quot;优先队列的堆实现&quot;&gt;&lt;a href=&quot;#优先队列的堆实现&quot; class=&quot;headerlink&quot; title=&quot;优先队列的堆实现&quot;&gt;&lt;/a&gt;优先队列的堆实现&lt;/h2&gt;&lt;hr&gt;
+&lt;h3 id=&quot;堆及其性质&quot;&gt;&lt;a href=&quot;#堆及其性质&quot; class=&quot;headerlink&quot; title=&quot;堆及其性质&quot;&gt;&lt;/a&gt;堆及其性质&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;采用树形结构实现优先队列的一种有效技术成为 &lt;strong&gt;堆&lt;/strong&gt;，节点数据的存储满足堆序。&lt;ul&gt;
+&lt;li&gt;从根到任何一个叶节点，节点数据优先级递减&lt;/li&gt;
+&lt;li&gt;堆顶元素优先级最高，O(1)时间即可得到&lt;/li&gt;
+&lt;li&gt;位于不同路径上的元素，这里不关心其顺序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;几个重要性质&lt;ul&gt;
+&lt;li&gt;在一个堆最后追加一个元素，依然是完全二叉树，但未必是堆&lt;/li&gt;
+&lt;li&gt;去掉堆顶，两个子堆上堆序不变&lt;/li&gt;
+&lt;li&gt;去掉堆顶的两个子堆加入根元素，未必是堆（堆序无法保证）&lt;/li&gt;
+&lt;li&gt;去掉堆中最后的元素，不破坏堆序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="栈和队列" scheme="http://yoursite.com/tags/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"/>
+    
+      <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+      <category term="堆" scheme="http://yoursite.com/tags/%E5%A0%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>优先队列的连续列表实现</title>
+    <link href="http://yoursite.com/2016/09/06/PrioQueue0/"/>
+    <id>http://yoursite.com/2016/09/06/PrioQueue0/</id>
+    <published>2016-09-06T02:03:03.000Z</published>
+    <updated>2016-09-06T07:10:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="优先队列的连续列表实现"><a href="#优先队列的连续列表实现" class="headerlink" title="优先队列的连续列表实现"></a>优先队列的连续列表实现</h2><hr>
 <h3 id="两种实现方案"><a href="#两种实现方案" class="headerlink" title="两种实现方案"></a>两种实现方案</h3><ol>
 <li>存储数据时保证元素的优先顺序，任何时候取元素都可以得到最高优先级（存入操作效率低，访问和弹出方便）</li>
 <li>存入简单（顺序表存入表尾，链接表存入表头），取用时检索（存入效率高，访问弹出不便），如许多次访问统一元素但不弹出，则不采用此法，避免重复检索，或者记录要访问的元素位置。</li>
@@ -136,12 +223,34 @@
 <li>程序出自 《<strong>数据结构与算法Python语言描述</strong>》</li>
 </ul>
 ]]></content>
-    </entry>
     
-    <entry>
-      <title><![CDATA[其他]]></title>
-      <url>http://yoursite.com/2016/09/05/meeting/</url>
-      <content type="html"><![CDATA[<h2 id="了解点概念"><a href="#了解点概念" class="headerlink" title="了解点概念"></a>了解点概念</h2><hr>
+    <summary type="html">
+    
+      &lt;h2 id=&quot;优先队列的连续列表实现&quot;&gt;&lt;a href=&quot;#优先队列的连续列表实现&quot; class=&quot;headerlink&quot; title=&quot;优先队列的连续列表实现&quot;&gt;&lt;/a&gt;优先队列的连续列表实现&lt;/h2&gt;&lt;hr&gt;
+&lt;h3 id=&quot;两种实现方案&quot;&gt;&lt;a href=&quot;#两种实现方案&quot; class=&quot;headerlink&quot; title=&quot;两种实现方案&quot;&gt;&lt;/a&gt;两种实现方案&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;存储数据时保证元素的优先顺序，任何时候取元素都可以得到最高优先级（存入操作效率低，访问和弹出方便）&lt;/li&gt;
+&lt;li&gt;存入简单（顺序表存入表尾，链接表存入表头），取用时检索（存入效率高，访问弹出不便），如许多次访问统一元素但不弹出，则不采用此法，避免重复检索，或者记录要访问的元素位置。&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="栈和队列" scheme="http://yoursite.com/tags/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>其他</title>
+    <link href="http://yoursite.com/2016/09/05/meeting/"/>
+    <id>http://yoursite.com/2016/09/05/meeting/</id>
+    <published>2016-09-05T03:15:32.000Z</published>
+    <updated>2016-09-06T13:52:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="了解点概念"><a href="#了解点概念" class="headerlink" title="了解点概念"></a>了解点概念</h2><hr>
 <ul>
 <li>DNS流量分发</li>
 <li>容器调度:HP Ku8 Mannager</li>
@@ -151,12 +260,32 @@
 </ul>
 <hr>
 ]]></content>
-    </entry>
     
-    <entry>
-      <title><![CDATA[背包问题]]></title>
-      <url>http://yoursite.com/2016/09/05/bagproblem/</url>
-      <content type="html"><![CDATA[<h2 id="栈的应用其二：背包问题"><a href="#栈的应用其二：背包问题" class="headerlink" title="栈的应用其二：背包问题"></a>栈的应用其二：背包问题</h2><hr>
+    <summary type="html">
+    
+      &lt;h2 id=&quot;了解点概念&quot;&gt;&lt;a href=&quot;#了解点概念&quot; class=&quot;headerlink&quot; title=&quot;了解点概念&quot;&gt;&lt;/a&gt;了解点概念&lt;/h2&gt;&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;DNS流量分发&lt;/li&gt;
+&lt;li&gt;容器调度:HP Ku8 Mannager&lt;/li&gt;
+&lt;li&gt;
+    
+    </summary>
+    
+      <category term="其他" scheme="http://yoursite.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="其他" scheme="http://yoursite.com/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>背包问题</title>
+    <link href="http://yoursite.com/2016/09/05/bagproblem/"/>
+    <id>http://yoursite.com/2016/09/05/bagproblem/</id>
+    <published>2016-09-05T03:12:15.000Z</published>
+    <updated>2016-09-06T07:44:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="栈的应用其二：背包问题"><a href="#栈的应用其二：背包问题" class="headerlink" title="栈的应用其二：背包问题"></a>栈的应用其二：背包问题</h2><hr>
 <h3 id="处理逻辑"><a href="#处理逻辑" class="headerlink" title="处理逻辑"></a>处理逻辑</h3><ol>
 <li><code>kanp(weight,n)</code>表示n件物品的重量<ul>
 <li>若不选最后一件物品(重量为W(n-1))，<code>kanp(weight,n-1)</code>的解即为<code>kanp(weight,n)</code>的解</li>
@@ -201,12 +330,40 @@
 <li>程序出自 《<strong>数据结构与算法Python语言描述</strong>》</li>
 </ul>
 ]]></content>
-    </entry>
     
-    <entry>
-      <title><![CDATA[简单的括号匹配]]></title>
-      <url>http://yoursite.com/2016/09/05/stack/</url>
-      <content type="html"><![CDATA[<h2 id="栈的应用其一：括号匹配"><a href="#栈的应用其一：括号匹配" class="headerlink" title="栈的应用其一：括号匹配"></a>栈的应用其一：括号匹配</h2><hr>
+    <summary type="html">
+    
+      &lt;h2 id=&quot;栈的应用其二：背包问题&quot;&gt;&lt;a href=&quot;#栈的应用其二：背包问题&quot; class=&quot;headerlink&quot; title=&quot;栈的应用其二：背包问题&quot;&gt;&lt;/a&gt;栈的应用其二：背包问题&lt;/h2&gt;&lt;hr&gt;
+&lt;h3 id=&quot;处理逻辑&quot;&gt;&lt;a href=&quot;#处理逻辑&quot; class=&quot;headerlink&quot; title=&quot;处理逻辑&quot;&gt;&lt;/a&gt;处理逻辑&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;kanp(weight,n)&lt;/code&gt;表示n件物品的重量&lt;ul&gt;
+&lt;li&gt;若不选最后一件物品(重量为W(n-1))，&lt;code&gt;kanp(weight,n-1)&lt;/code&gt;的解即为&lt;code&gt;kanp(weight,n)&lt;/code&gt;的解&lt;/li&gt;
+&lt;li&gt;若选择最后一件物品，若&lt;code&gt;kanp(weight-W(n-1),n-1)&lt;/code&gt;有解，其解加上最后一件物品就是&lt;code&gt;kanp(weight,n)&lt;/code&gt;的解，即前者有解后者也有解&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;递归的考虑问题，n件物品的背包问题可归结为两个n-1件物品的背包问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;同样重量，物品数量减一&lt;/li&gt;
+&lt;li&gt;减少重量，物品数量减一
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="栈和队列" scheme="http://yoursite.com/tags/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>简单的括号匹配</title>
+    <link href="http://yoursite.com/2016/09/05/stack/"/>
+    <id>http://yoursite.com/2016/09/05/stack/</id>
+    <published>2016-09-05T00:44:51.000Z</published>
+    <updated>2016-09-06T07:20:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="栈的应用其一：括号匹配"><a href="#栈的应用其一：括号匹配" class="headerlink" title="栈的应用其一：括号匹配"></a>栈的应用其一：括号匹配</h2><hr>
 <h3 id="处理逻辑"><a href="#处理逻辑" class="headerlink" title="处理逻辑"></a>处理逻辑</h3><p>未考虑引号和注释中的括号情况</p>
 <ul>
 <li>顺序扫描正文字符串，跳过无关字符</li>
@@ -221,8 +378,27 @@
 <li>程序出自 《<strong>数据结构与算法Python语言描述</strong>》</li>
 </ul>
 ]]></content>
-    </entry>
     
+    <summary type="html">
+    
+      &lt;h2 id=&quot;栈的应用其一：括号匹配&quot;&gt;&lt;a href=&quot;#栈的应用其一：括号匹配&quot; class=&quot;headerlink&quot; title=&quot;栈的应用其一：括号匹配&quot;&gt;&lt;/a&gt;栈的应用其一：括号匹配&lt;/h2&gt;&lt;hr&gt;
+&lt;h3 id=&quot;处理逻辑&quot;&gt;&lt;a href=&quot;#处理逻辑&quot; class=&quot;headerlink&quot; title=&quot;处理逻辑&quot;&gt;&lt;/a&gt;处理逻辑&lt;/h3&gt;&lt;p&gt;未考虑引号和注释中的括号情况&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;顺序扫描正文字符串，跳过无关字符&lt;/li&gt;
+&lt;li&gt;遇到开括号&lt;code&gt;(,[,{&lt;/code&gt;则入栈&lt;/li&gt;
+&lt;li&gt;遇到闭括号&lt;code&gt;),],}&lt;/code&gt;则弹出栈顶元素与之匹配&lt;/li&gt;
+&lt;li&gt;匹配成功则继续，否则失败结束&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="栈和队列" scheme="http://yoursite.com/tags/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
   
-  
-</search>
+</feed>
