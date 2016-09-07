@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-06T14:52:52.000Z</updated>
+  <updated>2016-09-07T12:50:45.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,27 +16,265 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>杂</title>
-    <link href="http://yoursite.com/2016/09/06/something0/"/>
-    <id>http://yoursite.com/2016/09/06/something0/</id>
-    <published>2016-09-06T14:42:40.000Z</published>
-    <updated>2016-09-06T14:52:52.000Z</updated>
+    <title>Create a Hexo Theme 3</title>
+    <link href="http://yoursite.com/2016/09/07/hexotheme2/"/>
+    <id>http://yoursite.com/2016/09/07/hexotheme2/</id>
+    <published>2016-09-07T12:33:18.000Z</published>
+    <updated>2016-09-07T12:50:45.000Z</updated>
     
-    <content type="html"><![CDATA[<p>知乎上看到的鲁迅的东西。</p>
-<a id="more"></a>
-<blockquote><p>我独自远行，不但没有你，并且再没有别的影在黑暗里。<br>只有我被黑暗吞没，那世界全属于我自己。</p>
-<footer><strong>鲁迅</strong></footer></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="Part-3-Wrapping-up-with-Disqus-comments-Google-Analytics-and-the-widgets"><a href="#Part-3-Wrapping-up-with-Disqus-comments-Google-Analytics-and-the-widgets" class="headerlink" title="Part 3: Wrapping up with Disqus comments, Google Analytics and the widgets"></a>Part 3: Wrapping up with Disqus comments, Google Analytics and the widgets</h2><hr>
+]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;知乎上看到的鲁迅的东西。&lt;/p&gt;
+      &lt;h2 id=&quot;Part-3-Wrapping-up-with-Disqus-comments-Google-Analytics-and-the-widgets&quot;&gt;&lt;a href=&quot;#Part-3-Wrapping-up-with-Disqus-comments-Google-A
     
     </summary>
     
-      <category term="无关紧要" scheme="http://yoursite.com/categories/%E6%97%A0%E5%85%B3%E7%B4%A7%E8%A6%81/"/>
+      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
     
     
-      <category term="随想" scheme="http://yoursite.com/tags/%E9%9A%8F%E6%83%B3/"/>
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="Theme" scheme="http://yoursite.com/tags/Theme/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Create a Hexo Theme 2</title>
+    <link href="http://yoursite.com/2016/09/07/hexotheme1/"/>
+    <id>http://yoursite.com/2016/09/07/hexotheme1/</id>
+    <published>2016-09-07T12:33:13.000Z</published>
+    <updated>2016-09-07T12:56:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Part-2-Finishing-up-the-remaining-pages"><a href="#Part-2-Finishing-up-the-remaining-pages" class="headerlink" title="Part 2: Finishing up the remaining pages"></a>Part 2: Finishing up the remaining pages</h2><hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Part-2-Finishing-up-the-remaining-pages&quot;&gt;&lt;a href=&quot;#Part-2-Finishing-up-the-remaining-pages&quot; class=&quot;headerlink&quot; title=&quot;Part 2: Finish
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="Theme" scheme="http://yoursite.com/tags/Theme/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Create a Hexo Theme 1</title>
+    <link href="http://yoursite.com/2016/09/07/hexotheme0/"/>
+    <id>http://yoursite.com/2016/09/07/hexotheme0/</id>
+    <published>2016-09-07T12:33:08.000Z</published>
+    <updated>2016-09-07T12:51:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Part-1-Setting-up-the-project-and-creating-the-blog’s-main-index-page"><a href="#Part-1-Setting-up-the-project-and-creating-the-blog’s-main-index-page" class="headerlink" title="Part 1: Setting up the project and creating the blog’s main index page"></a>Part 1: Setting up the project and creating the blog’s main index page</h2><hr>
+<p>In this multi part tutorial, you will learn how to create an Hexo Theme from scratch. I really love Hexo and use it everyday; unfortunately, as of today, the documentation for theme creation is pretty slim. Here is my attempt at fixing that.</p>
+<a id="more"></a>
+<h3 id="LINKS-TO-OTHER-SECTIONS"><a href="#LINKS-TO-OTHER-SECTIONS" class="headerlink" title="LINKS TO OTHER SECTIONS"></a>LINKS TO OTHER SECTIONS</h3><hr>
+<ul>
+<li>Part 1: Setting up the project and creating the blog’s main index pages</li>
+<li>Part 2: Finishing up the remaining pages</li>
+<li>Part 3: Wrapping up with Disqus comments, Google Analytics and the widgets</li>
+</ul>
+<h3 id="PREREQUISITES"><a href="#PREREQUISITES" class="headerlink" title="PREREQUISITES"></a>PREREQUISITES</h3><hr>
+<ul>
+<li>The very basics of blogging with hexo. If you are completely new, check the getting started guide on hexo.io.</li>
+<li>Some knowledge of Bootstrap</li>
+<li>Some knowledge of a JavaScript templating engine (we will use EJS)</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Part-1-Setting-up-the-project-and-creating-the-blog’s-main-index-page&quot;&gt;&lt;a href=&quot;#Part-1-Setting-up-the-project-and-creating-the-blog’s-main-index-page&quot; class=&quot;headerlink&quot; title=&quot;Part 1: Setting up the project and creating the blog’s main index page&quot;&gt;&lt;/a&gt;Part 1: Setting up the project and creating the blog’s main index page&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;In this multi part tutorial, you will learn how to create an Hexo Theme from scratch. I really love Hexo and use it everyday; unfortunately, as of today, the documentation for theme creation is pretty slim. Here is my attempt at fixing that.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="Theme" scheme="http://yoursite.com/tags/Theme/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小巷</title>
+    <link href="http://yoursite.com/2016/09/07/poetry0/"/>
+    <id>http://yoursite.com/2016/09/07/poetry0/</id>
+    <published>2016-09-07T12:27:16.000Z</published>
+    <updated>2016-09-07T12:30:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="小巷"><a href="#小巷" class="headerlink" title="小巷"></a>小巷</h2><hr>
+<a id="more"></a>
+<blockquote><p>小巷<br>又弯又长<br>没有门<br>没有窗<br>我拿把旧钥匙<br>敲着厚厚的墙</p>
+<footer><strong>顾城</strong><cite>小巷</cite></footer></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;小巷&quot;&gt;&lt;a href=&quot;#小巷&quot; class=&quot;headerlink&quot; title=&quot;小巷&quot;&gt;&lt;/a&gt;小巷&lt;/h2&gt;&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="Tips" scheme="http://yoursite.com/categories/Tips/"/>
+    
+    
+      <category term="诗" scheme="http://yoursite.com/tags/%E8%AF%97/"/>
+    
+      <category term="私人" scheme="http://yoursite.com/tags/%E7%A7%81%E4%BA%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL5.7.9密码重置</title>
+    <link href="http://yoursite.com/2016/09/07/database1/"/>
+    <id>http://yoursite.com/2016/09/07/database1/</id>
+    <published>2016-09-07T12:02:52.000Z</published>
+    <updated>2016-09-07T12:12:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="MySQL忘记密码"><a href="#MySQL忘记密码" class="headerlink" title="MySQL忘记密码"></a>MySQL忘记密码</h2><hr>
+<ol>
+<li>修改my.cnf</li>
+</ol>
+<ul>
+<li><code>vi /etc/my.cnf</code>,添加<code>skip-grant-tables</code></li>
+</ul>
+<ol>
+<li>重启数据库</li>
+</ol>
+<ul>
+<li><code>service mysqld restart</code></li>
+</ul>
+<a id="more"></a>
+<ol>
+<li>连接数据库</li>
+</ol>
+<ul>
+<li><code>mysql -u root</code></li>
+</ul>
+<ol>
+<li>修改MySQL root用户的密码<br>三行命令分别如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">update mysql.user set authentication_string = password(&apos;123456&apos;) where user=&apos;root&apos; and Host = &apos;localhost&apos;;</div><div class="line">flush privileges;</div><div class="line">quit;</div></pre></td></tr></table></figure></li>
+<li>恢复第一步中的修改</li>
+</ol>
+<ul>
+<li><code>vi /etc/my.cnf</code>，删除<code>skip-grant-tables</code></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;MySQL忘记密码&quot;&gt;&lt;a href=&quot;#MySQL忘记密码&quot; class=&quot;headerlink&quot; title=&quot;MySQL忘记密码&quot;&gt;&lt;/a&gt;MySQL忘记密码&lt;/h2&gt;&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;修改my.cnf&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;vi /etc/my.cnf&lt;/code&gt;,添加&lt;code&gt;skip-grant-tables&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;重启数据库&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;service mysqld restart&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="MySQL" scheme="http://yoursite.com/categories/MySQL/"/>
+    
+    
+      <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL数据库错误</title>
+    <link href="http://yoursite.com/2016/09/07/database0/"/>
+    <id>http://yoursite.com/2016/09/07/database0/</id>
+    <published>2016-09-07T08:37:43.000Z</published>
+    <updated>2016-09-07T08:48:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="OperationalError-1366"><a href="#OperationalError-1366" class="headerlink" title="OperationalError 1366"></a>OperationalError 1366</h2><hr>
+<p>在 <strong>Django</strong>连接数据库时发生这样的错误，此异常是 <strong>MySQL</strong>问题，而非 <strong>Python</strong>的问题，因类 <strong>MySQL</strong>的字段类型是<code>utf-xxx</code>，而在 <strong>MySQL</strong>中这些<code>utf-8</code>数据类型只能存储最多三个字节的字符，而存不了包含四个字节的字符。类似这样的错误，应该是数据库表的 <em>charset</em>和 <em>collation</em>问题。尝试把所有表的 <em>charset</em>改为<code>utf-8</code>,  <em>collation</em>改为<code>utf8-unicode-ci</code>。<br>如果还是不能解决，最好是重建数据库，然后设置数据库的属性，选择 <em>charset</em>为<code>utf-8</code>, <em>collation</em>为<code>utf8-unicode-ci</code>。<br>或者在MySQL命令行模式下，执行如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">create database cc default charset utf8 collate utf8_unicode_ci;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;OperationalError-1366&quot;&gt;&lt;a href=&quot;#OperationalError-1366&quot; class=&quot;headerlink&quot; title=&quot;OperationalError 1366&quot;&gt;&lt;/a&gt;OperationalError 1366&lt;/
+    
+    </summary>
+    
+      <category term="MySQL" scheme="http://yoursite.com/categories/MySQL/"/>
+    
+    
+      <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django后台admin密码重置</title>
+    <link href="http://yoursite.com/2016/09/07/django0/"/>
+    <id>http://yoursite.com/2016/09/07/django0/</id>
+    <published>2016-09-07T08:13:31.000Z</published>
+    <updated>2016-09-07T08:36:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Django管理控制台密码重置"><a href="#Django管理控制台密码重置" class="headerlink" title="Django管理控制台密码重置"></a>Django管理控制台密码重置</h2><hr>
+<ol>
+<li>进入到Django项目根目录，执行<code>python manage.py shell</code>(进入到Django Shell环境)</li>
+<li>导入模块：<code>from django.contrib.auth.models import User</code></li>
+<li>获取相应的用户名：<code>user = User.objects.get(username=&#39;admin&#39;)</code>(默认为admin，若在创建超级用户(<code>python manage.py createsuperuser</code>)时做过更改，则输入更改的用户名)</li>
+<li>重置密码：<code>user.set_password(&#39;new_password&#39;)</code></li>
+<li>保存更改:<code>user.save()</code></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Django管理控制台密码重置&quot;&gt;&lt;a href=&quot;#Django管理控制台密码重置&quot; class=&quot;headerlink&quot; title=&quot;Django管理控制台密码重置&quot;&gt;&lt;/a&gt;Django管理控制台密码重置&lt;/h2&gt;&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;进入到Djan
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="栈和队列" scheme="http://yoursite.com/tags/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"/>
+    
+      <category term="Django" scheme="http://yoursite.com/tags/Django/"/>
+    
+      <category term="WEB框架" scheme="http://yoursite.com/tags/WEB%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>影的告别</title>
+    <link href="http://yoursite.com/2016/09/06/something0/"/>
+    <id>http://yoursite.com/2016/09/06/something0/</id>
+    <published>2016-09-06T14:42:40.000Z</published>
+    <updated>2016-09-07T13:06:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="影的告别"><a href="#影的告别" class="headerlink" title="影的告别"></a>影的告别</h2><a id="more"></a>
+<blockquote><p>影的告别<br>人睡到不知道时候的时候，就会有影来告别，说出那些话——<br>有我所不乐意的在天堂里，我不愿去；有我所不乐意的在地狱里，我不愿去；<br>有我所不乐意的在你们将来的黄金世界里，我不愿去。<br>然而你就是我所不乐意的。<br>朋友，我不想跟随你了，我不愿住。<br>我不愿意！<br>呜乎呜乎，我不愿意，我不如彷徨于无地。<br>我不过一个影，要别你而沉没在黑暗里了。<br>然而黑暗又会吞并我，然而光明又会使我消失。<br>然而我不愿彷徨于明暗之间，我不如在黑暗里沉没。<br>然而我终于彷徨于明暗之间，我不知道是黄昏还是黎明。我姑且举灰黑的手装作喝干一杯酒，我将在不知道时候的时候独自远行。<br>呜乎呜乎，倘若黄昏，黑夜自然会来沉没我，否则我要被白天消失，如果现是黎明。<br>朋友，时候近了。<br>我将向黑暗里彷徨于无地。<br>你还想我的赠品。我能献你甚么呢？无已，则仍是黑暗和虚空而已。<br>但是，我愿意只是黑暗，或者会消失于你的白天；我愿意只是虚空，决不占你的心地。<br>我愿意这样，朋友——<br>我独自远行，不但没有你，并且再没有别的影在黑暗里。只有我被黑暗沉没，那世界全属于我自己。</p>
+<footer><strong>鲁迅</strong><cite>一九二四年九月二十四日</cite></footer></blockquote>
+<blockquote><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=26494705&auto=1&height=66"></iframe></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;影的告别&quot;&gt;&lt;a href=&quot;#影的告别&quot; class=&quot;headerlink&quot; title=&quot;影的告别&quot;&gt;&lt;/a&gt;影的告别&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="Tips" scheme="http://yoursite.com/categories/Tips/"/>
+    
+    
+      <category term="诗" scheme="http://yoursite.com/tags/%E8%AF%97/"/>
     
       <category term="私人" scheme="http://yoursite.com/tags/%E7%A7%81%E4%BA%BA/"/>
     
@@ -283,13 +521,13 @@
     <link href="http://yoursite.com/2016/09/05/bagproblem/"/>
     <id>http://yoursite.com/2016/09/05/bagproblem/</id>
     <published>2016-09-05T03:12:15.000Z</published>
-    <updated>2016-09-06T07:44:12.000Z</updated>
+    <updated>2016-09-07T02:04:31.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="栈的应用其二：背包问题"><a href="#栈的应用其二：背包问题" class="headerlink" title="栈的应用其二：背包问题"></a>栈的应用其二：背包问题</h2><hr>
 <h3 id="处理逻辑"><a href="#处理逻辑" class="headerlink" title="处理逻辑"></a>处理逻辑</h3><ol>
-<li><code>kanp(weight,n)</code>表示n件物品的重量<ul>
-<li>若不选最后一件物品(重量为W(n-1))，<code>kanp(weight,n-1)</code>的解即为<code>kanp(weight,n)</code>的解</li>
-<li>若选择最后一件物品，若<code>kanp(weight-W(n-1),n-1)</code>有解，其解加上最后一件物品就是<code>kanp(weight,n)</code>的解，即前者有解后者也有解</li>
+<li><code>knap(weight,n)</code>表示n件物品的重量<ul>
+<li>若不选最后一件物品(重量为W(n-1))，<code>knap(weight,n-1)</code>的解即为<code>knap(weight,n)</code>的解</li>
+<li>若选择最后一件物品，若<code>knap(weight-W(n-1),n-1)</code>有解，其解加上最后一件物品就是<code>kanp(weight,n)</code>的解，即前者有解后者也有解</li>
 </ul>
 </li>
 <li><p>递归的考虑问题，n件物品的背包问题可归结为两个n-1件物品的背包问题：</p>
@@ -335,9 +573,9 @@
     
       &lt;h2 id=&quot;栈的应用其二：背包问题&quot;&gt;&lt;a href=&quot;#栈的应用其二：背包问题&quot; class=&quot;headerlink&quot; title=&quot;栈的应用其二：背包问题&quot;&gt;&lt;/a&gt;栈的应用其二：背包问题&lt;/h2&gt;&lt;hr&gt;
 &lt;h3 id=&quot;处理逻辑&quot;&gt;&lt;a href=&quot;#处理逻辑&quot; class=&quot;headerlink&quot; title=&quot;处理逻辑&quot;&gt;&lt;/a&gt;处理逻辑&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;kanp(weight,n)&lt;/code&gt;表示n件物品的重量&lt;ul&gt;
-&lt;li&gt;若不选最后一件物品(重量为W(n-1))，&lt;code&gt;kanp(weight,n-1)&lt;/code&gt;的解即为&lt;code&gt;kanp(weight,n)&lt;/code&gt;的解&lt;/li&gt;
-&lt;li&gt;若选择最后一件物品，若&lt;code&gt;kanp(weight-W(n-1),n-1)&lt;/code&gt;有解，其解加上最后一件物品就是&lt;code&gt;kanp(weight,n)&lt;/code&gt;的解，即前者有解后者也有解&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;knap(weight,n)&lt;/code&gt;表示n件物品的重量&lt;ul&gt;
+&lt;li&gt;若不选最后一件物品(重量为W(n-1))，&lt;code&gt;knap(weight,n-1)&lt;/code&gt;的解即为&lt;code&gt;knap(weight,n)&lt;/code&gt;的解&lt;/li&gt;
+&lt;li&gt;若选择最后一件物品，若&lt;code&gt;knap(weight-W(n-1),n-1)&lt;/code&gt;有解，其解加上最后一件物品就是&lt;code&gt;kanp(weight,n)&lt;/code&gt;的解，即前者有解后者也有解&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;递归的考虑问题，n件物品的背包问题可归结为两个n-1件物品的背包问题：&lt;/p&gt;

@@ -4,12 +4,111 @@
   
     
     <entry>
-      <title><![CDATA[杂]]></title>
-      <url>http://yoursite.com/2016/09/06/something0/</url>
-      <content type="html"><![CDATA[<p>知乎上看到的鲁迅的东西。</p>
+      <title><![CDATA[Create a Hexo Theme 3]]></title>
+      <url>http://yoursite.com/2016/09/07/hexotheme2/</url>
+      <content type="html"><![CDATA[<h2 id="Part-3-Wrapping-up-with-Disqus-comments-Google-Analytics-and-the-widgets"><a href="#Part-3-Wrapping-up-with-Disqus-comments-Google-Analytics-and-the-widgets" class="headerlink" title="Part 3: Wrapping up with Disqus comments, Google Analytics and the widgets"></a>Part 3: Wrapping up with Disqus comments, Google Analytics and the widgets</h2><hr>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Create a Hexo Theme 2]]></title>
+      <url>http://yoursite.com/2016/09/07/hexotheme1/</url>
+      <content type="html"><![CDATA[<h2 id="Part-2-Finishing-up-the-remaining-pages"><a href="#Part-2-Finishing-up-the-remaining-pages" class="headerlink" title="Part 2: Finishing up the remaining pages"></a>Part 2: Finishing up the remaining pages</h2><hr>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Create a Hexo Theme 1]]></title>
+      <url>http://yoursite.com/2016/09/07/hexotheme0/</url>
+      <content type="html"><![CDATA[<h2 id="Part-1-Setting-up-the-project-and-creating-the-blog’s-main-index-page"><a href="#Part-1-Setting-up-the-project-and-creating-the-blog’s-main-index-page" class="headerlink" title="Part 1: Setting up the project and creating the blog’s main index page"></a>Part 1: Setting up the project and creating the blog’s main index page</h2><hr>
+<p>In this multi part tutorial, you will learn how to create an Hexo Theme from scratch. I really love Hexo and use it everyday; unfortunately, as of today, the documentation for theme creation is pretty slim. Here is my attempt at fixing that.</p>
 <a id="more"></a>
-<blockquote><p>我独自远行，不但没有你，并且再没有别的影在黑暗里。<br>只有我被黑暗吞没，那世界全属于我自己。</p>
-<footer><strong>鲁迅</strong></footer></blockquote>]]></content>
+<h3 id="LINKS-TO-OTHER-SECTIONS"><a href="#LINKS-TO-OTHER-SECTIONS" class="headerlink" title="LINKS TO OTHER SECTIONS"></a>LINKS TO OTHER SECTIONS</h3><hr>
+<ul>
+<li>Part 1: Setting up the project and creating the blog’s main index pages</li>
+<li>Part 2: Finishing up the remaining pages</li>
+<li>Part 3: Wrapping up with Disqus comments, Google Analytics and the widgets</li>
+</ul>
+<h3 id="PREREQUISITES"><a href="#PREREQUISITES" class="headerlink" title="PREREQUISITES"></a>PREREQUISITES</h3><hr>
+<ul>
+<li>The very basics of blogging with hexo. If you are completely new, check the getting started guide on hexo.io.</li>
+<li>Some knowledge of Bootstrap</li>
+<li>Some knowledge of a JavaScript templating engine (we will use EJS)</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[小巷]]></title>
+      <url>http://yoursite.com/2016/09/07/poetry0/</url>
+      <content type="html"><![CDATA[<h2 id="小巷"><a href="#小巷" class="headerlink" title="小巷"></a>小巷</h2><hr>
+<a id="more"></a>
+<blockquote><p>小巷<br>又弯又长<br>没有门<br>没有窗<br>我拿把旧钥匙<br>敲着厚厚的墙</p>
+<footer><strong>顾城</strong><cite>小巷</cite></footer></blockquote>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MySQL5.7.9密码重置]]></title>
+      <url>http://yoursite.com/2016/09/07/database1/</url>
+      <content type="html"><![CDATA[<h2 id="MySQL忘记密码"><a href="#MySQL忘记密码" class="headerlink" title="MySQL忘记密码"></a>MySQL忘记密码</h2><hr>
+<ol>
+<li>修改my.cnf</li>
+</ol>
+<ul>
+<li><code>vi /etc/my.cnf</code>,添加<code>skip-grant-tables</code></li>
+</ul>
+<ol>
+<li>重启数据库</li>
+</ol>
+<ul>
+<li><code>service mysqld restart</code></li>
+</ul>
+<a id="more"></a>
+<ol>
+<li>连接数据库</li>
+</ol>
+<ul>
+<li><code>mysql -u root</code></li>
+</ul>
+<ol>
+<li>修改MySQL root用户的密码<br>三行命令分别如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">update mysql.user set authentication_string = password(&apos;123456&apos;) where user=&apos;root&apos; and Host = &apos;localhost&apos;;</div><div class="line">flush privileges;</div><div class="line">quit;</div></pre></td></tr></table></figure></li>
+<li>恢复第一步中的修改</li>
+</ol>
+<ul>
+<li><code>vi /etc/my.cnf</code>，删除<code>skip-grant-tables</code></li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MySQL数据库错误]]></title>
+      <url>http://yoursite.com/2016/09/07/database0/</url>
+      <content type="html"><![CDATA[<h2 id="OperationalError-1366"><a href="#OperationalError-1366" class="headerlink" title="OperationalError 1366"></a>OperationalError 1366</h2><hr>
+<p>在 <strong>Django</strong>连接数据库时发生这样的错误，此异常是 <strong>MySQL</strong>问题，而非 <strong>Python</strong>的问题，因类 <strong>MySQL</strong>的字段类型是<code>utf-xxx</code>，而在 <strong>MySQL</strong>中这些<code>utf-8</code>数据类型只能存储最多三个字节的字符，而存不了包含四个字节的字符。类似这样的错误，应该是数据库表的 <em>charset</em>和 <em>collation</em>问题。尝试把所有表的 <em>charset</em>改为<code>utf-8</code>,  <em>collation</em>改为<code>utf8-unicode-ci</code>。<br>如果还是不能解决，最好是重建数据库，然后设置数据库的属性，选择 <em>charset</em>为<code>utf-8</code>, <em>collation</em>为<code>utf8-unicode-ci</code>。<br>或者在MySQL命令行模式下，执行如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">create database cc default charset utf8 collate utf8_unicode_ci;</div></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Django后台admin密码重置]]></title>
+      <url>http://yoursite.com/2016/09/07/django0/</url>
+      <content type="html"><![CDATA[<h2 id="Django管理控制台密码重置"><a href="#Django管理控制台密码重置" class="headerlink" title="Django管理控制台密码重置"></a>Django管理控制台密码重置</h2><hr>
+<ol>
+<li>进入到Django项目根目录，执行<code>python manage.py shell</code>(进入到Django Shell环境)</li>
+<li>导入模块：<code>from django.contrib.auth.models import User</code></li>
+<li>获取相应的用户名：<code>user = User.objects.get(username=&#39;admin&#39;)</code>(默认为admin，若在创建超级用户(<code>python manage.py createsuperuser</code>)时做过更改，则输入更改的用户名)</li>
+<li>重置密码：<code>user.set_password(&#39;new_password&#39;)</code></li>
+<li>保存更改:<code>user.save()</code></li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[影的告别]]></title>
+      <url>http://yoursite.com/2016/09/06/something0/</url>
+      <content type="html"><![CDATA[<h2 id="影的告别"><a href="#影的告别" class="headerlink" title="影的告别"></a>影的告别</h2><a id="more"></a>
+<blockquote><p>影的告别<br>人睡到不知道时候的时候，就会有影来告别，说出那些话——<br>有我所不乐意的在天堂里，我不愿去；有我所不乐意的在地狱里，我不愿去；<br>有我所不乐意的在你们将来的黄金世界里，我不愿去。<br>然而你就是我所不乐意的。<br>朋友，我不想跟随你了，我不愿住。<br>我不愿意！<br>呜乎呜乎，我不愿意，我不如彷徨于无地。<br>我不过一个影，要别你而沉没在黑暗里了。<br>然而黑暗又会吞并我，然而光明又会使我消失。<br>然而我不愿彷徨于明暗之间，我不如在黑暗里沉没。<br>然而我终于彷徨于明暗之间，我不知道是黄昏还是黎明。我姑且举灰黑的手装作喝干一杯酒，我将在不知道时候的时候独自远行。<br>呜乎呜乎，倘若黄昏，黑夜自然会来沉没我，否则我要被白天消失，如果现是黎明。<br>朋友，时候近了。<br>我将向黑暗里彷徨于无地。<br>你还想我的赠品。我能献你甚么呢？无已，则仍是黑暗和虚空而已。<br>但是，我愿意只是黑暗，或者会消失于你的白天；我愿意只是虚空，决不占你的心地。<br>我愿意这样，朋友——<br>我独自远行，不但没有你，并且再没有别的影在黑暗里。只有我被黑暗沉没，那世界全属于我自己。</p>
+<footer><strong>鲁迅</strong><cite>一九二四年九月二十四日</cite></footer></blockquote>
+<blockquote><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=26494705&auto=1&height=66"></iframe></blockquote>]]></content>
     </entry>
     
     <entry>
@@ -158,9 +257,9 @@
       <url>http://yoursite.com/2016/09/05/bagproblem/</url>
       <content type="html"><![CDATA[<h2 id="栈的应用其二：背包问题"><a href="#栈的应用其二：背包问题" class="headerlink" title="栈的应用其二：背包问题"></a>栈的应用其二：背包问题</h2><hr>
 <h3 id="处理逻辑"><a href="#处理逻辑" class="headerlink" title="处理逻辑"></a>处理逻辑</h3><ol>
-<li><code>kanp(weight,n)</code>表示n件物品的重量<ul>
-<li>若不选最后一件物品(重量为W(n-1))，<code>kanp(weight,n-1)</code>的解即为<code>kanp(weight,n)</code>的解</li>
-<li>若选择最后一件物品，若<code>kanp(weight-W(n-1),n-1)</code>有解，其解加上最后一件物品就是<code>kanp(weight,n)</code>的解，即前者有解后者也有解</li>
+<li><code>knap(weight,n)</code>表示n件物品的重量<ul>
+<li>若不选最后一件物品(重量为W(n-1))，<code>knap(weight,n-1)</code>的解即为<code>knap(weight,n)</code>的解</li>
+<li>若选择最后一件物品，若<code>knap(weight-W(n-1),n-1)</code>有解，其解加上最后一件物品就是<code>kanp(weight,n)</code>的解，即前者有解后者也有解</li>
 </ul>
 </li>
 <li><p>递归的考虑问题，n件物品的背包问题可归结为两个n-1件物品的背包问题：</p>

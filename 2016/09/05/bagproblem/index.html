@@ -79,7 +79,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Edelsans:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=方正兰亭超细黑简体:300,300italic,400,400italic,700,700italic|msyi:300,300italic,400,400italic,700,700italic|PingFang:300,300italic,400,400italic,700,700italic|Comfortaa-Light:300,300italic,400,400italic,700,700italic|Hero Light:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -112,9 +112,9 @@
 
 <meta name="description" content="栈的应用其二：背包问题
 处理逻辑
-kanp(weight,n)表示n件物品的重量
-若不选最后一件物品(重量为W(n-1))，kanp(weight,n-1)的解即为kanp(weight,n)的解
-若选择最后一件物品，若kanp(weight-W(n-1),n-1)有解，其解加上最后一件物品就是kanp(weight,n)的解，即前者有解后者也有解
+knap(weight,n)表示n件物品的重量
+若不选最后一件物品(重量为W(n-1))，knap(weight,n-1)的解即为knap(weight,n)的解
+若选择最后一件物品，若knap(weight-W(n-1),n-1)有解，其解加上最后一件物品就是kanp(weight,n)的解，即前者有解后者也有解
 
 
 递归的考虑问题，n件物品的背包问题可归结为两">
@@ -124,20 +124,20 @@ kanp(weight,n)表示n件物品的重量
 <meta property="og:site_name" content="Saliva's Home">
 <meta property="og:description" content="栈的应用其二：背包问题
 处理逻辑
-kanp(weight,n)表示n件物品的重量
-若不选最后一件物品(重量为W(n-1))，kanp(weight,n-1)的解即为kanp(weight,n)的解
-若选择最后一件物品，若kanp(weight-W(n-1),n-1)有解，其解加上最后一件物品就是kanp(weight,n)的解，即前者有解后者也有解
+knap(weight,n)表示n件物品的重量
+若不选最后一件物品(重量为W(n-1))，knap(weight,n-1)的解即为knap(weight,n)的解
+若选择最后一件物品，若knap(weight-W(n-1),n-1)有解，其解加上最后一件物品就是kanp(weight,n)的解，即前者有解后者也有解
 
 
 递归的考虑问题，n件物品的背包问题可归结为两">
-<meta property="og:updated_time" content="2016-09-06T07:44:12.000Z">
+<meta property="og:updated_time" content="2016-09-07T02:04:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="背包问题">
 <meta name="twitter:description" content="栈的应用其二：背包问题
 处理逻辑
-kanp(weight,n)表示n件物品的重量
-若不选最后一件物品(重量为W(n-1))，kanp(weight,n-1)的解即为kanp(weight,n)的解
-若选择最后一件物品，若kanp(weight-W(n-1),n-1)有解，其解加上最后一件物品就是kanp(weight,n)的解，即前者有解后者也有解
+knap(weight,n)表示n件物品的重量
+若不选最后一件物品(重量为W(n-1))，knap(weight,n-1)的解即为knap(weight,n)的解
+若选择最后一件物品，若knap(weight-W(n-1),n-1)有解，其解加上最后一件物品就是kanp(weight,n)的解，即前者有解后者也有解
 
 
 递归的考虑问题，n件物品的背包问题可归结为两">
@@ -399,9 +399,9 @@ kanp(weight,n)表示n件物品的重量
       
         <h2 id="栈的应用其二：背包问题"><a href="#栈的应用其二：背包问题" class="headerlink" title="栈的应用其二：背包问题"></a>栈的应用其二：背包问题</h2><hr>
 <h3 id="处理逻辑"><a href="#处理逻辑" class="headerlink" title="处理逻辑"></a>处理逻辑</h3><ol>
-<li><code>kanp(weight,n)</code>表示n件物品的重量<ul>
-<li>若不选最后一件物品(重量为W(n-1))，<code>kanp(weight,n-1)</code>的解即为<code>kanp(weight,n)</code>的解</li>
-<li>若选择最后一件物品，若<code>kanp(weight-W(n-1),n-1)</code>有解，其解加上最后一件物品就是<code>kanp(weight,n)</code>的解，即前者有解后者也有解</li>
+<li><code>knap(weight,n)</code>表示n件物品的重量<ul>
+<li>若不选最后一件物品(重量为W(n-1))，<code>knap(weight,n-1)</code>的解即为<code>knap(weight,n)</code>的解</li>
+<li>若选择最后一件物品，若<code>knap(weight-W(n-1),n-1)</code>有解，其解加上最后一件物品就是<code>kanp(weight,n)</code>的解，即前者有解后者也有解</li>
 </ul>
 </li>
 <li><p>递归的考虑问题，n件物品的背包问题可归结为两个n-1件物品的背包问题：</p>
@@ -574,7 +574,7 @@ kanp(weight,n)表示n件物品的重量
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -582,7 +582,7 @@ kanp(weight,n)表示n件物品的重量
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -591,7 +591,7 @@ kanp(weight,n)表示n件物品的重量
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -626,6 +626,15 @@ kanp(weight,n)表示n件物品的重量
                     <i class="fa fa-fw fa-envelope"></i>
                   
                   Mail
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/playlist?id=22361212" target="_blank" title="Music">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                  Music
                 </a>
               </span>
             
@@ -670,6 +679,10 @@ kanp(weight,n)表示n件物品的重量
               
                 <li class="links-of-blogroll-item">
                   <a href="http://www.awwwards.com" title="Awwwards" target="_blank">Awwwards</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.luoo.net" title="落网" target="_blank">落网</a>
                 </li>
               
             </ul>

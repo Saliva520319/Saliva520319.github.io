@@ -2,9 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2016-09-07T13:12:57.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/09/06/something0/</loc>
     
-    <lastmod>2016-09-06T14:52:52.000Z</lastmod>
+    <lastmod>2016-09-07T13:06:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/07/hexotheme1/</loc>
+    
+    <lastmod>2016-09-07T12:56:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/07/hexotheme0/</loc>
+    
+    <lastmod>2016-09-07T12:51:21.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/07/hexotheme2/</loc>
+    
+    <lastmod>2016-09-07T12:50:45.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/07/poetry0/</loc>
+    
+    <lastmod>2016-09-07T12:30:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/07/database1/</loc>
+    
+    <lastmod>2016-09-07T12:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/07/database0/</loc>
+    
+    <lastmod>2016-09-07T08:48:36.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/07/django0/</loc>
+    
+    <lastmod>2016-09-07T08:36:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/05/bagproblem/</loc>
+    
+    <lastmod>2016-09-07T02:04:31.000Z</lastmod>
     
   </url>
   
@@ -16,23 +79,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/about/index.html</loc>
-    
-    <lastmod>2016-09-06T14:07:22.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2016/09/05/meeting/</loc>
     
     <lastmod>2016-09-06T13:52:12.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/09/05/bagproblem/</loc>
-    
-    <lastmod>2016-09-06T07:44:12.000Z</lastmod>
     
   </url>
   
