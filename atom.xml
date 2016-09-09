@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-07T12:50:45.000Z</updated>
+  <updated>2016-09-09T08:45:36.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,180 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一个人</title>
+    <link href="http://yoursite.com/2016/09/09/poetry1/"/>
+    <id>http://yoursite.com/2016/09/09/poetry1/</id>
+    <published>2016-09-09T08:42:43.000Z</published>
+    <updated>2016-09-09T08:45:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a>
+<blockquote><p>一个人<br>就这么一人<br>一夜又一夜<br>走在路上<br>我把最快的那部份<br>写信寄给你<br>你有了新的吃穿你可以忘了他<br>当对岸灯火昏黄的小酒馆打烊的时候<br>喜拉雅山南麓的丛林里<br>千百万片树叶正在缓缓滑落<br>你熟悉它们的每道伤口<br>你熟悉它们的每道伤口<br>一个人<br>就这么一人<br>一夜又一夜<br>走在路上<br>我把最快的那部份<br>写信寄给你<br>你有了新的吃穿你可以忘了他<br>当对岸灯火昏黄的小酒馆打烊的时候<br>喜拉雅山南麓的丛林里<br>千百万片树叶正在缓缓滑落<br>你熟悉它们的每道伤口<br>你熟悉它们的每道伤口<br>每道伤口<br>从明天起<br>雨季来临<br>一天又一天<br>没有太阳</p>
+<footer><strong>张玮玮和郭龙</strong><cite>一个人</cite></footer></blockquote>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=26494705&auto=1&height=66"></iframe>]]></content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;blockquote&gt;&lt;p&gt;一个人&lt;br&gt;就这么一人&lt;br&gt;一夜又一夜&lt;br&gt;走在路上&lt;br&gt;我把最快的那部份&lt;br&gt;写信寄给你&lt;br&gt;你有了新的吃穿你可以忘了他&lt;br&gt;当对岸灯火昏黄的小酒馆打烊的时候&lt;br&gt;喜拉雅山南麓的丛林里&lt;br&gt;千百
+    
+    </summary>
+    
+      <category term="Tips" scheme="http://yoursite.com/categories/Tips/"/>
+    
+    
+      <category term="诗" scheme="http://yoursite.com/tags/%E8%AF%97/"/>
+    
+      <category term="私人" scheme="http://yoursite.com/tags/%E7%A7%81%E4%BA%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>片刻的闲暇</title>
+    <link href="http://yoursite.com/2016/09/09/something2/"/>
+    <id>http://yoursite.com/2016/09/09/something2/</id>
+    <published>2016-09-09T08:31:01.000Z</published>
+    <updated>2016-09-09T08:38:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="不见不问不听不想"><a href="#不见不问不听不想" class="headerlink" title="不见不问不听不想"></a>不见不问不听不想</h2><hr>
+<p>牙疼，终于拔了。<br>打电话给母亲，明显感觉到一丝急促，匆匆了事，‘我儿子，搁北京呢。’</p>
+<p>文字永远跟不上思想。<br>身边的人，包括我在内，都在慢慢变得干瘪，死气沉沉，偶尔的亢奋也像是回光返照一样。<br>最可笑的是笑到最后那个人，可笑的笑了那么久。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;不见不问不听不想&quot;&gt;&lt;a href=&quot;#不见不问不听不想&quot; class=&quot;headerlink&quot; title=&quot;不见不问不听不想&quot;&gt;&lt;/a&gt;不见不问不听不想&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;牙疼，终于拔了。&lt;br&gt;打电话给母亲，明显感觉到一丝急促，匆匆了事，‘我儿子，搁北
+    
+    </summary>
+    
+      <category term="Tips" scheme="http://yoursite.com/categories/Tips/"/>
+    
+    
+      <category term="私人" scheme="http://yoursite.com/tags/%E7%A7%81%E4%BA%BA/"/>
+    
+      <category term="自欺欺人" scheme="http://yoursite.com/tags/%E8%87%AA%E6%AC%BA%E6%AC%BA%E4%BA%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>域名CNAME解析设置</title>
+    <link href="http://yoursite.com/2016/09/08/domain0/"/>
+    <id>http://yoursite.com/2016/09/08/domain0/</id>
+    <published>2016-09-08T05:49:52.000Z</published>
+    <updated>2016-09-08T06:08:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="域名CNAME解析"><a href="#域名CNAME解析" class="headerlink" title="域名CNAME解析"></a>域名CNAME解析</h2><hr>
+<p>别名（<strong>CNAME</strong>）解析允许你将多个域名映射到同一台计算机。例如你在Github上搭建的静态博客，地址为<code>yourusername.github.io</code>,你可以将自己的域名（假设为<code>www.yourusername.com</code>,）映射到这个地址上,别人访问<code>www.yourusername.com</code>时就直接访问到你的博客了。</p>
+<p>一般一个域名记录在申请后有两个服务(均指向<code>host.yourdomain.com</code>)：</p>
+<ul>
+<li>WWW: www.yourdomain.com</li>
+<li>Mail: mail.yourdomain.com </li>
+</ul>
+<a id="more"></a>
+<h2 id="设置方法"><a href="#设置方法" class="headerlink" title="设置方法"></a>设置方法</h2><ol>
+<li>登陆管理控制台（我的是万网）</li>
+<li>找到你的云解析或者域名栏目，进入记录页</li>
+<li>点击要解析的域名，进入解析记录页</li>
+<li>添加解析</li>
+<li>类型为CNAME，主机记录任意填写（空着最好），记录值填写你要解析的地址：</li>
+</ol>
+<ul>
+<li>如你的Github博客地址，你可以<code>ping</code>以下获得IP，之后把IP填写到这</li>
+<li>或者你自己搭建了VPS，则填写你的VPS对外服务的地址</li>
+</ul>
+<ol>
+<li>解析线路TTL默认</li>
+<li>在自己的Github博客里添加文件，名称CNAME，内容为你的域名地址，万事俱备了</li>
+<li>稍等片刻（说是片刻，万网说需要48小时）测试一下吧。</li>
+</ol>
+<hr>
+<p>内容来源于<a href="https://help.aliyun.com/knowledge_detail/39788.html" target="_blank" rel="external">阿里云（万网）</a>。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;域名CNAME解析&quot;&gt;&lt;a href=&quot;#域名CNAME解析&quot; class=&quot;headerlink&quot; title=&quot;域名CNAME解析&quot;&gt;&lt;/a&gt;域名CNAME解析&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;别名（&lt;strong&gt;CNAME&lt;/strong&gt;）解析允许你将多个域名映射到同一台计算机。例如你在Github上搭建的静态博客，地址为&lt;code&gt;yourusername.github.io&lt;/code&gt;,你可以将自己的域名（假设为&lt;code&gt;www.yourusername.com&lt;/code&gt;,）映射到这个地址上,别人访问&lt;code&gt;www.yourusername.com&lt;/code&gt;时就直接访问到你的博客了。&lt;/p&gt;
+&lt;p&gt;一般一个域名记录在申请后有两个服务(均指向&lt;code&gt;host.yourdomain.com&lt;/code&gt;)：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;WWW: www.yourdomain.com&lt;/li&gt;
+&lt;li&gt;Mail: mail.yourdomain.com &lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="域名" scheme="http://yoursite.com/categories/%E5%9F%9F%E5%90%8D/"/>
+    
+    
+      <category term="域名" scheme="http://yoursite.com/tags/%E5%9F%9F%E5%90%8D/"/>
+    
+      <category term="CNAME" scheme="http://yoursite.com/tags/CNAME/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 自定义主题样式</title>
+    <link href="http://yoursite.com/2016/09/07/hexo0/"/>
+    <id>http://yoursite.com/2016/09/07/hexo0/</id>
+    <published>2016-09-07T14:39:20.000Z</published>
+    <updated>2016-09-07T15:41:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Hexo博客主题NexT使用自定义的CSS样式"><a href="#Hexo博客主题NexT使用自定义的CSS样式" class="headerlink" title="Hexo博客主题NexT使用自定义的CSS样式"></a>Hexo博客主题NexT使用自定义的CSS样式</h2><hr>
+<h2 id="添加样式支持"><a href="#添加样式支持" class="headerlink" title="添加样式支持"></a>添加样式支持</h2><p>为了不吧原先的像是文件搞得太乱，这里，添加子集的样式文件。<br>首先，在next主题目录下样式文件的<code>source</code>文件夹下找到<code>css</code>文件夹，打开<code>main.styl</code>文件，在最后添加：</p>
+<a id="more"></a>
+<figure class="highlight plain"><figcaption><span>css</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//My Layer</div><div class="line">//--------------------------------------------------</div><div class="line">@import &quot;_my/mycss&quot;;</div></pre></td></tr></table></figure>
+<h2 id="新建自定义样式"><a href="#新建自定义样式" class="headerlink" title="新建自定义样式"></a>新建自定义样式</h2><p>找到样式文件夹<code>css</code>新建_my文件夹，在其中新建<code>mycss.styl</code>文件，之后就可以按照stylus的格式自定义样式了。</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>例如：我想在文章中添加个自定义样式的按钮，怎么做呢？？？</p>
+<p>打开新建的<code>mycss.styl</code>文件，在其中添加样式：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.myButton</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>:<span class="number">#0f94bd</span>;</div><div class="line">    <span class="attribute">-moz-border-radius</span>:<span class="number">15px</span>;</div><div class="line">    <span class="attribute">-webkit-border-radius</span>:<span class="number">15px</span>;</div><div class="line">    <span class="attribute">border-radius</span>:<span class="number">15px</span>;</div><div class="line">    <span class="attribute">display</span>:inline-block;</div><div class="line">    <span class="attribute">cursor</span>:pointer;</div><div class="line">    <span class="attribute">color</span>:<span class="number">#ffffff</span>;</div><div class="line">    <span class="attribute">font-family</span>:Arial;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">17px</span>;</div><div class="line">    <span class="attribute">padding</span>:<span class="number">11px</span> <span class="number">27px</span>;</div><div class="line">    <span class="attribute">text-decoration</span>:none;</div><div class="line">    <span class="attribute">text-shadow</span>:<span class="number">0px</span> <span class="number">1px</span> <span class="number">0px</span> <span class="number">#2f6627</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.myButton</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>:<span class="number">#5cbf2a</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.myButton</span><span class="selector-pseudo">:active</span> &#123;</div><div class="line">    <span class="attribute">position</span>:relative;</div><div class="line">    <span class="attribute">top</span>:<span class="number">1px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>(ps:这里直接使用的css的格式写的，因为css的代码在网上很好找到，而stylus预处理器的就不那么容易找到了，stylus一样支持css格式，所以在这里直接使用了css文件，没有写成stylus语法。其实让我写我也不会，哈哈！)<br>引用：在想要引用的时候添加<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"myButton"</span>&gt;</span>MyButton<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h2><p>推荐一个css button样式的生成网站：<a href="http://www.bestcssbuttongenerator.com/" target="_blank" rel="external">Button Generator</a></p>
+<hr>
+<p>文章转载自<a href="http://blog.magicer.xyz/2015/10/hexo-custom-style/" target="_blank" rel="external">Magicer</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Hexo博客主题NexT使用自定义的CSS样式&quot;&gt;&lt;a href=&quot;#Hexo博客主题NexT使用自定义的CSS样式&quot; class=&quot;headerlink&quot; title=&quot;Hexo博客主题NexT使用自定义的CSS样式&quot;&gt;&lt;/a&gt;Hexo博客主题NexT使用自定义的CSS样式&lt;/h2&gt;&lt;hr&gt;
+&lt;h2 id=&quot;添加样式支持&quot;&gt;&lt;a href=&quot;#添加样式支持&quot; class=&quot;headerlink&quot; title=&quot;添加样式支持&quot;&gt;&lt;/a&gt;添加样式支持&lt;/h2&gt;&lt;p&gt;为了不吧原先的像是文件搞得太乱，这里，添加子集的样式文件。&lt;br&gt;首先，在next主题目录下样式文件的&lt;code&gt;source&lt;/code&gt;文件夹下找到&lt;code&gt;css&lt;/code&gt;文件夹，打开&lt;code&gt;main.styl&lt;/code&gt;文件，在最后添加：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>琐碎</title>
+    <link href="http://yoursite.com/2016/09/07/something1/"/>
+    <id>http://yoursite.com/2016/09/07/something1/</id>
+    <published>2016-09-07T13:27:15.000Z</published>
+    <updated>2016-09-07T14:38:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="标题是什么鬼，都说了是琐事"><a href="#标题是什么鬼，都说了是琐事" class="headerlink" title="标题是什么鬼，都说了是琐事"></a>标题是什么鬼，都说了是琐事</h2><p>最开始是想用Jekyll自己搞一个静态博客的，无奈才疏学浅，搞了半天，很丑陋，像一个待字闺中的老姑娘，惆怅的紧。不过好歹是自己亲生的，修修补补，就是不舍得删掉，或者东拼西凑，这个主题COPY点，那个主题COPY点，这心情就像是姑娘家学别人打扮，各种化学试剂，瓶瓶罐罐，毫不含糊的往家搬，除了获得了些许的‘外交胜利’式的错觉，没有任何改观（其实是底子薄）。不过我还是不愿意承认是因为自己审美差导致的，嗯，是我技术不行，谁让我笨呢是吧，一定是我生孩子的方式不对。<br>这其中我就邂逅了几个，美观有余，优雅不足。或者中看不中用，或者庸脂俗粉，充分体现了人民群众的低俗乐趣。反观我自己弄的破玩意，对比之下似乎还有那么一丝朴素在里面（这真的不是敝帚自珍）。<br>扭头我就把她抛弃了（始乱终弃，这次第，怎一个愁字了得），投入了Hexo的怀抱当中，调教调教，其实也不是啥难事儿。好歹搞得稍微不同一点（虽然只有那么一丁点），省的我有种隔壁老王的错觉。<br>最近几个月说来并不开心，我就是个别扭的人，既瞧不起大部分人，庸庸碌碌，然而我却是他们的一份子。既看不上大部分人浪费了自己的天分，把时间浇灌在人情往来中，沉迷于破烂的虚假繁荣的嬉戏中，沉迷于貌似漫无边际实则空洞干涸网络中，自己又无可奈何的害怕逃离，无法远离人群，即便是克制，自省，也做不成那深林里细嗅蔷薇的猛虎。了不起是条土狗，中华田园犬，没有血统，不值钱。侬晓得回字有四种写法呢。<br>健身花费了大部分时间，自己的Evernote也零零散散的做着笔记，大部分内容短小的，这个死了，那个没了的。偶尔也发几句牢骚。莺莺燕燕的事真是没有，可遇不可求，求之不得寤寐思服啊。<br>或者该上进一点，该多学些东西，起码要画要唱吧。我至今还记得我小学毕业的时候，班主任给我的评价是多面手。<br>这个评价现在想想，还真是高。</p>
+<p>PS：我特别喜欢落网的一期音乐 <a href="http://www.luoo.net/music/840?sid=16658" target="_blank" rel="external"><strong>停下来看看世界的风景</strong></a>,听着真年轻啊。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;标题是什么鬼，都说了是琐事&quot;&gt;&lt;a href=&quot;#标题是什么鬼，都说了是琐事&quot; class=&quot;headerlink&quot; title=&quot;标题是什么鬼，都说了是琐事&quot;&gt;&lt;/a&gt;标题是什么鬼，都说了是琐事&lt;/h2&gt;&lt;p&gt;最开始是想用Jekyll自己搞一个静态博客的，无奈才
+    
+    </summary>
+    
+      <category term="Tips" scheme="http://yoursite.com/categories/Tips/"/>
+    
+    
+      <category term="私人" scheme="http://yoursite.com/tags/%E7%A7%81%E4%BA%BA/"/>
+    
+      <category term="自欺欺人" scheme="http://yoursite.com/tags/%E8%87%AA%E6%AC%BA%E6%AC%BA%E4%BA%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>Create a Hexo Theme 3</title>
@@ -70,7 +244,7 @@
     <link href="http://yoursite.com/2016/09/07/hexotheme0/"/>
     <id>http://yoursite.com/2016/09/07/hexotheme0/</id>
     <published>2016-09-07T12:33:08.000Z</published>
-    <updated>2016-09-07T12:51:21.000Z</updated>
+    <updated>2016-09-09T08:36:39.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Part-1-Setting-up-the-project-and-creating-the-blog’s-main-index-page"><a href="#Part-1-Setting-up-the-project-and-creating-the-blog’s-main-index-page" class="headerlink" title="Part 1: Setting up the project and creating the blog’s main index page"></a>Part 1: Setting up the project and creating the blog’s main index page</h2><hr>
 <p>In this multi part tutorial, you will learn how to create an Hexo Theme from scratch. I really love Hexo and use it everyday; unfortunately, as of today, the documentation for theme creation is pretty slim. Here is my attempt at fixing that.</p>
@@ -258,12 +432,12 @@
     <link href="http://yoursite.com/2016/09/06/something0/"/>
     <id>http://yoursite.com/2016/09/06/something0/</id>
     <published>2016-09-06T14:42:40.000Z</published>
-    <updated>2016-09-07T13:06:50.000Z</updated>
+    <updated>2016-09-09T08:39:41.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="影的告别"><a href="#影的告别" class="headerlink" title="影的告别"></a>影的告别</h2><a id="more"></a>
 <blockquote><p>影的告别<br>人睡到不知道时候的时候，就会有影来告别，说出那些话——<br>有我所不乐意的在天堂里，我不愿去；有我所不乐意的在地狱里，我不愿去；<br>有我所不乐意的在你们将来的黄金世界里，我不愿去。<br>然而你就是我所不乐意的。<br>朋友，我不想跟随你了，我不愿住。<br>我不愿意！<br>呜乎呜乎，我不愿意，我不如彷徨于无地。<br>我不过一个影，要别你而沉没在黑暗里了。<br>然而黑暗又会吞并我，然而光明又会使我消失。<br>然而我不愿彷徨于明暗之间，我不如在黑暗里沉没。<br>然而我终于彷徨于明暗之间，我不知道是黄昏还是黎明。我姑且举灰黑的手装作喝干一杯酒，我将在不知道时候的时候独自远行。<br>呜乎呜乎，倘若黄昏，黑夜自然会来沉没我，否则我要被白天消失，如果现是黎明。<br>朋友，时候近了。<br>我将向黑暗里彷徨于无地。<br>你还想我的赠品。我能献你甚么呢？无已，则仍是黑暗和虚空而已。<br>但是，我愿意只是黑暗，或者会消失于你的白天；我愿意只是虚空，决不占你的心地。<br>我愿意这样，朋友——<br>我独自远行，不但没有你，并且再没有别的影在黑暗里。只有我被黑暗沉没，那世界全属于我自己。</p>
 <footer><strong>鲁迅</strong><cite>一九二四年九月二十四日</cite></footer></blockquote>
-<blockquote><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=26494705&auto=1&height=66"></iframe></blockquote>]]></content>
+]]></content>
     
     <summary type="html">
     
