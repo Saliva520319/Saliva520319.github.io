@@ -2,9 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2016-09-13T12:18:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/13/song2/</loc>
+    
+    <lastmod>2016-09-13T12:17:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/13/song1/</loc>
+    
+    <lastmod>2016-09-13T11:58:51.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/12/mangodb0/</loc>
+    
+    <lastmod>2016-09-13T11:51:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/09/09/song0/</loc>
     
-    <lastmod>2016-09-09T09:15:47.000Z</lastmod>
+    <lastmod>2016-09-09T09:17:34.000Z</lastmod>
     
   </url>
   
@@ -33,13 +61,6 @@
     <loc>http://yoursite.com/index.html</loc>
     
     <lastmod>2016-09-09T08:38:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/about/index.html</loc>
-    
-    <lastmod>2016-09-09T08:38:42.000Z</lastmod>
     
   </url>
   
