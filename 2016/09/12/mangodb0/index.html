@@ -110,7 +110,7 @@
 
 
 
-<meta name="description" content="MongoDB实战
+<meta name="description" content="MongoDB实战1
 传统关系数据库,难以定义表结构：
 
 先定义最低限度必要字段，需要再添加（更改表结构）：反复变更表结构
@@ -122,12 +122,12 @@ MongoDB（面向文档型数据库）:
 不需要定义表结构，以BSON形式保存数据
 表：集合；记录：文档
 变更时无需考虑程序和表结构不一直问题
-容易扩展（数据库升级-买更好的机器；扩">
+容易扩展（数据库升级-买更好的机器；">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MongoDB">
+<meta property="og:title" content="MongoDB-1">
 <meta property="og:url" content="http://yoursite.com/2016/09/12/mangodb0/index.html">
 <meta property="og:site_name" content="Saliva's Home">
-<meta property="og:description" content="MongoDB实战
+<meta property="og:description" content="MongoDB实战1
 传统关系数据库,难以定义表结构：
 
 先定义最低限度必要字段，需要再添加（更改表结构）：反复变更表结构
@@ -139,11 +139,11 @@ MongoDB（面向文档型数据库）:
 不需要定义表结构，以BSON形式保存数据
 表：集合；记录：文档
 变更时无需考虑程序和表结构不一直问题
-容易扩展（数据库升级-买更好的机器；扩">
-<meta property="og:updated_time" content="2016-09-13T11:51:32.000Z">
+容易扩展（数据库升级-买更好的机器；">
+<meta property="og:updated_time" content="2016-09-15T12:10:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MongoDB">
-<meta name="twitter:description" content="MongoDB实战
+<meta name="twitter:title" content="MongoDB-1">
+<meta name="twitter:description" content="MongoDB实战1
 传统关系数据库,难以定义表结构：
 
 先定义最低限度必要字段，需要再添加（更改表结构）：反复变更表结构
@@ -155,7 +155,7 @@ MongoDB（面向文档型数据库）:
 不需要定义表结构，以BSON形式保存数据
 表：集合；记录：文档
 变更时无需考虑程序和表结构不一直问题
-容易扩展（数据库升级-买更好的机器；扩">
+容易扩展（数据库升级-买更好的机器；">
 
 
 
@@ -173,7 +173,7 @@ MongoDB（面向文档型数据库）:
   };
 </script>
 
-  <title> MongoDB | Saliva's Home </title>
+  <title> MongoDB-1 | Saliva's Home </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -346,7 +346,7 @@ MongoDB（面向文档型数据库）:
             
             
               
-                MongoDB
+                MongoDB-1
               
             
           </h1>
@@ -412,7 +412,7 @@ MongoDB（面向文档型数据库）:
       
 
       
-        <h2 id="MongoDB实战"><a href="#MongoDB实战" class="headerlink" title="MongoDB实战"></a>MongoDB实战</h2><hr>
+        <h2 id="MongoDB实战1"><a href="#MongoDB实战1" class="headerlink" title="MongoDB实战1"></a>MongoDB实战1</h2><hr>
 <p>传统关系数据库,难以定义表结构：</p>
 <ul>
 <li>先定义最低限度必要字段，需要再添加（更改表结构）：反复变更表结构</li>
@@ -546,9 +546,56 @@ MongoDB（面向文档型数据库）:
 <td>判断是否存在</td>
 <td><code>db.users.find({age:{$exists:true}});</code></td>
 </tr>
+<tr>
+<td>Null处理</td>
+<td><code>db.c2.find({age:{&quot;$in&quot;:[null],&quot;exists&quot;:true}});</code></td>
+</tr>
+<tr>
+<td>取模运算</td>
+<td><code>db.student.find({age:{$mod:[10,1]}});</code></td>
+</tr>
+<tr>
+<td>不等于</td>
+<td><code>db.things.find({x:{$ne:3}});</code></td>
+</tr>
+<tr>
+<td>包含</td>
+<td><code>db.c1.find({age:{$in:[2,3,4]}});</code></td>
+</tr>
+<tr>
+<td>不包含</td>
+<td><code>db.c1.find({age:{$nin:[2,3,4]}});</code></td>
+</tr>
+<tr>
+<td>数组元素个数</td>
+<td><code>db.users.find({favorite:{$size:3}});</code></td>
+</tr>
+<tr>
+<td>正则匹配</td>
+<td><code>db.users.find({name:{$not:/^B.*/}});</code></td>
+</tr>
+<tr>
+<td>JavaScript查询</td>
+<td><code>db.c1.find({a:{$gt:3}});</code>,<code>db.c1.find({$where:&quot;this.a&gt;3&quot;});</code>,<code>db.c1.find(&quot;this.a&gt;3&quot;);</code>,<code>f=func(){return this.a&gt;3;} db.c1.find(f);</code></td>
+</tr>
+<tr>
+<td>查询记录数</td>
+<td><code>db.users.find().count();</code>,<code>db.users.find().skip(10).limit(5).count();</code></td>
+</tr>
+<tr>
+<td>限制返回记录起点</td>
+<td><code>db.users.find().skip(3).limit(3);</code></td>
+</tr>
+<tr>
+<td>排序</td>
+<td><code>db.users.find().sort({age:1});</code>,<code>db.users.find().sort({age:-1});</code></td>
+</tr>
+<tr>
+<td>游标</td>
+<td><code>for(var c=db.t3.find();c.hasNext();){printjson(c.next());}</code>,<code>db.t3.find().forEach(function(u){printjson(u);});</code></td>
+</tr>
 </tbody>
 </table>
-<p>Null处理</p>
 
       
     </div>
@@ -607,7 +654,7 @@ MongoDB（面向文档型数据库）:
     <div class="post-spread">
       
         <div class="ds-share flat" data-thread-key="2016/09/12/mangodb0/"
-     data-title="MongoDB"
+     data-title="MongoDB-1"
      data-content=""
      data-url="http://yoursite.com/2016/09/12/mangodb0/">
   <div class="ds-share-inline">
@@ -637,7 +684,7 @@ MongoDB（面向文档型数据库）:
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/09/12/mangodb0/"
-           data-title="MongoDB" data-url="http://yoursite.com/2016/09/12/mangodb0/">
+           data-title="MongoDB-1" data-url="http://yoursite.com/2016/09/12/mangodb0/">
       </div>
     
   </div>
@@ -682,7 +729,7 @@ MongoDB（面向文档型数据库）:
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -806,7 +853,7 @@ MongoDB（面向文档型数据库）:
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MongoDB实战"><span class="nav-number">1.</span> <span class="nav-text">MongoDB实战</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MongoDB实战1"><span class="nav-number">1.</span> <span class="nav-text">MongoDB实战1</span></a></li></ol></div>
             
           </div>
         </section>

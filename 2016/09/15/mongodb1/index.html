@@ -92,7 +92,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript代码段," />
+  <meta name="keywords" content="数据库,NoSQL," />
 
 
 
@@ -110,16 +110,22 @@
 
 
 
-<meta name="description" content="代码段看到网上的JavaScript代码带一个复制的小按键，好奇就把相关的代码段整理了一下。">
+<meta name="description" content="MongoDB实战2
+MapReduce类似于MySQL的group by,做统计工作。Map函数调用emit(key,value),遍历集合中记录，将参数传递给Reduce函数处理。使用db.runCommand或mapReduce命令执行。
+格式1234567891011121314db.runCommand(    &amp;#123;mapreduce:&amp;lt;collection&amp;gt;,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript复制">
-<meta property="og:url" content="http://yoursite.com/2016/09/06/JavaScript0/index.html">
+<meta property="og:title" content="MongoDB-2">
+<meta property="og:url" content="http://yoursite.com/2016/09/15/mongodb1/index.html">
 <meta property="og:site_name" content="Saliva's Home">
-<meta property="og:description" content="代码段看到网上的JavaScript代码带一个复制的小按键，好奇就把相关的代码段整理了一下。">
-<meta property="og:updated_time" content="2016-09-06T14:17:10.000Z">
+<meta property="og:description" content="MongoDB实战2
+MapReduce类似于MySQL的group by,做统计工作。Map函数调用emit(key,value),遍历集合中记录，将参数传递给Reduce函数处理。使用db.runCommand或mapReduce命令执行。
+格式1234567891011121314db.runCommand(    &amp;#123;mapreduce:&amp;lt;collection&amp;gt;,">
+<meta property="og:updated_time" content="2016-09-15T13:06:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript复制">
-<meta name="twitter:description" content="代码段看到网上的JavaScript代码带一个复制的小按键，好奇就把相关的代码段整理了一下。">
+<meta name="twitter:title" content="MongoDB-2">
+<meta name="twitter:description" content="MongoDB实战2
+MapReduce类似于MySQL的group by,做统计工作。Map函数调用emit(key,value),遍历集合中记录，将参数传递给Reduce函数处理。使用db.runCommand或mapReduce命令执行。
+格式1234567891011121314db.runCommand(    &amp;#123;mapreduce:&amp;lt;collection&amp;gt;,">
 
 
 
@@ -137,7 +143,7 @@
   };
 </script>
 
-  <title> JavaScript复制 | Saliva's Home </title>
+  <title> MongoDB-2 | Saliva's Home </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -310,7 +316,7 @@
             
             
               
-                JavaScript复制
+                MongoDB-2
               
             
           </h1>
@@ -322,8 +328,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-06T15:53:50+08:00" content="2016-09-06">
-              2016-09-06
+            <time itemprop="dateCreated" datetime="2016-09-15T19:05:24+08:00" content="2016-09-15">
+              2016-09-15
             </time>
           </span>
 
@@ -336,8 +342,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/MongoDB/" itemprop="url" rel="index">
+                    <span itemprop="name">MongoDB</span>
                   </a>
                 </span>
 
@@ -352,8 +358,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/06/JavaScript0/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/06/JavaScript0/" itemprop="commentsCount"></span>
+                <a href="/2016/09/15/mongodb1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/15/mongodb1/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -376,24 +382,71 @@
       
 
       
-        <h3 id="代码段"><a href="#代码段" class="headerlink" title="代码段"></a>代码段</h3><p>看到网上的JavaScript代码带一个复制的小按键，好奇就把相关的代码段整理了一下。</p>
-<a id="more"></a>
-<ol>
-<li>复制文本框内容</li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line">    function jsCopy()&#123;</div><div class="line">        var e = document.getElementById('content');</div><div class="line">        e.select();</div><div class="line">        document.execCommand('Copy');</div><div class="line">        alert('已复制内容到剪切板')</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">'content'</span> <span class="attr">cols</span>=<span class="string">'50'</span> <span class="attr">rows</span>=<span class="string">'5'</span>&gt;</span></div><div class="line">Your fucking content.</div><div class="line"><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onClick</span>=<span class="string">"jsCopy();"</span> <span class="attr">value</span>=<span class="string">"COPY"</span> /&gt;</span></div></pre></td></tr></table></figure>
-<ol>
-<li>复制网络地址 </li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line">    function urlCopy()&#123;</div><div class="line">        var clipboardContent = this.location.href;</div><div class="line">        window.clipboardData.setData('Text',clipboardContent);</div><div class="line">        alert('已将网络地址复制到剪切板')</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onClick</span>=<span class="string">"jsCopy();"</span> <span class="attr">value</span>=<span class="string">"COPY URL"</span> /&gt;</span></div></pre></td></tr></table></figure>
-<ol>
-<li>点击文本框复制内容</li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line">    function urlCopy()&#123;</div><div class="line">        var clipboardContent = this.location.href;</div><div class="line">        window.clipboardData.setData('Text',clipboardContent);</div><div class="line">        alert('已将网络地址复制到剪切板')</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onClick</span>=<span class="string">"jsCopy();"</span> <span class="attr">value</span>=<span class="string">"COPY URL"</span> /&gt;</span></div></pre></td></tr></table></figure>
-<hr>
-<ul>
-<li>代码段来源于互联网,作者1： <a href="http://my.csdn.net/jin367411763,&#39;作者的CSDN博客地址&#39;" target="_blank" rel="external"><em>jin367411763</em></a>，作者2: <a href="http://www.cnblogs.com/tylerdonet/,&#39;作者的cnblogs地址&#39;" target="_blank" rel="external"><em>Tyler’s Blog</em></a></li>
-</ul>
+        <h2 id="MongoDB实战2"><a href="#MongoDB实战2" class="headerlink" title="MongoDB实战2"></a>MongoDB实战2</h2><hr>
+<h3 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h3><p>类似于MySQL的<code>group by</code>,做统计工作。Map函数调用<code>emit(key,value)</code>,遍历集合中记录，将参数传递给Reduce函数处理。<br>使用<code>db.runCommand</code>或mapReduce命令执行。</p>
+<p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">db.runCommand(</div><div class="line">    &#123;mapreduce:&lt;collection&gt;,</div><div class="line">     map:&lt;mapfunction&gt;,</div><div class="line">     reduce:&lt;reducefunction&gt;,</div><div class="line">     [,query:&lt;query filter object]</div><div class="line">     [,sort:&lt;sorts the input objects using this key.Useful for optimization,like sorting by the emit key for fewer reduces&gt;]</div><div class="line">     [,limit:&lt;number of objects to return from collection&gt;]</div><div class="line">     [,out:&lt;output collections&gt;]</div><div class="line">     [,keeptemp:&lt;true|false&gt;]</div><div class="line">     [,finalize:&lt;finalizefunction&gt;]</div><div class="line">     [,scope:&lt;object where fields go into javascript global scope&gt;]</div><div class="line">     [,verbose:true]</div><div class="line">    &#125;</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mapreduce</td>
+<td>指定数据集</td>
+</tr>
+<tr>
+<td>map</td>
+<td>指定映射函数（生成键值对序列，作为统计函数输入参数）</td>
+</tr>
+<tr>
+<td>reduce</td>
+<td>指定统计函数</td>
+</tr>
+<tr>
+<td>query</td>
+<td>目标过滤</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>目标记录排序</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>限制目标记录数量</td>
+</tr>
+<tr>
+<td>out</td>
+<td>统计结果存放集合，不指定则使用临时集合，客户端断开自动删除</td>
+</tr>
+<tr>
+<td>keeptemp</td>
+<td>是否保留临时集合</td>
+</tr>
+<tr>
+<td>finalize</td>
+<td>最终处理函数</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>向map、reduce和finalize导入外部变量</td>
+</tr>
+<tr>
+<td>verbose</td>
+<td>显示详细的时间统计信息</td>
+</tr>
+</tbody>
+</table>
+<h3 id="MapReduce实例"><a href="#MapReduce实例" class="headerlink" title="MapReduce实例"></a>MapReduce实例</h3><p><strong>准备数据</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&gt; for(var i=1;i&lt;10;i++)db.students.insert(&#123;class:1,age:i&#125;);</div><div class="line">WriteResult(&#123; &quot;nInserted&quot; : 1 &#125;)</div><div class="line">&gt; for(var i=1;i&lt;10;i++)db.students.insert(&#123;class:2,age:i&#125;);</div><div class="line">WriteResult(&#123; &quot;nInserted&quot; : 1 &#125;)</div><div class="line">&gt; db.students.find();</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8340279c0ecac9b96fe1&quot;), &quot;class&quot; : 1, &quot;age&quot; : 1 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8340279c0ecac9b96fe2&quot;), &quot;class&quot; : 1, &quot;age&quot; : 2 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8340279c0ecac9b96fe3&quot;), &quot;class&quot; : 1, &quot;age&quot; : 3 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8340279c0ecac9b96fe4&quot;), &quot;class&quot; : 1, &quot;age&quot; : 4 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8340279c0ecac9b96fe5&quot;), &quot;class&quot; : 1, &quot;age&quot; : 5 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8340279c0ecac9b96fe6&quot;), &quot;class&quot; : 1, &quot;age&quot; : 6 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8340279c0ecac9b96fe7&quot;), &quot;class&quot; : 1, &quot;age&quot; : 7 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8340279c0ecac9b96fe8&quot;), &quot;class&quot; : 1, &quot;age&quot; : 8 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8340279c0ecac9b96fe9&quot;), &quot;class&quot; : 1, &quot;age&quot; : 9 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8990279c0ecac9b96fea&quot;), &quot;class&quot; : 2, &quot;age&quot; : 1 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8990279c0ecac9b96feb&quot;), &quot;class&quot; : 2, &quot;age&quot; : 2 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8990279c0ecac9b96fec&quot;), &quot;class&quot; : 2, &quot;age&quot; : 3 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8990279c0ecac9b96fed&quot;), &quot;class&quot; : 2, &quot;age&quot; : 4 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8990279c0ecac9b96fee&quot;), &quot;class&quot; : 2, &quot;age&quot; : 5 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8990279c0ecac9b96fef&quot;), &quot;class&quot; : 2, &quot;age&quot; : 6 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8990279c0ecac9b96ff0&quot;), &quot;class&quot; : 2, &quot;age&quot; : 7 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8990279c0ecac9b96ff1&quot;), &quot;class&quot; : 2, &quot;age&quot; : 8 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8990279c0ecac9b96ff2&quot;), &quot;class&quot; : 2, &quot;age&quot; : 9 &#125;</div></pre></td></tr></table></figure></p>
+<p><strong>分别指定函数及运行结果</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&gt; m = function()&#123;emit(this.class,1)&#125;</div><div class="line">&gt; r = function(key,value)&#123;var x = 0;values.forEach(function(v)&#123;x += v&#125;);return x;&#125;</div><div class="line">&gt; f = function(key,value)&#123;return &#123;class:key,count:value&#125;;&#125;</div><div class="line">&gt; re = db.runCommand(&#123; mapreduce:&quot;students&quot;, map:m, reduce:r, out:&quot;students_res&quot;,finalize:f,query:&#123;age:&#123;$lt:5&#125;&#125;&#125;);</div><div class="line">&#123;</div><div class="line">    &quot;result&quot; : &quot;students_res&quot;,</div><div class="line">    &quot;timeMillis&quot; : 148,</div><div class="line">    &quot;counts&quot; : &#123;</div><div class="line">        &quot;input&quot; : 8,</div><div class="line">        &quot;emit&quot; : 8,</div><div class="line">        &quot;reduce&quot; : 2,</div><div class="line">        &quot;output&quot; : 2</div><div class="line">    &#125;,</div><div class="line">    &quot;ok&quot; : 1</div><div class="line">&#125;</div><div class="line">&gt; db.students_res.find();</div><div class="line">&#123; &quot;_id&quot; : 1, &quot;value&quot; : &#123; &quot;class&quot; : 1, &quot;count&quot; : 4 &#125; &#125;</div><div class="line">&#123; &quot;_id&quot; : 2, &quot;value&quot; : &#123; &quot;class&quot; : 2, &quot;count&quot; : 4 &#125; &#125;</div></pre></td></tr></table></figure></p>
+<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><p>索引信息保存在<code>system.indexes</code>中，默认为<code>_id</code>创建索引，并且不可删除，创建索引可以后台执行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">//创建索引</div><div class="line">&gt; db.students.ensureIndex(&#123;age:1&#125;);     //1升序，-1降序</div><div class="line">&#123;</div><div class="line">    &quot;createdCollectionAutomatically&quot; : false,</div><div class="line">    &quot;numIndexesBefore&quot; : 1,</div><div class="line">    &quot;numIndexesAfter&quot; : 2,</div><div class="line">    &quot;ok&quot; : 1</div><div class="line">&#125;</div><div class="line">//查看索引</div><div class="line">&gt; db.students.getIndexes();</div><div class="line">[</div><div class="line">    &#123;</div><div class="line">        &quot;v&quot; : 1,</div><div class="line">        &quot;key&quot; : &#123;</div><div class="line">            &quot;_id&quot; : 1</div><div class="line">        &#125;,</div><div class="line">        &quot;name&quot; : &quot;_id_&quot;,</div><div class="line">        &quot;ns&quot; : &quot;test.students&quot;</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        &quot;v&quot; : 1,</div><div class="line">        &quot;key&quot; : &#123;</div><div class="line">            &quot;age&quot; : 1</div><div class="line">        &#125;,</div><div class="line">        &quot;name&quot; : &quot;age_1&quot;,</div><div class="line">        &quot;ns&quot; : &quot;test.students&quot;</div><div class="line">    &#125;</div><div class="line">]</div><div class="line">//后台执行创建索引</div><div class="line">&gt; db.students.ensureIndex(&#123;class:1&#125;,&#123;background:true&#125;);</div><div class="line">&#123;</div><div class="line">    &quot;createdCollectionAutomatically&quot; : false,</div><div class="line">    &quot;numIndexesBefore&quot; : 2,</div><div class="line">    &quot;numIndexesAfter&quot; : 3,</div><div class="line">    &quot;ok&quot; : 1</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>索引可以是任何类型的字段，甚至是文档<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; db.factories.insert(&#123;name:&quot;wwl&quot;,addr:&#123;city:&quot;BJ&quot;,state:&quot;BJ&quot;&#125;&#125;);</div><div class="line">//在addr列创建索引</div><div class="line">&gt; db.factories.ensureIndex(&#123;addr:1&#125;);</div><div class="line">//查询一会用到索引，查询二不会用到(顺序不一致)</div><div class="line">查询一:db.factories.find(&#123;addr:&#123;city:&quot;BJ&quot;,state:&quot;BJ&quot;&#125;&#125;);</div><div class="line">查询二:db.factories.find(&#123;addr:&#123;state:&quot;BJ&quot;,city:&quot;BJ&quot;&#125;&#125;);</div></pre></td></tr></table></figure></p>
+<p>组合索引<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.factories.ensureIndex(&#123;&quot;addr.city&quot;:1,&quot;addr.state&quot;:-1&#125;);</div></pre></td></tr></table></figure></p>
+<p>唯一索引<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.factories.ensureIndex(&#123;name:&quot;wwl&quot;&#125;,&#123;unique:true&#125;);</div></pre></td></tr></table></figure></p>
+<p>强制索引<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.t5.find(&#123;age:&#123;$lt:5&#125;&#125;).hint(&#123;name:1,age:1&#125;).explain();</div></pre></td></tr></table></figure></p>
+<p>删除索引<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//删除所有索引</div><div class="line">db.factories.dropIndexes();</div><div class="line">//指定删除</div><div class="line">db.factories.drop(&#123;addr:1&#125;);</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -415,7 +468,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript代码段/" rel="tag">#JavaScript代码段</a>
+            <a href="/tags/数据库/" rel="tag">#数据库</a>
+          
+            <a href="/tags/NoSQL/" rel="tag">#NoSQL</a>
           
         </div>
       
@@ -424,16 +479,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/06/PrioQueue1/" rel="next" title="优先队列的堆实现">
-                <i class="fa fa-chevron-left"></i> 优先队列的堆实现
+              <a href="/2016/09/13/song2/" rel="next" title="揪心的玩笑与漫长的白日梦">
+                <i class="fa fa-chevron-left"></i> 揪心的玩笑与漫长的白日梦
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/06/something0/" rel="prev" title="影的告别">
-                影的告别 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/15/something3/" rel="prev" title="中秋节">
+                中秋节 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -449,10 +504,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/09/06/JavaScript0/"
-     data-title="JavaScript复制"
+        <div class="ds-share flat" data-thread-key="2016/09/15/mongodb1/"
+     data-title="MongoDB-2"
      data-content=""
-     data-url="http://yoursite.com/2016/09/06/JavaScript0/">
+     data-url="http://yoursite.com/2016/09/15/mongodb1/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -479,8 +534,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/06/JavaScript0/"
-           data-title="JavaScript复制" data-url="http://yoursite.com/2016/09/06/JavaScript0/">
+      <div class="ds-thread" data-thread-key="2016/09/15/mongodb1/"
+           data-title="MongoDB-2" data-url="http://yoursite.com/2016/09/15/mongodb1/">
       </div>
     
   </div>
@@ -649,7 +704,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码段"><span class="nav-number">1.</span> <span class="nav-text">代码段</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MongoDB实战2"><span class="nav-number">1.</span> <span class="nav-text">MongoDB实战2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MapReduce"><span class="nav-number">1.1.</span> <span class="nav-text">MapReduce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MapReduce实例"><span class="nav-number">1.2.</span> <span class="nav-text">MapReduce实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#索引"><span class="nav-number">1.3.</span> <span class="nav-text">索引</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

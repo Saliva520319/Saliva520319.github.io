@@ -312,6 +312,391 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/06/JavaScript0/" itemprop="url">
+                  JavaScript复制
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-06T15:53:50+08:00" content="2016-09-06">
+              2016-09-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/06/JavaScript0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/06/JavaScript0/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="代码段"><a href="#代码段" class="headerlink" title="代码段"></a>代码段</h3><p>看到网上的JavaScript代码带一个复制的小按键，好奇就把相关的代码段整理了一下。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/06/JavaScript0/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/06/PrioQueue1/" itemprop="url">
+                  优先队列的堆实现
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-06T10:53:30+08:00" content="2016-09-06">
+              2016-09-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/06/PrioQueue1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/06/PrioQueue1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="优先队列的堆实现"><a href="#优先队列的堆实现" class="headerlink" title="优先队列的堆实现"></a>优先队列的堆实现</h2><hr>
+<h3 id="堆及其性质"><a href="#堆及其性质" class="headerlink" title="堆及其性质"></a>堆及其性质</h3><ol>
+<li>采用树形结构实现优先队列的一种有效技术成为 <strong>堆</strong>，节点数据的存储满足堆序。<ul>
+<li>从根到任何一个叶节点，节点数据优先级递减</li>
+<li>堆顶元素优先级最高，O(1)时间即可得到</li>
+<li>位于不同路径上的元素，这里不关心其顺序</li>
+</ul>
+</li>
+<li>几个重要性质<ul>
+<li>在一个堆最后追加一个元素，依然是完全二叉树，但未必是堆</li>
+<li>去掉堆顶，两个子堆上堆序不变</li>
+<li>去掉堆顶的两个子堆加入根元素，未必是堆（堆序无法保证）</li>
+<li>去掉堆中最后的元素，不破坏堆序</li>
+</ul>
+</li>
+</ol>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/06/PrioQueue1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/06/PrioQueue0/" itemprop="url">
+                  优先队列的连续列表实现
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-06T10:03:03+08:00" content="2016-09-06">
+              2016-09-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/06/PrioQueue0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/06/PrioQueue0/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="优先队列的连续列表实现"><a href="#优先队列的连续列表实现" class="headerlink" title="优先队列的连续列表实现"></a>优先队列的连续列表实现</h2><hr>
+<h3 id="两种实现方案"><a href="#两种实现方案" class="headerlink" title="两种实现方案"></a>两种实现方案</h3><ol>
+<li>存储数据时保证元素的优先顺序，任何时候取元素都可以得到最高优先级（存入操作效率低，访问和弹出方便）</li>
+<li>存入简单（顺序表存入表尾，链接表存入表头），取用时检索（存入效率高，访问弹出不便），如许多次访问统一元素但不弹出，则不采用此法，避免重复检索，或者记录要访问的元素位置。</li>
+</ol>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/06/PrioQueue0/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/05/meeting/" itemprop="url">
                   其他
                 </a>
@@ -731,7 +1116,7 @@ WEB应用层，能力服务器，数据库，高可用
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-13T12:17:01.000Z</updated>
+  <updated>2016-09-15T13:07:33.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,148 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MongoDB-3</title>
+    <link href="http://yoursite.com/2016/09/15/mongodb2/"/>
+    <id>http://yoursite.com/2016/09/15/mongodb2/</id>
+    <published>2016-09-15T13:07:01.000Z</published>
+    <updated>2016-09-15T13:07:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="MongoDB实战2"><a href="#MongoDB实战2" class="headerlink" title="MongoDB实战2"></a>MongoDB实战2</h2><hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;MongoDB实战2&quot;&gt;&lt;a href=&quot;#MongoDB实战2&quot; class=&quot;headerlink&quot; title=&quot;MongoDB实战2&quot;&gt;&lt;/a&gt;MongoDB实战2&lt;/h2&gt;&lt;hr&gt;
+
+    
+    </summary>
+    
+      <category term="MongoDB" scheme="http://yoursite.com/categories/MongoDB/"/>
+    
+    
+      <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="NoSQL" scheme="http://yoursite.com/tags/NoSQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>中秋节</title>
+    <link href="http://yoursite.com/2016/09/15/something3/"/>
+    <id>http://yoursite.com/2016/09/15/something3/</id>
+    <published>2016-09-15T11:05:47.000Z</published>
+    <updated>2016-09-15T12:10:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>中秋节回家。中午迷迷糊糊做梦，大概就是喜欢的姑娘心里住着前男友。醒来一脸水。莫名的悲伤。<br>回去好好治治脸，特么一脸痘我也烦躁了。看来指望系统自动修复是不行了。就去中日友好吧。<br>洗心革面了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;中秋节回家。中午迷迷糊糊做梦，大概就是喜欢的姑娘心里住着前男友。醒来一脸水。莫名的悲伤。&lt;br&gt;回去好好治治脸，特么一脸痘我也烦躁了。看来指望系统自动修复是不行了。就去中日友好吧。&lt;br&gt;洗心革面了。&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="Tips" scheme="http://yoursite.com/categories/Tips/"/>
+    
+    
+      <category term="私人" scheme="http://yoursite.com/tags/%E7%A7%81%E4%BA%BA/"/>
+    
+      <category term="自欺欺人" scheme="http://yoursite.com/tags/%E8%87%AA%E6%AC%BA%E6%AC%BA%E4%BA%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB-2</title>
+    <link href="http://yoursite.com/2016/09/15/mongodb1/"/>
+    <id>http://yoursite.com/2016/09/15/mongodb1/</id>
+    <published>2016-09-15T11:05:24.000Z</published>
+    <updated>2016-09-15T13:06:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="MongoDB实战2"><a href="#MongoDB实战2" class="headerlink" title="MongoDB实战2"></a>MongoDB实战2</h2><hr>
+<h3 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h3><p>类似于MySQL的<code>group by</code>,做统计工作。Map函数调用<code>emit(key,value)</code>,遍历集合中记录，将参数传递给Reduce函数处理。<br>使用<code>db.runCommand</code>或mapReduce命令执行。</p>
+<p>格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">db.runCommand(</div><div class="line">    &#123;mapreduce:&lt;collection&gt;,</div><div class="line">     map:&lt;mapfunction&gt;,</div><div class="line">     reduce:&lt;reducefunction&gt;,</div><div class="line">     [,query:&lt;query filter object]</div><div class="line">     [,sort:&lt;sorts the input objects using this key.Useful for optimization,like sorting by the emit key for fewer reduces&gt;]</div><div class="line">     [,limit:&lt;number of objects to return from collection&gt;]</div><div class="line">     [,out:&lt;output collections&gt;]</div><div class="line">     [,keeptemp:&lt;true|false&gt;]</div><div class="line">     [,finalize:&lt;finalizefunction&gt;]</div><div class="line">     [,scope:&lt;object where fields go into javascript global scope&gt;]</div><div class="line">     [,verbose:true]</div><div class="line">    &#125;</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mapreduce</td>
+<td>指定数据集</td>
+</tr>
+<tr>
+<td>map</td>
+<td>指定映射函数（生成键值对序列，作为统计函数输入参数）</td>
+</tr>
+<tr>
+<td>reduce</td>
+<td>指定统计函数</td>
+</tr>
+<tr>
+<td>query</td>
+<td>目标过滤</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>目标记录排序</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>限制目标记录数量</td>
+</tr>
+<tr>
+<td>out</td>
+<td>统计结果存放集合，不指定则使用临时集合，客户端断开自动删除</td>
+</tr>
+<tr>
+<td>keeptemp</td>
+<td>是否保留临时集合</td>
+</tr>
+<tr>
+<td>finalize</td>
+<td>最终处理函数</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>向map、reduce和finalize导入外部变量</td>
+</tr>
+<tr>
+<td>verbose</td>
+<td>显示详细的时间统计信息</td>
+</tr>
+</tbody>
+</table>
+<h3 id="MapReduce实例"><a href="#MapReduce实例" class="headerlink" title="MapReduce实例"></a>MapReduce实例</h3><p><strong>准备数据</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&gt; for(var i=1;i&lt;10;i++)db.students.insert(&#123;class:1,age:i&#125;);</div><div class="line">WriteResult(&#123; &quot;nInserted&quot; : 1 &#125;)</div><div class="line">&gt; for(var i=1;i&lt;10;i++)db.students.insert(&#123;class:2,age:i&#125;);</div><div class="line">WriteResult(&#123; &quot;nInserted&quot; : 1 &#125;)</div><div class="line">&gt; db.students.find();</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8340279c0ecac9b96fe1&quot;), &quot;class&quot; : 1, &quot;age&quot; : 1 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8340279c0ecac9b96fe2&quot;), &quot;class&quot; : 1, &quot;age&quot; : 2 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8340279c0ecac9b96fe3&quot;), &quot;class&quot; : 1, &quot;age&quot; : 3 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8340279c0ecac9b96fe4&quot;), &quot;class&quot; : 1, &quot;age&quot; : 4 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8340279c0ecac9b96fe5&quot;), &quot;class&quot; : 1, &quot;age&quot; : 5 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8340279c0ecac9b96fe6&quot;), &quot;class&quot; : 1, &quot;age&quot; : 6 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8340279c0ecac9b96fe7&quot;), &quot;class&quot; : 1, &quot;age&quot; : 7 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8340279c0ecac9b96fe8&quot;), &quot;class&quot; : 1, &quot;age&quot; : 8 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8340279c0ecac9b96fe9&quot;), &quot;class&quot; : 1, &quot;age&quot; : 9 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8990279c0ecac9b96fea&quot;), &quot;class&quot; : 2, &quot;age&quot; : 1 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8990279c0ecac9b96feb&quot;), &quot;class&quot; : 2, &quot;age&quot; : 2 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8990279c0ecac9b96fec&quot;), &quot;class&quot; : 2, &quot;age&quot; : 3 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8990279c0ecac9b96fed&quot;), &quot;class&quot; : 2, &quot;age&quot; : 4 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8990279c0ecac9b96fee&quot;), &quot;class&quot; : 2, &quot;age&quot; : 5 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8990279c0ecac9b96fef&quot;), &quot;class&quot; : 2, &quot;age&quot; : 6 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8990279c0ecac9b96ff0&quot;), &quot;class&quot; : 2, &quot;age&quot; : 7 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8990279c0ecac9b96ff1&quot;), &quot;class&quot; : 2, &quot;age&quot; : 8 &#125;</div><div class="line">&#123; &quot;_id&quot; : ObjectId(&quot;57da8990279c0ecac9b96ff2&quot;), &quot;class&quot; : 2, &quot;age&quot; : 9 &#125;</div></pre></td></tr></table></figure></p>
+<p><strong>分别指定函数及运行结果</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&gt; m = function()&#123;emit(this.class,1)&#125;</div><div class="line">&gt; r = function(key,value)&#123;var x = 0;values.forEach(function(v)&#123;x += v&#125;);return x;&#125;</div><div class="line">&gt; f = function(key,value)&#123;return &#123;class:key,count:value&#125;;&#125;</div><div class="line">&gt; re = db.runCommand(&#123; mapreduce:&quot;students&quot;, map:m, reduce:r, out:&quot;students_res&quot;,finalize:f,query:&#123;age:&#123;$lt:5&#125;&#125;&#125;);</div><div class="line">&#123;</div><div class="line">    &quot;result&quot; : &quot;students_res&quot;,</div><div class="line">    &quot;timeMillis&quot; : 148,</div><div class="line">    &quot;counts&quot; : &#123;</div><div class="line">        &quot;input&quot; : 8,</div><div class="line">        &quot;emit&quot; : 8,</div><div class="line">        &quot;reduce&quot; : 2,</div><div class="line">        &quot;output&quot; : 2</div><div class="line">    &#125;,</div><div class="line">    &quot;ok&quot; : 1</div><div class="line">&#125;</div><div class="line">&gt; db.students_res.find();</div><div class="line">&#123; &quot;_id&quot; : 1, &quot;value&quot; : &#123; &quot;class&quot; : 1, &quot;count&quot; : 4 &#125; &#125;</div><div class="line">&#123; &quot;_id&quot; : 2, &quot;value&quot; : &#123; &quot;class&quot; : 2, &quot;count&quot; : 4 &#125; &#125;</div></pre></td></tr></table></figure></p>
+<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><p>索引信息保存在<code>system.indexes</code>中，默认为<code>_id</code>创建索引，并且不可删除，创建索引可以后台执行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">//创建索引</div><div class="line">&gt; db.students.ensureIndex(&#123;age:1&#125;);     //1升序，-1降序</div><div class="line">&#123;</div><div class="line">    &quot;createdCollectionAutomatically&quot; : false,</div><div class="line">    &quot;numIndexesBefore&quot; : 1,</div><div class="line">    &quot;numIndexesAfter&quot; : 2,</div><div class="line">    &quot;ok&quot; : 1</div><div class="line">&#125;</div><div class="line">//查看索引</div><div class="line">&gt; db.students.getIndexes();</div><div class="line">[</div><div class="line">    &#123;</div><div class="line">        &quot;v&quot; : 1,</div><div class="line">        &quot;key&quot; : &#123;</div><div class="line">            &quot;_id&quot; : 1</div><div class="line">        &#125;,</div><div class="line">        &quot;name&quot; : &quot;_id_&quot;,</div><div class="line">        &quot;ns&quot; : &quot;test.students&quot;</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        &quot;v&quot; : 1,</div><div class="line">        &quot;key&quot; : &#123;</div><div class="line">            &quot;age&quot; : 1</div><div class="line">        &#125;,</div><div class="line">        &quot;name&quot; : &quot;age_1&quot;,</div><div class="line">        &quot;ns&quot; : &quot;test.students&quot;</div><div class="line">    &#125;</div><div class="line">]</div><div class="line">//后台执行创建索引</div><div class="line">&gt; db.students.ensureIndex(&#123;class:1&#125;,&#123;background:true&#125;);</div><div class="line">&#123;</div><div class="line">    &quot;createdCollectionAutomatically&quot; : false,</div><div class="line">    &quot;numIndexesBefore&quot; : 2,</div><div class="line">    &quot;numIndexesAfter&quot; : 3,</div><div class="line">    &quot;ok&quot; : 1</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>索引可以是任何类型的字段，甚至是文档<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; db.factories.insert(&#123;name:&quot;wwl&quot;,addr:&#123;city:&quot;BJ&quot;,state:&quot;BJ&quot;&#125;&#125;);</div><div class="line">//在addr列创建索引</div><div class="line">&gt; db.factories.ensureIndex(&#123;addr:1&#125;);</div><div class="line">//查询一会用到索引，查询二不会用到(顺序不一致)</div><div class="line">查询一:db.factories.find(&#123;addr:&#123;city:&quot;BJ&quot;,state:&quot;BJ&quot;&#125;&#125;);</div><div class="line">查询二:db.factories.find(&#123;addr:&#123;state:&quot;BJ&quot;,city:&quot;BJ&quot;&#125;&#125;);</div></pre></td></tr></table></figure></p>
+<p>组合索引<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.factories.ensureIndex(&#123;&quot;addr.city&quot;:1,&quot;addr.state&quot;:-1&#125;);</div></pre></td></tr></table></figure></p>
+<p>唯一索引<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.factories.ensureIndex(&#123;name:&quot;wwl&quot;&#125;,&#123;unique:true&#125;);</div></pre></td></tr></table></figure></p>
+<p>强制索引<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.t5.find(&#123;age:&#123;$lt:5&#125;&#125;).hint(&#123;name:1,age:1&#125;).explain();</div></pre></td></tr></table></figure></p>
+<p>删除索引<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//删除所有索引</div><div class="line">db.factories.dropIndexes();</div><div class="line">//指定删除</div><div class="line">db.factories.drop(&#123;addr:1&#125;);</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;MongoDB实战2&quot;&gt;&lt;a href=&quot;#MongoDB实战2&quot; class=&quot;headerlink&quot; title=&quot;MongoDB实战2&quot;&gt;&lt;/a&gt;MongoDB实战2&lt;/h2&gt;&lt;hr&gt;
+&lt;h3 id=&quot;MapReduce&quot;&gt;&lt;a href=&quot;#MapRedu
+    
+    </summary>
+    
+      <category term="MongoDB" scheme="http://yoursite.com/categories/MongoDB/"/>
+    
+    
+      <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="NoSQL" scheme="http://yoursite.com/tags/NoSQL/"/>
+    
+  </entry>
   
   <entry>
     <title>揪心的玩笑与漫长的白日梦</title>
@@ -77,13 +219,13 @@
   </entry>
   
   <entry>
-    <title>MongoDB</title>
+    <title>MongoDB-1</title>
     <link href="http://yoursite.com/2016/09/12/mangodb0/"/>
     <id>http://yoursite.com/2016/09/12/mangodb0/</id>
     <published>2016-09-12T05:47:51.000Z</published>
-    <updated>2016-09-13T11:51:32.000Z</updated>
+    <updated>2016-09-15T12:10:50.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="MongoDB实战"><a href="#MongoDB实战" class="headerlink" title="MongoDB实战"></a>MongoDB实战</h2><hr>
+    <content type="html"><![CDATA[<h2 id="MongoDB实战1"><a href="#MongoDB实战1" class="headerlink" title="MongoDB实战1"></a>MongoDB实战1</h2><hr>
 <p>传统关系数据库,难以定义表结构：</p>
 <ul>
 <li>先定义最低限度必要字段，需要再添加（更改表结构）：反复变更表结构</li>
@@ -217,17 +359,64 @@
 <td>判断是否存在</td>
 <td><code>db.users.find({age:{$exists:true}});</code></td>
 </tr>
+<tr>
+<td>Null处理</td>
+<td><code>db.c2.find({age:{&quot;$in&quot;:[null],&quot;exists&quot;:true}});</code></td>
+</tr>
+<tr>
+<td>取模运算</td>
+<td><code>db.student.find({age:{$mod:[10,1]}});</code></td>
+</tr>
+<tr>
+<td>不等于</td>
+<td><code>db.things.find({x:{$ne:3}});</code></td>
+</tr>
+<tr>
+<td>包含</td>
+<td><code>db.c1.find({age:{$in:[2,3,4]}});</code></td>
+</tr>
+<tr>
+<td>不包含</td>
+<td><code>db.c1.find({age:{$nin:[2,3,4]}});</code></td>
+</tr>
+<tr>
+<td>数组元素个数</td>
+<td><code>db.users.find({favorite:{$size:3}});</code></td>
+</tr>
+<tr>
+<td>正则匹配</td>
+<td><code>db.users.find({name:{$not:/^B.*/}});</code></td>
+</tr>
+<tr>
+<td>JavaScript查询</td>
+<td><code>db.c1.find({a:{$gt:3}});</code>,<code>db.c1.find({$where:&quot;this.a&gt;3&quot;});</code>,<code>db.c1.find(&quot;this.a&gt;3&quot;);</code>,<code>f=func(){return this.a&gt;3;} db.c1.find(f);</code></td>
+</tr>
+<tr>
+<td>查询记录数</td>
+<td><code>db.users.find().count();</code>,<code>db.users.find().skip(10).limit(5).count();</code></td>
+</tr>
+<tr>
+<td>限制返回记录起点</td>
+<td><code>db.users.find().skip(3).limit(3);</code></td>
+</tr>
+<tr>
+<td>排序</td>
+<td><code>db.users.find().sort({age:1});</code>,<code>db.users.find().sort({age:-1});</code></td>
+</tr>
+<tr>
+<td>游标</td>
+<td><code>for(var c=db.t3.find();c.hasNext();){printjson(c.next());}</code>,<code>db.t3.find().forEach(function(u){printjson(u);});</code></td>
+</tr>
 </tbody>
 </table>
-<p>Null处理</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;MongoDB实战&quot;&gt;&lt;a href=&quot;#MongoDB实战&quot; class=&quot;headerlink&quot; title=&quot;MongoDB实战&quot;&gt;&lt;/a&gt;MongoDB实战&lt;/h2&gt;&lt;hr&gt;
+      &lt;h2 id=&quot;MongoDB实战1&quot;&gt;&lt;a href=&quot;#MongoDB实战1&quot; class=&quot;headerlink&quot; title=&quot;MongoDB实战1&quot;&gt;&lt;/a&gt;MongoDB实战1&lt;/h2&gt;&lt;hr&gt;
 &lt;p&gt;传统关系数据库,难以定义表结构：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;先定义最低限度
+&lt;li&gt;先定义
     
     </summary>
     
@@ -710,207 +899,6 @@
       <category term="诗" scheme="http://yoursite.com/tags/%E8%AF%97/"/>
     
       <category term="私人" scheme="http://yoursite.com/tags/%E7%A7%81%E4%BA%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript复制</title>
-    <link href="http://yoursite.com/2016/09/06/JavaScript0/"/>
-    <id>http://yoursite.com/2016/09/06/JavaScript0/</id>
-    <published>2016-09-06T07:53:50.000Z</published>
-    <updated>2016-09-06T14:17:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="代码段"><a href="#代码段" class="headerlink" title="代码段"></a>代码段</h3><p>看到网上的JavaScript代码带一个复制的小按键，好奇就把相关的代码段整理了一下。</p>
-<a id="more"></a>
-<ol>
-<li>复制文本框内容</li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line">    function jsCopy()&#123;</div><div class="line">        var e = document.getElementById('content');</div><div class="line">        e.select();</div><div class="line">        document.execCommand('Copy');</div><div class="line">        alert('已复制内容到剪切板')</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">'content'</span> <span class="attr">cols</span>=<span class="string">'50'</span> <span class="attr">rows</span>=<span class="string">'5'</span>&gt;</span></div><div class="line">Your fucking content.</div><div class="line"><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onClick</span>=<span class="string">"jsCopy();"</span> <span class="attr">value</span>=<span class="string">"COPY"</span> /&gt;</span></div></pre></td></tr></table></figure>
-<ol>
-<li>复制网络地址 </li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line">    function urlCopy()&#123;</div><div class="line">        var clipboardContent = this.location.href;</div><div class="line">        window.clipboardData.setData('Text',clipboardContent);</div><div class="line">        alert('已将网络地址复制到剪切板')</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onClick</span>=<span class="string">"jsCopy();"</span> <span class="attr">value</span>=<span class="string">"COPY URL"</span> /&gt;</span></div></pre></td></tr></table></figure>
-<ol>
-<li>点击文本框复制内容</li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line">    function urlCopy()&#123;</div><div class="line">        var clipboardContent = this.location.href;</div><div class="line">        window.clipboardData.setData('Text',clipboardContent);</div><div class="line">        alert('已将网络地址复制到剪切板')</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onClick</span>=<span class="string">"jsCopy();"</span> <span class="attr">value</span>=<span class="string">"COPY URL"</span> /&gt;</span></div></pre></td></tr></table></figure>
-<hr>
-<ul>
-<li>代码段来源于互联网,作者1： <a href="http://my.csdn.net/jin367411763,&#39;作者的CSDN博客地址&#39;" target="_blank" rel="external"><em>jin367411763</em></a>，作者2: <a href="http://www.cnblogs.com/tylerdonet/,&#39;作者的cnblogs地址&#39;" target="_blank" rel="external"><em>Tyler’s Blog</em></a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;代码段&quot;&gt;&lt;a href=&quot;#代码段&quot; class=&quot;headerlink&quot; title=&quot;代码段&quot;&gt;&lt;/a&gt;代码段&lt;/h3&gt;&lt;p&gt;看到网上的JavaScript代码带一个复制的小按键，好奇就把相关的代码段整理了一下。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript代码段" scheme="http://yoursite.com/tags/JavaScript%E4%BB%A3%E7%A0%81%E6%AE%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>优先队列的堆实现</title>
-    <link href="http://yoursite.com/2016/09/06/PrioQueue1/"/>
-    <id>http://yoursite.com/2016/09/06/PrioQueue1/</id>
-    <published>2016-09-06T02:53:30.000Z</published>
-    <updated>2016-09-06T07:09:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="优先队列的堆实现"><a href="#优先队列的堆实现" class="headerlink" title="优先队列的堆实现"></a>优先队列的堆实现</h2><hr>
-<h3 id="堆及其性质"><a href="#堆及其性质" class="headerlink" title="堆及其性质"></a>堆及其性质</h3><ol>
-<li>采用树形结构实现优先队列的一种有效技术成为 <strong>堆</strong>，节点数据的存储满足堆序。<ul>
-<li>从根到任何一个叶节点，节点数据优先级递减</li>
-<li>堆顶元素优先级最高，O(1)时间即可得到</li>
-<li>位于不同路径上的元素，这里不关心其顺序</li>
-</ul>
-</li>
-<li>几个重要性质<ul>
-<li>在一个堆最后追加一个元素，依然是完全二叉树，但未必是堆</li>
-<li>去掉堆顶，两个子堆上堆序不变</li>
-<li>去掉堆顶的两个子堆加入根元素，未必是堆（堆序无法保证）</li>
-<li>去掉堆中最后的元素，不破坏堆序</li>
-</ul>
-</li>
-</ol>
-<a id="more"></a>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PrioQueueError</span><span class="params">(ValueError)</span>:</span></div><div class="line">	<span class="keyword">pass</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PrioQueue</span><span class="params">()</span>:</span></div><div class="line">	<span class="string">'''</span></div><div class="line">	Implementing priority queues using heaps.</div><div class="line">	'''</div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,elist=[])</span>:</span></div><div class="line">		self._elems = list(elist)</div><div class="line">		<span class="keyword">if</span> elist:</div><div class="line">			self.buildheap()</div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">is_empty</span><span class="params">(self)</span>:</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">not</span> self._elems</div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">peek</span><span class="params">(self)</span>:</span></div><div class="line">		<span class="keyword">if</span> self.is_empty():</div><div class="line">			<span class="keyword">raise</span> PrioQueueError(<span class="string">'Already in peek.'</span>)</div><div class="line">		<span class="keyword">return</span> self._elems[<span class="number">0</span>]</div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">enqueue</span><span class="params">(self,e)</span>:</span></div><div class="line">		self._elems.append(<span class="keyword">None</span>)</div><div class="line">		self.siftup(e,len(self._elems)<span class="number">-1</span>)</div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">siftup</span><span class="params">(self,e,last)</span>:</span></div><div class="line">		elems,i,j = self._elems,last,(last<span class="number">-1</span>)//<span class="number">2</span></div><div class="line">		<span class="keyword">while</span> i &gt; <span class="number">0</span> <span class="keyword">and</span> e &lt; elems[j]:</div><div class="line">			elems[i] = elems[j]</div><div class="line">			i,j = j,(j<span class="number">-1</span>)//<span class="number">2</span></div><div class="line">		elems[i] = e</div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">dequeue</span><span class="params">(self)</span>:</span></div><div class="line">		<span class="keyword">if</span> self.is_empty():</div><div class="line">			<span class="keyword">raise</span> PrioQueueError(<span class="string">'Already in dequeue.'</span>)</div><div class="line">		elems  = self._elems</div><div class="line">		e0 = elems[<span class="number">0</span>]</div><div class="line">		e = elems.pop()</div><div class="line">		<span class="keyword">if</span> len(elems) &gt; <span class="number">0</span>:</div><div class="line">			self.siftdown(e,<span class="number">0</span>,len(elems))</div><div class="line">		<span class="keyword">return</span> e0</div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">siftdown</span><span class="params">(self,e,begin,end)</span>:</span></div><div class="line">		elems,i,j = self._elems,begin,begin*<span class="number">2</span>+<span class="number">1</span></div><div class="line">		<span class="keyword">while</span> j &lt; end:</div><div class="line">			<span class="keyword">if</span> j+<span class="number">1</span> &lt; end <span class="keyword">and</span> elems[j+<span class="number">1</span>] &lt; elems[j]:</div><div class="line">				j += <span class="number">1</span></div><div class="line">			<span class="keyword">if</span> e &lt; elems[j]:</div><div class="line">				<span class="keyword">break</span></div><div class="line">			elems[i] = elems[j]</div><div class="line">			i,j = j, <span class="number">2</span>*j+<span class="number">1</span></div><div class="line">		elems[i] = e</div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">buildheap</span><span class="params">(self)</span>:</span></div><div class="line">		end = len(self._elems)</div><div class="line">		<span class="keyword">for</span> i <span class="keyword">in</span> range(end//<span class="number">2</span>,<span class="number">-1</span>,<span class="number">-1</span>):</div><div class="line">			self.siftdown(self._elems[i],i,end)</div></pre></td></tr></table></figure>
-<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><table>
-<thead>
-<tr>
-<th>操作</th>
-<th>复杂度</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>创建操作</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>插入和弹出元素</td>
-<td>O(log n)</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<ul>
-<li>程序出自《<strong>数据结构与算法Python语言描述</strong>》</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;优先队列的堆实现&quot;&gt;&lt;a href=&quot;#优先队列的堆实现&quot; class=&quot;headerlink&quot; title=&quot;优先队列的堆实现&quot;&gt;&lt;/a&gt;优先队列的堆实现&lt;/h2&gt;&lt;hr&gt;
-&lt;h3 id=&quot;堆及其性质&quot;&gt;&lt;a href=&quot;#堆及其性质&quot; class=&quot;headerlink&quot; title=&quot;堆及其性质&quot;&gt;&lt;/a&gt;堆及其性质&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;采用树形结构实现优先队列的一种有效技术成为 &lt;strong&gt;堆&lt;/strong&gt;，节点数据的存储满足堆序。&lt;ul&gt;
-&lt;li&gt;从根到任何一个叶节点，节点数据优先级递减&lt;/li&gt;
-&lt;li&gt;堆顶元素优先级最高，O(1)时间即可得到&lt;/li&gt;
-&lt;li&gt;位于不同路径上的元素，这里不关心其顺序&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;几个重要性质&lt;ul&gt;
-&lt;li&gt;在一个堆最后追加一个元素，依然是完全二叉树，但未必是堆&lt;/li&gt;
-&lt;li&gt;去掉堆顶，两个子堆上堆序不变&lt;/li&gt;
-&lt;li&gt;去掉堆顶的两个子堆加入根元素，未必是堆（堆序无法保证）&lt;/li&gt;
-&lt;li&gt;去掉堆中最后的元素，不破坏堆序&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
-    
-    
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="栈和队列" scheme="http://yoursite.com/tags/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"/>
-    
-      <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
-      <category term="堆" scheme="http://yoursite.com/tags/%E5%A0%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>优先队列的连续列表实现</title>
-    <link href="http://yoursite.com/2016/09/06/PrioQueue0/"/>
-    <id>http://yoursite.com/2016/09/06/PrioQueue0/</id>
-    <published>2016-09-06T02:03:03.000Z</published>
-    <updated>2016-09-06T07:10:34.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="优先队列的连续列表实现"><a href="#优先队列的连续列表实现" class="headerlink" title="优先队列的连续列表实现"></a>优先队列的连续列表实现</h2><hr>
-<h3 id="两种实现方案"><a href="#两种实现方案" class="headerlink" title="两种实现方案"></a>两种实现方案</h3><ol>
-<li>存储数据时保证元素的优先顺序，任何时候取元素都可以得到最高优先级（存入操作效率低，访问和弹出方便）</li>
-<li>存入简单（顺序表存入表尾，链接表存入表头），取用时检索（存入效率高，访问弹出不便），如许多次访问统一元素但不弹出，则不采用此法，避免重复检索，或者记录要访问的元素位置。</li>
-</ol>
-<a id="more"></a>
-<h3 id="代码（第一种方案）"><a href="#代码（第一种方案）" class="headerlink" title="代码（第一种方案）"></a>代码（第一种方案）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PrioQueueError</span><span class="params">(ValueError)</span>:</span></div><div class="line">	<span class="keyword">pass</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PrioQue</span><span class="params">()</span>:</span></div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,elist=[])</span>:</span></div><div class="line">		self._elems = list(elist)           <span class="comment">#使用list转换：对实参拷贝防止共享；实参可以是任一迭代对象</span></div><div class="line">		self._elems = sort(reversed=<span class="keyword">True</span>)	  <span class="comment">#设置为较小的优先级高</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">enqueue</span><span class="params">(self,e)</span>:</span></div><div class="line">		i = len(self._elems) - <span class="number">1</span></div><div class="line">		<span class="keyword">while</span> i &gt;= <span class="number">0</span>:                       <span class="comment">#优先级相同的元素先进先出</span></div><div class="line">			<span class="keyword">if</span> self._elems[i] &lt;= e:</div><div class="line">				i -= <span class="number">1</span></div><div class="line">			<span class="keyword">else</span>:</div><div class="line">				<span class="keyword">break</span></div><div class="line">		self._elems.insert(i+<span class="number">1</span>,e)</div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">is_empty</span><span class="params">(self)</span>:</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">not</span> self._elems</div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">peek</span><span class="params">(self)</span>:</span></div><div class="line">		<span class="keyword">if</span> self.is_empty():</div><div class="line">			<span class="keyword">raise</span> PrioQueueError(<span class="string">'Already in top.'</span>)</div><div class="line">		<span class="keyword">return</span> self._elems[<span class="number">-1</span>]</div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">dequeue</span><span class="params">(self)</span>:</span></div><div class="line">		<span class="keyword">if</span> self.is_empty():</div><div class="line">			<span class="keyword">raise</span> PrioQueueError(<span class="string">'No elem to pop.'</span>)</div><div class="line">		<span class="keyword">return</span> self._elems.pop()</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="操作效率（复杂度）"><a href="#操作效率（复杂度）" class="headerlink" title="操作效率（复杂度）"></a>操作效率（复杂度）</h3><p><strong>方案1</strong></p>
-<table>
-<thead>
-<tr>
-<th>操作</th>
-<th>复杂度</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>插入元素</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>其他</td>
-<td>O(1)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>方案2</strong></p>
-<table>
-<thead>
-<tr>
-<th>操作</th>
-<th>复杂度</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>插入元素</td>
-<td>O(1)，替换表存储空间需要O(n)时间</td>
-</tr>
-<tr>
-<td>其他</td>
-<td>O(n)</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<ul>
-<li>程序出自 《<strong>数据结构与算法Python语言描述</strong>》</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;优先队列的连续列表实现&quot;&gt;&lt;a href=&quot;#优先队列的连续列表实现&quot; class=&quot;headerlink&quot; title=&quot;优先队列的连续列表实现&quot;&gt;&lt;/a&gt;优先队列的连续列表实现&lt;/h2&gt;&lt;hr&gt;
-&lt;h3 id=&quot;两种实现方案&quot;&gt;&lt;a href=&quot;#两种实现方案&quot; class=&quot;headerlink&quot; title=&quot;两种实现方案&quot;&gt;&lt;/a&gt;两种实现方案&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;存储数据时保证元素的优先顺序，任何时候取元素都可以得到最高优先级（存入操作效率低，访问和弹出方便）&lt;/li&gt;
-&lt;li&gt;存入简单（顺序表存入表尾，链接表存入表头），取用时检索（存入效率高，访问弹出不便），如许多次访问统一元素但不弹出，则不采用此法，避免重复检索，或者记录要访问的元素位置。&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
-    
-    
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="栈和队列" scheme="http://yoursite.com/tags/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"/>
     
   </entry>
   
