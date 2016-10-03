@@ -4,6 +4,136 @@
   
     
     <entry>
+      <title><![CDATA[Python 批量生成变量]]></title>
+      <url>http://yoursite.com/2016/09/22/python/</url>
+      <content type="html"><![CDATA[<p>基本思想就是利用<code>locals()</code>字典生成特定的变量,如列表，字典等。</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">for</span> p,i <span class="keyword">in</span> enumerate(range(<span class="number">1</span>,<span class="number">11</span>)):</div><div class="line">    locals()[<span class="string">'l%i'</span>%(p+<span class="number">1</span>)] = []</div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">11</span>):</div><div class="line">    locals()[<span class="string">'list'</span>+str(i)] = []</div><div class="line">    </div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">11</span>):</div><div class="line">    a=<span class="string">'list%d=[]'</span>%i </div><div class="line"><span class="keyword">exec</span> a</div></pre></td></tr></table></figure>
+<p>另小九九</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">dict_ = &#123;&#125;</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">1</span>,<span class="number">10</span>):</div><div class="line">    dict_[i]=<span class="string">''</span></div><div class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>,i+<span class="number">1</span>):</div><div class="line">        tmp = str(j)+<span class="string">'*'</span>+str(i)+<span class="string">'='</span>+str(j*i)</div><div class="line">        dict_[i] = dict_[i]+<span class="string">' '</span>+tmp</div><div class="line">    <span class="keyword">print</span> dict_[i]</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[那朵花]]></title>
+      <url>http://yoursite.com/2016/09/21/song4/</url>
+      <content type="html"><![CDATA[<p>实在是没什么说的。</p>
+<a id="more"></a>
+<blockquote><p>费了好几页<br>终于写完我们的心情<br>却不知为何<br>弥补不了空白的一行<br>夹上花样书签<br>和你乘着用完就扔的自行车<br>堆起快被人遗忘的砖头<br>却突然倒塌了</p>
+<p>那逐渐将人拖向对等的<br>蓝得可怕的天空<br>玩累了的我们<br>一定不会再想起<br>现在就这样朝我这边<br>一束束阳光倾注而来<br>两个人明明仍近在咫尺<br>而我却祈求「愿能再次相遇」<br>好像脑袋短路了</p>
+<p>在翻开新一页的手掌<br>用嘴唇绑结上纸手圈<br>今天也是一成不变的今天<br>下雨的话也能打电话<br>现在就这样朝你那边<br>(手圈不知不觉间断开了)<br>传递出我的温柔<br>(但不知为何总是难以开口)<br>好像真的脑袋短路了</p>
+<p>只要从中选一<br>便会传出崩溃的声音<br>我说那就是爱<br>你却真的笑了<br>能赶上太好了<br>整条街默认不知道陷入沉睡<br>前往用被人遗忘的砖头<br>堆积而成的地方吧</p>
+<p>攀上可以遥望大海的山坡<br>头上是蓝得可怕的天空<br>右手拿着汽水<br>而左手却一直在找寻你</p>
+<p>就这样用这双紧密的手<br>拥抱着春日之风<br>时间仍然归属于我们<br>「总有一天，会把今天遗忘」什么的<br>希望你不要说出口</p>
+<p>“现在”就这样<br>你也再没追问我什么<br>两个人依然停留在那里吧<br>「没错，弥补空白的语言」<br>不，还是先别说吧</p>
+<p>翻开新一页的手掌<br>用嘴唇解开的手带<br>首班电车零散的幸福<br>呐，今天也是一成不变的日子呢</p>
+<p>好像真的脑袋短路了</p>
+<footer><strong>Galileo Galilei</strong><cite>青い栞</cite></footer></blockquote>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=417613399&auto=1&height=66"></iframe>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Django获取数据库模型相关]]></title>
+      <url>http://yoursite.com/2016/09/21/django1/</url>
+      <content type="html"><![CDATA[<p>1.获取数据库模型字段<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">params = yourmodel._meta.fields</div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(params)):</div><div class="line">    <span class="keyword">print</span> params[i],params[i].verbose_name</div></pre></td></tr></table></figure></p>
+<p>2.获取数据库名称<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yourmodel._meta.object_name</div></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MongoDB备份策略和Backup服务简介]]></title>
+      <url>http://yoursite.com/2016/09/21/mongodb3/</url>
+      <content type="html"><![CDATA[<h2 id="冗余-versus-备份"><a href="#冗余-versus-备份" class="headerlink" title="冗余 versus 备份"></a>冗余 versus 备份</h2><blockquote>
+<p><strong>冗余 ！= 备份</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>冗余</th>
+<th>备份</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><ul><li>Replica Set</li><li>7*24可用</li><li>故障发生无需干预<ul><li>秒级自动failover</li><li>多数据中心部署</li></ul></li><li>系统升级维护对用户透明</li></ul></td>
+<td><ul><li>灾难恢复</li><li>程序Bug损坏数据</li><li>人工误操作</li></ul></td>
+</tr>
+<tr>
+<td>可以离线多少时间？</td>
+<td>可以丢失多少数据？</td>
+</tr>
+</tbody>
+</table>
+<h2 id="备份策略"><a href="#备份策略" class="headerlink" title="备份策略"></a>备份策略</h2><h3 id="mongodump-mongorestore"><a href="#mongodump-mongorestore" class="headerlink" title="mongodump / mongorestore"></a>mongodump / mongorestore</h3><ul>
+<li>导出BSON文件</li>
+<li>可以选择备份Namespace</li>
+<li>可以通过Oplog实现时间点恢复（Point-in-time）</li>
+<li>缺点<ul>
+<li>速度较慢</li>
+<li>分片集群需同步</li>
+</ul>
+</li>
+</ul>
+<h3 id="文件系统备份"><a href="#文件系统备份" class="headerlink" title="文件系统备份"></a>文件系统备份</h3><ul>
+<li>常见方式<ul>
+<li>文件复制</li>
+<li>文件系统或块存储快照，如LVM 或AWS EBS</li>
+</ul>
+</li>
+<li>速度最快</li>
+<li><p>缺点</p>
+<ul>
+<li>日志文件（journal）落盘</li>
+<li>无法选择性备份</li>
+<li>备份文件占用空间较大</li>
+<li>分片同步问题</li>
+</ul>
+<h3 id="Backup服务"><a href="#Backup服务" class="headerlink" title="Backup服务"></a>Backup服务</h3><ul>
+<li>MongoDB开发</li>
+<li>操作简单</li>
+<li>选择性备份</li>
+<li>时间点恢复</li>
+<li>缺点</li>
+<li>无法备份Standalone mongod</li>
+</ul>
+</li>
+</ul>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
+<li>分片集群备份时的同步问题</li>
+<li>若无法恢复，失去备份意义<ul>
+<li>持续恢复？</li>
+</ul>
+</li>
+</ul>
+<h2 id="Backup服务-1"><a href="#Backup服务-1" class="headerlink" title="Backup服务"></a>Backup服务</h2><h3 id="Backup-amp-Restore系统"><a href="#Backup-amp-Restore系统" class="headerlink" title="Backup &amp; Restore系统"></a>Backup &amp; Restore系统</h3><p>是MongoDB云服务系统的主要组件之一，目标是降低备份难度（只需要安装agent）</p>
+<table>
+<thead>
+<tr>
+<th>类似Secondary</th>
+<th>又不是Secondary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><ul><li>复制数据</li><li>更新数据，采用MongoDB Replication机制</li><li>Tail Oplog</li><li>回访Oplog</li><li>离线维护时不影响用户生产环境</li></ul></td>
+<td><ul><li>不是Replica Set组成部分</li><li>不参与选举</li><li>不参与Write Concern</li><li>无状态，没有磁盘I/O</li></ul></td>
+</tr>
+</tbody>
+</table>
+<div align="center"><img src="/img/image1.png" alt="主要组件"></div>
+
+<h4 id="Backup-Agent"><a href="#Backup-Agent" class="headerlink" title="Backup Agent"></a>Backup Agent</h4><ul>
+<li>可执行文件，用GO语言编写</li>
+<li>无状态，从Ingestion获得配置命令</li>
+<li>发送InitialSync数据</li>
+<li>传输Oplog流</li>
+<li>对于Sharded Cluster快照，试图同步Shards和Config servers</li>
+<li>序列化BSON，压缩，网络传输</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[xwlt模块]]></title>
       <url>http://yoursite.com/2016/09/19/xwlt/</url>
       <content type="html"><![CDATA[<h2 id="xwlt"><a href="#xwlt" class="headerlink" title="xwlt"></a>xwlt</h2><blockquote>

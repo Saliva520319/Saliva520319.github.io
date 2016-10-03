@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-19T07:34:32.000Z</updated>
+  <updated>2016-09-22T01:49:20.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,216 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Python 批量生成变量</title>
+    <link href="http://yoursite.com/2016/09/22/python/"/>
+    <id>http://yoursite.com/2016/09/22/python/</id>
+    <published>2016-09-22T01:41:37.000Z</published>
+    <updated>2016-09-22T01:49:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>基本思想就是利用<code>locals()</code>字典生成特定的变量,如列表，字典等。</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">for</span> p,i <span class="keyword">in</span> enumerate(range(<span class="number">1</span>,<span class="number">11</span>)):</div><div class="line">    locals()[<span class="string">'l%i'</span>%(p+<span class="number">1</span>)] = []</div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">11</span>):</div><div class="line">    locals()[<span class="string">'list'</span>+str(i)] = []</div><div class="line">    </div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">11</span>):</div><div class="line">    a=<span class="string">'list%d=[]'</span>%i </div><div class="line"><span class="keyword">exec</span> a</div></pre></td></tr></table></figure>
+<p>另小九九</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">dict_ = &#123;&#125;</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">1</span>,<span class="number">10</span>):</div><div class="line">    dict_[i]=<span class="string">''</span></div><div class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>,i+<span class="number">1</span>):</div><div class="line">        tmp = str(j)+<span class="string">'*'</span>+str(i)+<span class="string">'='</span>+str(j*i)</div><div class="line">        dict_[i] = dict_[i]+<span class="string">' '</span>+tmp</div><div class="line">    <span class="keyword">print</span> dict_[i]</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;基本思想就是利用&lt;code&gt;locals()&lt;/code&gt;字典生成特定的变量,如列表，字典等。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>那朵花</title>
+    <link href="http://yoursite.com/2016/09/21/song4/"/>
+    <id>http://yoursite.com/2016/09/21/song4/</id>
+    <published>2016-09-21T12:54:28.000Z</published>
+    <updated>2016-09-21T13:03:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>实在是没什么说的。</p>
+<a id="more"></a>
+<blockquote><p>费了好几页<br>终于写完我们的心情<br>却不知为何<br>弥补不了空白的一行<br>夹上花样书签<br>和你乘着用完就扔的自行车<br>堆起快被人遗忘的砖头<br>却突然倒塌了</p>
+<p>那逐渐将人拖向对等的<br>蓝得可怕的天空<br>玩累了的我们<br>一定不会再想起<br>现在就这样朝我这边<br>一束束阳光倾注而来<br>两个人明明仍近在咫尺<br>而我却祈求「愿能再次相遇」<br>好像脑袋短路了</p>
+<p>在翻开新一页的手掌<br>用嘴唇绑结上纸手圈<br>今天也是一成不变的今天<br>下雨的话也能打电话<br>现在就这样朝你那边<br>(手圈不知不觉间断开了)<br>传递出我的温柔<br>(但不知为何总是难以开口)<br>好像真的脑袋短路了</p>
+<p>只要从中选一<br>便会传出崩溃的声音<br>我说那就是爱<br>你却真的笑了<br>能赶上太好了<br>整条街默认不知道陷入沉睡<br>前往用被人遗忘的砖头<br>堆积而成的地方吧</p>
+<p>攀上可以遥望大海的山坡<br>头上是蓝得可怕的天空<br>右手拿着汽水<br>而左手却一直在找寻你</p>
+<p>就这样用这双紧密的手<br>拥抱着春日之风<br>时间仍然归属于我们<br>「总有一天，会把今天遗忘」什么的<br>希望你不要说出口</p>
+<p>“现在”就这样<br>你也再没追问我什么<br>两个人依然停留在那里吧<br>「没错，弥补空白的语言」<br>不，还是先别说吧</p>
+<p>翻开新一页的手掌<br>用嘴唇解开的手带<br>首班电车零散的幸福<br>呐，今天也是一成不变的日子呢</p>
+<p>好像真的脑袋短路了</p>
+<footer><strong>Galileo Galilei</strong><cite>青い栞</cite></footer></blockquote>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=417613399&auto=1&height=66"></iframe>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;实在是没什么说的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Tips" scheme="http://yoursite.com/categories/Tips/"/>
+    
+    
+      <category term="私人" scheme="http://yoursite.com/tags/%E7%A7%81%E4%BA%BA/"/>
+    
+      <category term="自欺欺人" scheme="http://yoursite.com/tags/%E8%87%AA%E6%AC%BA%E6%AC%BA%E4%BA%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django获取数据库模型相关</title>
+    <link href="http://yoursite.com/2016/09/21/django1/"/>
+    <id>http://yoursite.com/2016/09/21/django1/</id>
+    <published>2016-09-21T07:54:58.000Z</published>
+    <updated>2016-09-26T02:18:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.获取数据库模型字段<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">params = yourmodel._meta.fields</div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(params)):</div><div class="line">    <span class="keyword">print</span> params[i],params[i].verbose_name</div></pre></td></tr></table></figure></p>
+<p>2.获取数据库名称<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yourmodel._meta.object_name</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.获取数据库模型字段&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="栈和队列" scheme="http://yoursite.com/tags/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"/>
+    
+      <category term="Django" scheme="http://yoursite.com/tags/Django/"/>
+    
+      <category term="WEB框架" scheme="http://yoursite.com/tags/WEB%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB备份策略和Backup服务简介</title>
+    <link href="http://yoursite.com/2016/09/21/mongodb3/"/>
+    <id>http://yoursite.com/2016/09/21/mongodb3/</id>
+    <published>2016-09-21T02:02:23.000Z</published>
+    <updated>2016-09-26T02:18:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="冗余-versus-备份"><a href="#冗余-versus-备份" class="headerlink" title="冗余 versus 备份"></a>冗余 versus 备份</h2><blockquote>
+<p><strong>冗余 ！= 备份</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>冗余</th>
+<th>备份</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><ul><li>Replica Set</li><li>7*24可用</li><li>故障发生无需干预<ul><li>秒级自动failover</li><li>多数据中心部署</li></ul></li><li>系统升级维护对用户透明</li></ul></td>
+<td><ul><li>灾难恢复</li><li>程序Bug损坏数据</li><li>人工误操作</li></ul></td>
+</tr>
+<tr>
+<td>可以离线多少时间？</td>
+<td>可以丢失多少数据？</td>
+</tr>
+</tbody>
+</table>
+<h2 id="备份策略"><a href="#备份策略" class="headerlink" title="备份策略"></a>备份策略</h2><h3 id="mongodump-mongorestore"><a href="#mongodump-mongorestore" class="headerlink" title="mongodump / mongorestore"></a>mongodump / mongorestore</h3><ul>
+<li>导出BSON文件</li>
+<li>可以选择备份Namespace</li>
+<li>可以通过Oplog实现时间点恢复（Point-in-time）</li>
+<li>缺点<ul>
+<li>速度较慢</li>
+<li>分片集群需同步</li>
+</ul>
+</li>
+</ul>
+<h3 id="文件系统备份"><a href="#文件系统备份" class="headerlink" title="文件系统备份"></a>文件系统备份</h3><ul>
+<li>常见方式<ul>
+<li>文件复制</li>
+<li>文件系统或块存储快照，如LVM 或AWS EBS</li>
+</ul>
+</li>
+<li>速度最快</li>
+<li><p>缺点</p>
+<ul>
+<li>日志文件（journal）落盘</li>
+<li>无法选择性备份</li>
+<li>备份文件占用空间较大</li>
+<li>分片同步问题</li>
+</ul>
+<h3 id="Backup服务"><a href="#Backup服务" class="headerlink" title="Backup服务"></a>Backup服务</h3><ul>
+<li>MongoDB开发</li>
+<li>操作简单</li>
+<li>选择性备份</li>
+<li>时间点恢复</li>
+<li>缺点</li>
+<li>无法备份Standalone mongod</li>
+</ul>
+</li>
+</ul>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
+<li>分片集群备份时的同步问题</li>
+<li>若无法恢复，失去备份意义<ul>
+<li>持续恢复？</li>
+</ul>
+</li>
+</ul>
+<h2 id="Backup服务-1"><a href="#Backup服务-1" class="headerlink" title="Backup服务"></a>Backup服务</h2><h3 id="Backup-amp-Restore系统"><a href="#Backup-amp-Restore系统" class="headerlink" title="Backup &amp; Restore系统"></a>Backup &amp; Restore系统</h3><p>是MongoDB云服务系统的主要组件之一，目标是降低备份难度（只需要安装agent）</p>
+<table>
+<thead>
+<tr>
+<th>类似Secondary</th>
+<th>又不是Secondary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><ul><li>复制数据</li><li>更新数据，采用MongoDB Replication机制</li><li>Tail Oplog</li><li>回访Oplog</li><li>离线维护时不影响用户生产环境</li></ul></td>
+<td><ul><li>不是Replica Set组成部分</li><li>不参与选举</li><li>不参与Write Concern</li><li>无状态，没有磁盘I/O</li></ul></td>
+</tr>
+</tbody>
+</table>
+<div align="center"><img src="/img/image1.png" alt="主要组件"></div>
+
+<h4 id="Backup-Agent"><a href="#Backup-Agent" class="headerlink" title="Backup Agent"></a>Backup Agent</h4><ul>
+<li>可执行文件，用GO语言编写</li>
+<li>无状态，从Ingestion获得配置命令</li>
+<li>发送InitialSync数据</li>
+<li>传输Oplog流</li>
+<li>对于Sharded Cluster快照，试图同步Shards和Config servers</li>
+<li>序列化BSON，压缩，网络传输</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;冗余-versus-备份&quot;&gt;&lt;a href=&quot;#冗余-versus-备份&quot; class=&quot;headerlink&quot; title=&quot;冗余 versus 备份&quot;&gt;&lt;/a&gt;冗余 versus 备份&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;冗余 ！= 备份&lt;
+    
+    </summary>
+    
+      <category term="MongoDB" scheme="http://yoursite.com/categories/MongoDB/"/>
+    
+    
+      <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="NoSQL" scheme="http://yoursite.com/tags/NoSQL/"/>
+    
+      <category term="转载" scheme="http://yoursite.com/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
     <title>xwlt模块</title>
     <link href="http://yoursite.com/2016/09/19/xwlt/"/>
     <id>http://yoursite.com/2016/09/19/xwlt/</id>
     <published>2016-09-19T05:43:27.000Z</published>
-    <updated>2016-09-19T07:34:32.000Z</updated>
+    <updated>2016-09-20T14:27:21.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="xwlt"><a href="#xwlt" class="headerlink" title="xwlt"></a>xwlt</h2><blockquote>
 <p>生成兼容MS Excel 97/2000/XP/2003 XLS的电子表格文件，Python2.6+均支持该模块，平台不限。无需任何Python自带库外的文件依赖。</p>
@@ -172,7 +377,7 @@
     <link href="http://yoursite.com/2016/09/17/song3/"/>
     <id>http://yoursite.com/2016/09/17/song3/</id>
     <published>2016-09-17T13:46:05.000Z</published>
-    <updated>2016-09-20T13:55:00.000Z</updated>
+    <updated>2016-09-20T14:27:10.000Z</updated>
     
     <content type="html"><![CDATA[<p>居然由于版权保护，无法生成外链。<br>达达的黄金时代，一整张专辑都很好，怎么说呢，就是年轻逼人。隔着耳机你都能感觉彭坦的喉结在随着歌曲，像一只没长毛的老鼠，在蠕动。<br>我这么比喻可能有点恶心，或者说有点GAY?毕竟一个一脸痘的粗犷老爷们听着唧唧歪歪的情歌，想想男主唱的喉结，是很奇怪的一件事。但是那所谓的阳光，真的，难以掩盖。歌曲鼓点响起来的时候，你就是感觉在青春的校园，男孩得意洋洋的打着爵士鼓，仿佛司马相如和卓文君的凤求凰，在向下面一样青春、阳光的女孩示爱。你甚至可以感受得到，女孩穿的是运动鞋，不是那些个庸脂俗粉的各路妖魔鬼怪的也称之为鞋的东西；圆圆的脸蛋，不是那种看起来审美疲劳的瓜子脸，白洗干净，黑色镜框，头发整齐的扎在后面，阳光在侧面打过来，肉肉的脸蛋上的绒毛都一清二楚；穿着干净简洁的衬衫，穿着同样干净简洁的牛仔裤。这样一个午后，一个青春的校园爱情故事就要发生了。<br>我大概学了唱这歌，听起来就像我那只不争气的柯基在学狼叫，滑稽。糙。妈的好伤心。看来这辈子想唱点什么是没戏了。毕竟我还是知道回字有四种写法的。是不是该一脸得意呢。</p>
 <a id="more"></a>
@@ -843,123 +1048,6 @@
       <category term="私人" scheme="http://yoursite.com/tags/%E7%A7%81%E4%BA%BA/"/>
     
       <category term="自欺欺人" scheme="http://yoursite.com/tags/%E8%87%AA%E6%AC%BA%E6%AC%BA%E4%BA%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Create a Hexo Theme 3</title>
-    <link href="http://yoursite.com/2016/09/07/hexotheme2/"/>
-    <id>http://yoursite.com/2016/09/07/hexotheme2/</id>
-    <published>2016-09-07T12:33:18.000Z</published>
-    <updated>2016-09-07T12:50:45.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Part-3-Wrapping-up-with-Disqus-comments-Google-Analytics-and-the-widgets"><a href="#Part-3-Wrapping-up-with-Disqus-comments-Google-Analytics-and-the-widgets" class="headerlink" title="Part 3: Wrapping up with Disqus comments, Google Analytics and the widgets"></a>Part 3: Wrapping up with Disqus comments, Google Analytics and the widgets</h2><hr>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Part-3-Wrapping-up-with-Disqus-comments-Google-Analytics-and-the-widgets&quot;&gt;&lt;a href=&quot;#Part-3-Wrapping-up-with-Disqus-comments-Google-A
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
-    
-      <category term="Theme" scheme="http://yoursite.com/tags/Theme/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Create a Hexo Theme 2</title>
-    <link href="http://yoursite.com/2016/09/07/hexotheme1/"/>
-    <id>http://yoursite.com/2016/09/07/hexotheme1/</id>
-    <published>2016-09-07T12:33:13.000Z</published>
-    <updated>2016-09-07T12:56:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Part-2-Finishing-up-the-remaining-pages"><a href="#Part-2-Finishing-up-the-remaining-pages" class="headerlink" title="Part 2: Finishing up the remaining pages"></a>Part 2: Finishing up the remaining pages</h2><hr>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Part-2-Finishing-up-the-remaining-pages&quot;&gt;&lt;a href=&quot;#Part-2-Finishing-up-the-remaining-pages&quot; class=&quot;headerlink&quot; title=&quot;Part 2: Finish
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
-    
-      <category term="Theme" scheme="http://yoursite.com/tags/Theme/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Create a Hexo Theme 1</title>
-    <link href="http://yoursite.com/2016/09/07/hexotheme0/"/>
-    <id>http://yoursite.com/2016/09/07/hexotheme0/</id>
-    <published>2016-09-07T12:33:08.000Z</published>
-    <updated>2016-09-09T08:36:39.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Part-1-Setting-up-the-project-and-creating-the-blog’s-main-index-page"><a href="#Part-1-Setting-up-the-project-and-creating-the-blog’s-main-index-page" class="headerlink" title="Part 1: Setting up the project and creating the blog’s main index page"></a>Part 1: Setting up the project and creating the blog’s main index page</h2><hr>
-<p>In this multi part tutorial, you will learn how to create an Hexo Theme from scratch. I really love Hexo and use it everyday; unfortunately, as of today, the documentation for theme creation is pretty slim. Here is my attempt at fixing that.</p>
-<a id="more"></a>
-<h3 id="LINKS-TO-OTHER-SECTIONS"><a href="#LINKS-TO-OTHER-SECTIONS" class="headerlink" title="LINKS TO OTHER SECTIONS"></a>LINKS TO OTHER SECTIONS</h3><hr>
-<ul>
-<li>Part 1: Setting up the project and creating the blog’s main index pages</li>
-<li>Part 2: Finishing up the remaining pages</li>
-<li>Part 3: Wrapping up with Disqus comments, Google Analytics and the widgets</li>
-</ul>
-<h3 id="PREREQUISITES"><a href="#PREREQUISITES" class="headerlink" title="PREREQUISITES"></a>PREREQUISITES</h3><hr>
-<ul>
-<li>The very basics of blogging with hexo. If you are completely new, check the getting started guide on hexo.io.</li>
-<li>Some knowledge of Bootstrap</li>
-<li>Some knowledge of a JavaScript templating engine (we will use EJS)</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Part-1-Setting-up-the-project-and-creating-the-blog’s-main-index-page&quot;&gt;&lt;a href=&quot;#Part-1-Setting-up-the-project-and-creating-the-blog’s-main-index-page&quot; class=&quot;headerlink&quot; title=&quot;Part 1: Setting up the project and creating the blog’s main index page&quot;&gt;&lt;/a&gt;Part 1: Setting up the project and creating the blog’s main index page&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;In this multi part tutorial, you will learn how to create an Hexo Theme from scratch. I really love Hexo and use it everyday; unfortunately, as of today, the documentation for theme creation is pretty slim. Here is my attempt at fixing that.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
-    
-      <category term="Theme" scheme="http://yoursite.com/tags/Theme/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小巷</title>
-    <link href="http://yoursite.com/2016/09/07/poetry0/"/>
-    <id>http://yoursite.com/2016/09/07/poetry0/</id>
-    <published>2016-09-07T12:27:16.000Z</published>
-    <updated>2016-09-07T12:30:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="小巷"><a href="#小巷" class="headerlink" title="小巷"></a>小巷</h2><hr>
-<a id="more"></a>
-<blockquote><p>小巷<br>又弯又长<br>没有门<br>没有窗<br>我拿把旧钥匙<br>敲着厚厚的墙</p>
-<footer><strong>顾城</strong><cite>小巷</cite></footer></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;小巷&quot;&gt;&lt;a href=&quot;#小巷&quot; class=&quot;headerlink&quot; title=&quot;小巷&quot;&gt;&lt;/a&gt;小巷&lt;/h2&gt;&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="Tips" scheme="http://yoursite.com/categories/Tips/"/>
-    
-    
-      <category term="诗" scheme="http://yoursite.com/tags/%E8%AF%97/"/>
-    
-      <category term="私人" scheme="http://yoursite.com/tags/%E7%A7%81%E4%BA%BA/"/>
     
   </entry>
   
