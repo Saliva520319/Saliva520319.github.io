@@ -1,0 +1,921 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=V-Dub:300,300italic,400,400italic,700,700italicComfortaa:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python,语法," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Saliva's Home" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="内容绝大部分出自《Python高级编程》，Luke Sneeringer，清华大学出版社，Python版本2.7。代码部分经修改可以完整运行，方便理解和直接测试。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python装饰器的使用">
+<meta property="og:url" content="http://yoursite.com/2016/12/24/decorator/index.html">
+<meta property="og:site_name" content="Saliva's Home">
+<meta property="og:description" content="内容绝大部分出自《Python高级编程》，Luke Sneeringer，清华大学出版社，Python版本2.7。代码部分经修改可以完整运行，方便理解和直接测试。">
+<meta property="og:updated_time" content="2016-12-25T15:36:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python装饰器的使用">
+<meta name="twitter:description" content="内容绝大部分出自《Python高级编程》，Luke Sneeringer，清华大学出版社，Python版本2.7。代码部分经修改可以完整运行，方便理解和直接测试。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Python装饰器的使用 | Saliva's Home </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?85c9f23df9df77c9fde275f7823edaea";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Saliva's Home</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python装饰器的使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-24T11:05:14+08:00" content="2016-12-24">
+              2016-12-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/24/decorator/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/24/decorator/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>内容绝大部分出自《Python高级编程》，Luke Sneeringer，清华大学出版社，Python版本2.7。<br>代码部分经修改可以完整运行，方便理解和直接测试。</p>
+<a id="more"></a>
+<h2 id="理解语法"><a href="#理解语法" class="headerlink" title="理解语法"></a>理解语法</h2><p>添加文档说明<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="comment">#书写装饰器，为函数添加说明</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">decorated_by</span><span class="params">(func)</span>:</span></div><div class="line">    <span class="comment">#在函数文档说明后添加指定字段</span></div><div class="line">    func.__doc__ += <span class="string">'\nDecorated by decorated_by.'</span></div><div class="line">    <span class="keyword">return</span> func</div><div class="line"><span class="comment">#书写函数</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x,y)</span>:</span></div><div class="line">    <span class="comment">#文档说明，通过.__doc__方法查看</span></div><div class="line">    <span class="string">'''I'm add...'''</span></div><div class="line">    <span class="keyword">return</span> x + y</div><div class="line"></div><div class="line"><span class="meta">@decorated_by</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add_</span><span class="params">(x,y)</span>:</span></div><div class="line">    <span class="string">'''I'm add_...'''</span></div><div class="line">    <span class="keyword">return</span> x + y</div><div class="line"><span class="comment">#分别测试</span></div><div class="line"><span class="comment">#原始add</span></div><div class="line">help(add)</div><div class="line"><span class="comment">#添加了装饰器的add_</span></div><div class="line">help(add_)</div><div class="line"><span class="comment">#修改了名称为add0，分别查看add和add0</span></div><div class="line">add0 = decorated_by(add)</div><div class="line">help(add0)</div><div class="line">help(add)</div></pre></td></tr></table></figure></p>
+<p>获取被装饰函数相关参数，详见<a href="https://docs.python.org/2/reference/datamodel.html" target="_blank" rel="external">Python官方文档</a>-Code objects<br>这部分内容我也不是很理解。可以边看文档边用ipython之类的工具配合查看理解。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="comment">#书写装饰器，为函数添加说明</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">decorated_by</span><span class="params">(func)</span>:</span></div><div class="line">    <span class="comment">#在函数文档说明后添加指定字段</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'函数文档:'</span>,func.func_doc</div><div class="line">    <span class="keyword">print</span> <span class="string">'函数名称:'</span>,func.func_name</div><div class="line">    <span class="keyword">print</span> <span class="string">'参数个数'</span>,func.func_code.co_argcount</div><div class="line">    <span class="keyword">print</span> <span class="string">'函数code对象名称:'</span>,func.func_code.co_name</div><div class="line">    <span class="keyword">print</span> <span class="string">'code对象常量？'</span>,func.func_code.co_consts</div><div class="line">    <span class="keyword">print</span> <span class="string">'参数元组:'</span>,func.func_code.co_varnames</div><div class="line"><span class="comment">#书写函数</span></div><div class="line"><span class="meta">@decorated_by</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x,y)</span>:</span></div><div class="line">    <span class="comment">#文档说明，通过.__doc__方法查看</span></div><div class="line">    <span class="string">'''I'm add...'''</span></div><div class="line">    <span class="keyword">return</span> x + y</div><div class="line">add(<span class="number">4</span>,<span class="number">5</span>)</div></pre></td></tr></table></figure>
+<p>装饰器应用的顺序，自下而上(因为函数的解析是自内而外的)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="meta">@also_decorated_by</span></div><div class="line"><span class="meta">@decorated_by</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x,y)</span>:</span></div><div class="line">    <span class="string">"""Return the sum of x and y."""</span></div><div class="line">    <span class="keyword">return</span> x + y</div><div class="line"><span class="comment">#上面的表达方式与下面相同</span></div><div class="line">add = also_decorated_by(decorated_by(add))</div></pre></td></tr></table></figure></p>
+<h2 id="装饰器的使用"><a href="#装饰器的使用" class="headerlink" title="装饰器的使用"></a>装饰器的使用</h2><p>例如静态方法<code>@staticmethod</code>和类方法<code>@classmethod</code>，单元测试mock模块的<code>@mock.path</code>和<code>@mock.path.object</code>。Web框架Django的<code>@login_required</code>(用户必须登录才能查看特定页面)和<code>@permission_required</code>(权限限制),Flask的<code>@app.route</code>,Celery的<code>@task</code>等。<br>装饰器显示的对函数进行前置和收尾工作，减少了代码的重复，并且增加了可读性。它主要应用在以下几个地方（<strong>主要</strong> 说的可能有些草率）：</p>
+<ul>
+<li>在被装饰函数之前或之后追加功能，如合法性检查，权限验证，记录函数结果等</li>
+<li>预处理函数的参数（如改变格式），处理函数的返回值（如格式化输出JSON或XML等），附加参数等</li>
+<li>函数的注册</li>
+</ul>
+<h2 id="装饰器的编写"><a href="#装饰器的编写" class="headerlink" title="装饰器的编写"></a>装饰器的编写</h2><p>函数装饰器（这里说函数装饰器是因为还有类装饰器）通常接受一个callable函数作为参数，返回一个可调用函数（注意，返回的可能不是那个函数了呦）。<br>示例一：函数注册表<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line">registry = []</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">register</span><span class="params">(decorated)</span>:</span></div><div class="line">    <span class="comment">#注意列表添加的是函数对象，类型为fuction object</span></div><div class="line">    registry.append(decorated)</div><div class="line">    <span class="keyword">return</span> decorated</div><div class="line"><span class="meta">@register</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x,y)</span>:</span></div><div class="line">    <span class="keyword">return</span> x + y</div><div class="line"><span class="meta">@register</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">multiply</span><span class="params">(x,y)</span>:</span></div><div class="line">  <span class="keyword">return</span> x * y</div><div class="line"><span class="comment">#确认列表里的对象是函数不是函数返回结果</span></div><div class="line"><span class="keyword">print</span> registry</div><div class="line"><span class="comment">#结果列表</span></div><div class="line">answers = []</div><div class="line"><span class="comment">#分别调用，批量执行注册表内的函数，并将结果追加到结果列表</span></div><div class="line"><span class="keyword">for</span> func <span class="keyword">in</span> registry:</div><div class="line">    answers.append(func(<span class="number">5</span>,<span class="number">3</span>))</div><div class="line"><span class="keyword">print</span> answers</div></pre></td></tr></table></figure></p>
+<p>另一个例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Registry</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">      self._functions = []</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">register</span><span class="params">(self,decorated)</span>:</span></div><div class="line">      self._functions.append(decorated)</div><div class="line">      <span class="keyword">return</span> decorated</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run_all</span><span class="params">(self,*args,**kwargs)</span>:</span></div><div class="line">      return_values = []</div><div class="line">      <span class="keyword">for</span> func <span class="keyword">in</span> self._functions:</div><div class="line">        return_values.append(func(*args,**kwargs))</div><div class="line">      <span class="keyword">return</span> return_values</div><div class="line"><span class="comment">#人机分离！</span></div><div class="line">a = Registry()</div><div class="line">b = Registry()</div><div class="line"></div><div class="line"><span class="meta">@a.register</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(x=<span class="number">3</span>)</span>:</span></div><div class="line">  <span class="keyword">return</span> x</div><div class="line"><span class="meta">@b.register</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">(x=<span class="number">5</span>)</span>:</span></div><div class="line">  <span class="keyword">return</span> x</div><div class="line"><span class="meta">@a.register</span></div><div class="line"><span class="meta">@b.register</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">sa</span><span class="params">(x=<span class="number">7</span>)</span>:</span></div><div class="line">  <span class="keyword">return</span> x</div><div class="line"><span class="comment">#查看各自结果</span></div><div class="line"><span class="keyword">print</span> a.run_all()</div><div class="line"><span class="keyword">print</span> b.run_all()</div><div class="line"><span class="comment">#赋值</span></div><div class="line"><span class="keyword">print</span> a.run_all(<span class="number">4</span>)</div></pre></td></tr></table></figure></p>
+<p>示例二：类型检查<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="comment">#装饰器检查函数参数是否为整形</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">requires_ints</span><span class="params">(func)</span>:</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">replace_of_func</span><span class="params">(*args,**kwargs)</span>:</span></div><div class="line">    <span class="comment">#获取字典方式传入的参数</span></div><div class="line">    kwarg_values = [i <span class="keyword">for</span> i <span class="keyword">in</span> kwargs.values()]</div><div class="line">    <span class="comment">#判断所有参数值是不是整数</span></div><div class="line">    <span class="keyword">for</span> arg <span class="keyword">in</span> list(args) + kwarg_values:</div><div class="line">      <span class="keyword">if</span> <span class="keyword">not</span> isinstance(arg,int):</div><div class="line">        <span class="keyword">raise</span> TypeError(<span class="string">'%s only accepts intergers as arguments.'</span> % func.__name__)</div><div class="line">    <span class="comment">#参数没问题的话要返回func的计算值</span></div><div class="line">    <span class="keyword">return</span> func(*args,**kwargs)</div><div class="line">  <span class="comment">#原始函数func已经被替换了</span></div><div class="line">  <span class="keyword">return</span> replace_of_func</div><div class="line"><span class="meta">@requires_ints</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(x,y)</span>:</span></div><div class="line">  <span class="keyword">return</span> x + y</div><div class="line"><span class="comment">#help命令已经暴露了，这个装饰器其实已经把原始func替换掉了，只不过是计算结果一致而已</span></div><div class="line">help(foo)</div><div class="line"><span class="comment">#查看错误输入和正确输入</span></div><div class="line"><span class="keyword">print</span> foo(<span class="number">1</span>,<span class="number">2</span>)</div><div class="line">foo(<span class="string">'1'</span>,<span class="string">'2'</span>)</div></pre></td></tr></table></figure></p>
+<p>另一个例子，在上述代码的基础上,追加了<code>@functools.wraps(func)</code>,<code>help(foo)</code>返回结果则不同了，没有暴露出我们的狸猫换太子。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> functools</div><div class="line">...</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">requires_ints</span><span class="params">(func)</span>:</span></div><div class="line">  <span class="comment">#functools.wraps(func)接受了一个参数即func，并保存了帮助和文档字符串等内容</span></div><div class="line"><span class="meta">  @functools.wraps(func)</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">replace_of_func</span><span class="params">(*args,**kwargs)</span>:</span></div><div class="line">    ...</div></pre></td></tr></table></figure>
+<p>示例三：用户验证</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="comment">#区分普通用户和匿名用户，并用__nonzero__私有方法做标识（返回False）</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span><span class="params">(object)</span>:</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,username,email)</span>:</span></div><div class="line">    self.username = username</div><div class="line">    self.email = email</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AnonymousUser</span><span class="params">(object)</span>:</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">    self.username = <span class="keyword">None</span></div><div class="line">    self.email = <span class="keyword">None</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__nonzero__</span><span class="params">(self)</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="keyword">import</span> functools</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">requires_user</span><span class="params">(func)</span>:</span></div><div class="line"><span class="meta">  @functools.wraps(func)</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(user,*args,**kwargs)</span>:</span></div><div class="line">    <span class="comment">#判断非零和用户类型</span></div><div class="line">    <span class="keyword">if</span> user <span class="keyword">and</span> isinstance(user,User):</div><div class="line">    <span class="comment">#原书这里写的是func(user,*args,**kwargs)，我认为应该是func(*args,**kwargs),</span></div><div class="line">    <span class="comment">#因为原始func只接受两个参数，并不包含user。</span></div><div class="line">      <span class="keyword">return</span> func(*args,**kwargs)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">      <span class="keyword">return</span> ValueError(<span class="string">'A valid user is required to run this.'</span>)</div><div class="line">  <span class="keyword">return</span> inner</div><div class="line"><span class="comment">#创建函数，并用help(foo)发现函数已经增加了一个参数</span></div><div class="line"><span class="meta">@requires_user</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(x,y)</span>:</span></div><div class="line">    <span class="keyword">return</span> x + y</div><div class="line">help(foo)</div><div class="line"><span class="comment">#创建类实例，来验证参数个数和异常</span></div><div class="line">usr1 = User(<span class="string">'name'</span>,<span class="string">'email'</span>)</div><div class="line"><span class="keyword">print</span> foo(usr1,<span class="number">7</span>,<span class="number">8</span>)</div><div class="line"><span class="keyword">print</span> foo(<span class="number">7</span>,<span class="number">8</span>)</div></pre></td></tr></table></figure>
+<p>示例四：输出格式化</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> functools</div><div class="line"><span class="keyword">import</span> json</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">json_output</span><span class="params">(func)</span>:</span></div><div class="line">  <span class="comment">#序列化输出函数结果</span></div><div class="line"><span class="meta">  @functools.wraps(func)</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args,**kwargs)</span>:</span></div><div class="line">    result = func(*args,**kwargs)</div><div class="line">    <span class="keyword">return</span> json.dumps(result)</div><div class="line">  <span class="keyword">return</span> inner</div><div class="line"><span class="meta">@json_output</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">do_nothing</span><span class="params">()</span>:</span></div><div class="line">  <span class="keyword">return</span> &#123;<span class="string">'name'</span>:<span class="string">'YangMingJun'</span>&#125;</div><div class="line"><span class="comment">#测试</span></div><div class="line"><span class="keyword">print</span> do_nothing(),type(do_nothing())</div></pre></td></tr></table></figure>
+<p>另一个例子:捕获特定异常并JSON输出<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> functools</div><div class="line"><span class="keyword">import</span> json</div><div class="line"></div><div class="line"><span class="comment">#定义异常</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">JSONOutputError</span><span class="params">(Exception)</span>:</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,message)</span>:</span></div><div class="line">    self._message = message</div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></div><div class="line">    <span class="keyword">return</span> self._message</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">json_output</span><span class="params">(func)</span>:</span></div><div class="line"><span class="meta">  @functools.wraps(func)</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args,**kwargs)</span>:</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">      result = func(*args,**kwargs)</div><div class="line">    <span class="keyword">except</span> JSONOutputError <span class="keyword">as</span> ex:</div><div class="line">      result = &#123;<span class="string">'status'</span>:<span class="string">'error'</span>,<span class="string">'message'</span>:str(ex)&#125;</div><div class="line">    <span class="keyword">return</span> json.dumps(result)</div><div class="line">  <span class="keyword">return</span> inner</div><div class="line"><span class="comment">#可以针对特定异常进行处理（本处为JSONOutputError）</span></div><div class="line"><span class="meta">@json_output</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">error</span><span class="params">()</span>:</span></div><div class="line">  <span class="keyword">raise</span> JSONOutputError(<span class="string">'This function is erratic.'</span>)</div><div class="line"><span class="comment">#打印输出</span></div><div class="line"><span class="keyword">print</span> error()</div><div class="line"><span class="comment">#查看其他类型异常</span></div><div class="line"><span class="meta">@json_output</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">other_error</span><span class="params">()</span>:</span></div><div class="line">  <span class="keyword">raise</span> ValueError(<span class="string">'What is this.'</span>)</div><div class="line"><span class="keyword">print</span> other_error()</div></pre></td></tr></table></figure></p>
+<p>示例五：日志管理</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> functools</div><div class="line"><span class="keyword">import</span> logging</div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> os</div><div class="line"></div><div class="line"><span class="comment">#配置默认日志输出目录和格式,日志位于/tmp/test.log</span></div><div class="line">logging.basicConfig(level=logging.DEBUG,</div><div class="line">                    format=<span class="string">'%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s'</span>,</div><div class="line">                    datefmt=<span class="string">'%a, %d %b %Y %H:%M:%S'</span>,</div><div class="line">                    filename=<span class="string">'/tmp/test.log'</span>,</div><div class="line">                    filemode=<span class="string">'w'</span>)</div><div class="line"><span class="comment">#定义装饰器函数</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">logged</span><span class="params">(func)</span>:</span></div><div class="line"><span class="meta">  @functools.wraps(func)</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args,**kwargs)</span>:</span></div><div class="line">    <span class="comment">#记录开始时间</span></div><div class="line">    start = time.time()</div><div class="line">    <span class="comment">#记录结果</span></div><div class="line">    return_value = func(*args,**kwargs)</div><div class="line">    <span class="comment">#记录结束时间并计算</span></div><div class="line">    end = time.time()</div><div class="line">    delta = end - start</div><div class="line">    <span class="comment">#使用默认的日志设置</span></div><div class="line">    logger = logging.getLogger()</div><div class="line">    logger.warn(<span class="string">'Called method %s at %.2f;execution time %.2f seconds;result %r.'</span> % (func.__name__,start,delta,return_value))</div><div class="line">    <span class="comment">#返回原始func的返回值</span></div><div class="line">    <span class="keyword">return</span> return_value</div><div class="line">  <span class="keyword">return</span> inner</div><div class="line"><span class="comment">#</span></div><div class="line"><span class="meta">@logged</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">sleep_and_return</span><span class="params">(return_value)</span>:</span></div><div class="line">  time.sleep(<span class="number">2</span>)</div><div class="line">  <span class="keyword">return</span> return_value</div><div class="line"><span class="comment">#查看输出</span></div><div class="line"><span class="keyword">print</span> sleep_and_return(<span class="number">10</span>)</div><div class="line">os.system(<span class="string">'cat /tmp/test.log'</span>)</div></pre></td></tr></table></figure>
+<h2 id="带参数的装饰器"><a href="#带参数的装饰器" class="headerlink" title="带参数的装饰器"></a>带参数的装饰器</h2><p>废话少说，放码过来<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> functools</div><div class="line"><span class="keyword">import</span> json</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">JSONOutputError</span><span class="params">(Exception)</span>:</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,message)</span>:</span></div><div class="line">    self._message = message</div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></div><div class="line">    <span class="keyword">return</span> self._message</div><div class="line"><span class="comment">#添加参数的装饰器就是比普通的装饰器多了一层，外层负责接收参数，内层接收函数作为参数</span></div><div class="line"><span class="comment">#我的理解是，外层函数（这里是json_output）接收参数后，定向的返回了</span></div><div class="line"><span class="comment">#一个装饰器（这里是actual_decorator），这里定向是指针对所给的</span></div><div class="line"><span class="comment">#参数（indent=4）生成一个缩进4格的装饰器，然后actual_decorator就和普通装饰器</span></div><div class="line"><span class="comment">#做的工作一样，用另一个函数（这里是inner）去替代原始函数func，从而实现了带参数的效果</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">json_output</span><span class="params">(indent=None,sort_keys=False)</span>:</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">actual_decorator</span><span class="params">(func)</span>:</span></div><div class="line"><span class="meta">    @functools.wraps(func)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args,**kwargs)</span>:</span></div><div class="line">      <span class="keyword">try</span>:</div><div class="line">        result = func(*args,**kwargs)</div><div class="line">      <span class="keyword">except</span> JSONOutputError <span class="keyword">as</span> ex:</div><div class="line">        result = &#123;<span class="string">'status'</span>:<span class="string">'error'</span>,<span class="string">'message'</span>:str(ex)&#125;</div><div class="line">      <span class="keyword">return</span> json.dumps(result,indent=indent,sort_keys=sort_keys)</div><div class="line">    <span class="keyword">return</span> inner</div><div class="line">  <span class="keyword">return</span> actual_decorator</div><div class="line"><span class="comment">#注意，此时应用装饰器时，没有参数也必须调用（即@json_output()）,前文说了，这里调用相当于生成了</span></div><div class="line"><span class="comment">#actual_decorator装饰器，否则@json_output会报错,附加参数的效果</span></div><div class="line"><span class="comment">#相当于 json_output(参数)(do_nothing)，即actual_decorator(do_nothing)</span></div><div class="line"><span class="meta">@json_output(indent=4)</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">do_nothing</span><span class="params">()</span>:</span></div><div class="line">  <span class="keyword">return</span> &#123;<span class="string">'name'</span>:<span class="string">'YangMingJun'</span>&#125;</div><div class="line"></div><div class="line"><span class="keyword">print</span> do_nothing()，type(do_nothing())</div></pre></td></tr></table></figure></p>
+<p>理想的装饰器应该是这样的：</p>
+<ul>
+<li><code>@json_output</code></li>
+<li><code>@json_output()</code></li>
+<li><code>@json_output(参数)</code><br>所以对上述代码作如下修改：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> functools</div><div class="line"><span class="keyword">import</span> json</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">JSONOutputError</span><span class="params">(Exception)</span>:</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,message)</span>:</span></div><div class="line">    self._message = message</div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></div><div class="line">    <span class="keyword">return</span> self._message</div><div class="line"><span class="comment">#前面都一样</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">json_output</span><span class="params">(decorated_=None,indent=None,sort_keys=False)</span>:</span></div><div class="line">  <span class="comment">#加了一层判断，不应该同时函数func和参数都给json_output,即json_output(func,indent,sort_keys)</span></div><div class="line">  <span class="keyword">if</span> decorated_ <span class="keyword">and</span> (indent <span class="keyword">or</span> sort_keys):</div><div class="line">    <span class="keyword">raise</span> RuntimeError(<span class="string">'Unexpected arguments.'</span>)</div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">actual_decorator</span><span class="params">(func)</span>:</span></div><div class="line"><span class="meta">    @functools.wraps(func)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args,**kwargs)</span>:</span></div><div class="line">      <span class="keyword">try</span>:</div><div class="line">        result = func(*args,**kwargs)</div><div class="line">      <span class="keyword">except</span> JSONOutputError <span class="keyword">as</span> ex:</div><div class="line">        result = &#123;<span class="string">'status'</span>:<span class="string">'error'</span>,<span class="string">'message'</span>:str(ex)&#125;</div><div class="line">      <span class="keyword">return</span> json.dumps(result,indent=indent,sort_keys=sort_keys)</div><div class="line">    <span class="keyword">return</span> inner</div><div class="line">  <span class="comment">#加了一层判断，获得的参数是函数（即直接@json_output,相当于json_output(func)），</span></div><div class="line">  <span class="comment">#是函数则直接返回内层装饰器inner，否则照常返回actual_decorator</span></div><div class="line">  <span class="keyword">if</span> decorated_:</div><div class="line">    <span class="keyword">return</span> actual_decorator(decorated_)</div><div class="line">  <span class="keyword">else</span>:</div><div class="line">    <span class="keyword">return</span> actual_decorator</div><div class="line"></div><div class="line"><span class="comment">#仅测试不带调用,注意@json_output无括号调用，相当于decorated_ = do_nothing</span></div><div class="line"><span class="meta">@json_output</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">do_nothing</span><span class="params">()</span>:</span></div><div class="line">  <span class="keyword">return</span> &#123;<span class="string">'name'</span>:<span class="string">'YangMingJun'</span>&#125;</div><div class="line"><span class="keyword">print</span> do_nothing()，type(do_nothing())</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+            <a href="/tags/语法/" rel="tag">#语法</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/10/Graph0/" rel="next" title="图">
+                <i class="fa fa-chevron-left"></i> 图
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/24/song6/" rel="prev" title="Longing">
+                Longing <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/12/24/decorator/"
+     data-title="Python装饰器的使用"
+     data-content=""
+     data-url="http://yoursite.com/2016/12/24/decorator/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/24/decorator/"
+           data-title="Python装饰器的使用" data-url="http://yoursite.com/2016/12/24/decorator/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/profile.png"
+               alt="Saliva" />
+          <p class="site-author-name" itemprop="name">Saliva</p>
+          <p class="site-description motion-element" itemprop="description">与其感慨路难行，不如马上出发</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/your-user-name" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:chufengze@foxmail.com" target="_blank" title="Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Mail
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/playlist?id=22361212" target="_blank" title="Music">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                  Music
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zcool.com.cn" title="站酷" target="_blank">站酷</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://stackoverflow.com" title="Stack Overflow" target="_blank">Stack Overflow</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ui.cn" title="UI中国" target="_blank">UI中国</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.behance.net" title="Behance" target="_blank">Behance</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://dribbble.com" title="Dribble" target="_blank">Dribble</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.deviantart.com" title="Deviantart" target="_blank">Deviantart</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.awwwards.com" title="Awwwards" target="_blank">Awwwards</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.luoo.net" title="落网" target="_blank">落网</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#理解语法"><span class="nav-number">1.</span> <span class="nav-text">理解语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰器的使用"><span class="nav-number">2.</span> <span class="nav-text">装饰器的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰器的编写"><span class="nav-number">3.</span> <span class="nav-text">装饰器的编写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带参数的装饰器"><span class="nav-number">4.</span> <span class="nav-text">带参数的装饰器</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Saliva</span>
+</div>
+
+<div class="theme-info">
+  Powered by <a class="theme-link" href="https://hexo.io" >Hexo</a>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chufengze"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+
+</body>
+</html>
