@@ -2,23 +2,65 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2016/09/05/stack/</loc>
+    <loc>http://yoursite.com/about/index.html</loc>
     
-    <lastmod>2016-12-27T13:07:16.000Z</lastmod>
+    <lastmod>2017-01-01T13:08:06.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2016/09/13/song2/</loc>
     
-    <lastmod>2016-12-27T13:06:05.000Z</lastmod>
+    <lastmod>2017-01-01T13:05:10.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/09/09/something2/</loc>
+    <loc>http://yoursite.com/2016/09/05/stack/</loc>
     
-    <lastmod>2016-12-27T13:05:13.000Z</lastmod>
+    <lastmod>2017-01-01T13:02:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/12/24/song6/</loc>
+    
+    <lastmod>2017-01-01T13:02:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/10/03/song5/</loc>
+    
+    <lastmod>2017-01-01T13:01:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/17/song3/</loc>
+    
+    <lastmod>2017-01-01T13:01:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/09/song0/</loc>
+    
+    <lastmod>2017-01-01T12:58:31.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/12/26/generator/</loc>
+    
+    <lastmod>2016-12-28T02:39:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/12/26/contextmanager/</loc>
+    
+    <lastmod>2016-12-27T13:40:27.000Z</lastmod>
     
   </url>
   
@@ -44,30 +86,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/12/26/generator/</loc>
-    
-    <lastmod>2016-12-26T12:13:39.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/about/index.html</loc>
-    
-    <lastmod>2016-12-26T08:32:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2016/12/26/decorator0/</loc>
     
     <lastmod>2016-12-26T08:28:34.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/12/26/contextmanager/</loc>
-    
-    <lastmod>2016-12-26T06:40:52.000Z</lastmod>
     
   </url>
   
@@ -82,34 +103,6 @@
     <loc>http://yoursite.com/2016/12/25/python0/</loc>
     
     <lastmod>2016-12-25T02:42:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/12/24/song6/</loc>
-    
-    <lastmod>2016-12-24T14:22:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/09/15/something3/</loc>
-    
-    <lastmod>2016-12-24T14:16:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/09/17/song3/</loc>
-    
-    <lastmod>2016-12-24T14:15:16.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/10/03/song5/</loc>
-    
-    <lastmod>2016-12-24T13:45:33.000Z</lastmod>
     
   </url>
   
@@ -201,13 +194,6 @@
     <loc>http://yoursite.com/2016/09/13/song1/</loc>
     
     <lastmod>2016-09-13T11:58:51.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/09/09/song0/</loc>
-    
-    <lastmod>2016-09-09T09:17:34.000Z</lastmod>
     
   </url>
   

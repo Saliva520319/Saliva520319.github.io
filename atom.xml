@@ -80,11 +80,15 @@
     <link href="http://yoursite.com/2016/12/26/generator/"/>
     <id>http://yoursite.com/2016/12/26/generator/</id>
     <published>2016-12-26T12:11:50.000Z</published>
-    <updated>2016-12-26T12:13:39.000Z</updated>
+    <updated>2016-12-28T02:39:27.000Z</updated>
     
     <content type="html"><![CDATA[<p>内容绝大部分出自《Python高级编程》，Luke Sneeringer，清华大学出版社，Python版本2.7。<br>代码部分经修改可以完整运行，方便理解和直接测试。</p>
 <a id="more"></a>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div></pre></td></tr></table></figure>
+<p>生成器只在需要时才计算序列中的值，节省了内存空间。<br>生成器是一个函数，单次执行，直到迭代终止，可以表示无限序列（通过一个while true语句）。<br>生成器通常是通过yield语句实现。yield不会终止函数执行，而是暂停函数，当调用next或者send方法触发生成器时，生成器则从暂停位置继续执行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="comment">#无限斐波那契数列,如果你像我一样无聊的话，可以</span></div><div class="line"><span class="comment">#for i in fibonacci():print i 试一下刷屏的快感</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">fibonacci</span><span class="params">()</span>:</span></div><div class="line">    numbers = []</div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">      <span class="comment">#序列初始化，list里少于两个数就扔个1进去</span></div><div class="line">        <span class="keyword">if</span> len(numbers) &lt; <span class="number">2</span>:</div><div class="line">            numbers.append(<span class="number">1</span>)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="comment">#求出下一个值</span></div><div class="line">            numbers.append(sum(numbers))</div><div class="line">            <span class="comment">#弹出前一个，保证numbers中只有两个值</span></div><div class="line">            numbers.pop(<span class="number">0</span>)</div><div class="line">        <span class="comment">#每次输出序列尾部的值，程序顺序执行，当遇到的第一个yield语句后，输出yield语句</span></div><div class="line">        <span class="comment">#输出值，然后就暂停了，yield之后的语句（该处为下次循环）直到下次用next者send</span></div><div class="line">        <span class="comment">#启动生成器才会执行（详见下一个例子）</span></div><div class="line">        <span class="keyword">yield</span> numbers[<span class="number">-1</span>]</div><div class="line"><span class="comment">#赋值指定两个生成器</span></div><div class="line">f = fibonacci()</div><div class="line">a = fibonacci()</div><div class="line"><span class="comment">#查看类型：generator，可以看出生成器还没有初始化，所以没有产生数值</span></div><div class="line"><span class="keyword">print</span> type(f)</div><div class="line"><span class="comment">#查看方法，我们只关心next,send,throw</span></div><div class="line"><span class="keyword">print</span> dir(f)</div><div class="line"><span class="comment">#这句与f.next()效果等同，都是相当于初始化生成器</span></div><div class="line"><span class="comment">#但是初始化生成器时，不能send一个no-None的值，否则会报出</span></div><div class="line"><span class="comment">#TypeError: can't send non-None value to a just-started generator</span></div><div class="line"><span class="keyword">print</span> f.send(<span class="keyword">None</span>)</div><div class="line"><span class="comment">#连续输出几个值看看</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">  <span class="keyword">print</span> f.next(),</div><div class="line"><span class="keyword">print</span></div><div class="line"><span class="comment">#next不接受参数，否则会报</span></div><div class="line"><span class="comment">#TypeError: expected 0 arguments, got 1</span></div><div class="line"><span class="keyword">print</span> f.next()</div><div class="line"><span class="comment">#效果和上面一样</span></div><div class="line"><span class="keyword">print</span> f.send(<span class="keyword">None</span>)</div><div class="line"><span class="comment">#初始化后就可以随便send了（由于我们在生成器中没有接收传递进来的值，所以send什么都一样）</span></div><div class="line"><span class="keyword">print</span> f.send(<span class="number">1</span>)</div><div class="line"><span class="comment">#这句输出看得出来a,f是分开的</span></div><div class="line"><span class="keyword">print</span> a.next()</div><div class="line"><span class="keyword">print</span> f.next()</div></pre></td></tr></table></figure>
+<p>尽量写了个能看出yield语句暂停位置的东西：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"></div><div class="line">j = <span class="number">1</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">fibonacci</span><span class="params">()</span>:</span></div><div class="line">    numbers = []</div><div class="line">    <span class="keyword">global</span> j</div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">        <span class="keyword">if</span> len(numbers) &lt; <span class="number">2</span>:</div><div class="line">            numbers.append(<span class="number">1</span>)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            numbers.append(sum(numbers))</div><div class="line">            last = numbers.pop(<span class="number">0</span>)</div><div class="line">        j += <span class="number">1</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'Before yield: '</span>,</div><div class="line">        <span class="keyword">print</span> [i <span class="keyword">for</span> i <span class="keyword">in</span> numbers[:]],<span class="string">'yield output:'</span>,</div><div class="line">        <span class="keyword">yield</span> numbers[<span class="number">-1</span>]</div><div class="line">        <span class="keyword">print</span> <span class="string">'After yield:'</span>,</div><div class="line">        <span class="keyword">print</span> [i <span class="keyword">for</span> i <span class="keyword">in</span> numbers[:]]</div><div class="line">        <span class="comment">#print 'last number is %s' % numbers[-1]</span></div><div class="line"></div><div class="line">f = fibonacci()</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</div><div class="line">    <span class="keyword">print</span> <span class="string">'\nOutput %s '</span> % j</div><div class="line">    <span class="keyword">print</span> f.next()</div></pre></td></tr></table></figure>
+<p>输出如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Output 1</div><div class="line">Before yield:  [1] yield output: 1</div><div class="line"></div><div class="line">Output 2</div><div class="line">After yield: [1]</div><div class="line">Before yield:  [1, 1] yield output: 1</div><div class="line"></div><div class="line">Output 3</div><div class="line">After yield: [1, 1]</div><div class="line">Before yield:  [1, 2] yield output: 2</div><div class="line"></div><div class="line">Output 4</div><div class="line">After yield: [1, 2]</div><div class="line"></div><div class="line">Before yield:  [2, 3] yield output: 3</div><div class="line"></div><div class="line">Output 5</div><div class="line">After yield: [2, 3]</div><div class="line">Before yield:  [3, 5] yield output: 5</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
@@ -107,7 +111,7 @@
     <link href="http://yoursite.com/2016/12/26/contextmanager/"/>
     <id>http://yoursite.com/2016/12/26/contextmanager/</id>
     <published>2016-12-26T06:39:15.000Z</published>
-    <updated>2016-12-26T06:40:52.000Z</updated>
+    <updated>2016-12-27T13:40:27.000Z</updated>
     
     <content type="html"><![CDATA[<p>内容绝大部分出自《Python高级编程》，Luke Sneeringer，清华大学出版社，Python版本2.7。<br>代码部分经修改可以完整运行，方便理解和直接测试。</p>
 <a id="more"></a>
@@ -192,18 +196,16 @@
     <link href="http://yoursite.com/2016/12/24/song6/"/>
     <id>http://yoursite.com/2016/12/24/song6/</id>
     <published>2016-12-24T13:44:43.000Z</published>
-    <updated>2016-12-24T14:22:29.000Z</updated>
+    <updated>2017-01-01T13:02:24.000Z</updated>
     
-    <content type="html"><![CDATA[<p>应该是翻译做渴望吧。<br>渴望的是什么呢？<br>今天是平安夜，明天是圣诞节，我在家里练练吉他，没什么起色，手疼得厉害。<br>我天生就是比较笨的，笨手笨脚，脑子也不灵光，有时候感觉自己都可笑，强忍着不笑出来，不然自己笑自己实在是太可怜了。唱也不行，跳也不行，就只能指弹了，手指，尤其是中指和无名指始终分不太开，不过手指的力气大了许多，小指也还好。有些事情着急不了，已然输在起跑线上了。羡慕那些从小就有很多资源的人，起码想玩什么，哪怕是3分钟热度也行，不用担心钱的问题。<br>晚上不知道她去做什么，想什么，和谁在一起。实在是毫无办法的事情。我也知道自己一无是处，但是喜欢一个人总归是没错的吧？只不过我每次照镜子，都感觉在她的眼里的我是这样一副丑陋皮囊，心里还是非常落寞的。每次说的什么，事后也觉得我自己好蠢，她会不会把我想成是个可恶的人呐？总归没有办法，没有办法。<br>我很久之前想过能挺开心得意地为面前的姑娘弹点曲子，轻轻松松的，就好像在用音乐表达情绪一样，寻找一种通性，看来是很难了。<br>孤独是在所难免的。</p>
-<p>祝你快乐。哈哈哈反正你也不知道。</p>
+    <content type="html"><![CDATA[<p>应该是翻译做渴望吧。</p>
 <a id="more"></a>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=27588021&auto=1&height=66"></iframe>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;应该是翻译做渴望吧。&lt;br&gt;渴望的是什么呢？&lt;br&gt;今天是平安夜，明天是圣诞节，我在家里练练吉他，没什么起色，手疼得厉害。&lt;br&gt;我天生就是比较笨的，笨手笨脚，脑子也不灵光，有时候感觉自己都可笑，强忍着不笑出来，不然自己笑自己实在是太可怜了。唱也不行，跳也不行，就只能指弹了，手指，尤其是中指和无名指始终分不太开，不过手指的力气大了许多，小指也还好。有些事情着急不了，已然输在起跑线上了。羡慕那些从小就有很多资源的人，起码想玩什么，哪怕是3分钟热度也行，不用担心钱的问题。&lt;br&gt;晚上不知道她去做什么，想什么，和谁在一起。实在是毫无办法的事情。我也知道自己一无是处，但是喜欢一个人总归是没错的吧？只不过我每次照镜子，都感觉在她的眼里的我是这样一副丑陋皮囊，心里还是非常落寞的。每次说的什么，事后也觉得我自己好蠢，她会不会把我想成是个可恶的人呐？总归没有办法，没有办法。&lt;br&gt;我很久之前想过能挺开心得意地为面前的姑娘弹点曲子，轻轻松松的，就好像在用音乐表达情绪一样，寻找一种通性，看来是很难了。&lt;br&gt;孤独是在所难免的。&lt;/p&gt;
-&lt;p&gt;祝你快乐。哈哈哈反正你也不知道。&lt;/p&gt;
+      &lt;p&gt;应该是翻译做渴望吧。&lt;/p&gt;
     
     </summary>
     
@@ -408,9 +410,9 @@
     <link href="http://yoursite.com/2016/10/03/song5/"/>
     <id>http://yoursite.com/2016/10/03/song5/</id>
     <published>2016-10-03T13:57:53.000Z</published>
-    <updated>2016-12-24T13:45:33.000Z</updated>
+    <updated>2017-01-01T13:01:38.000Z</updated>
     
-    <content type="html"><![CDATA[<p>我很喜欢这里面的乐器。<br>我小时候也是会吹箫和笛子的（羞耻），也是上过舞台的(学校文艺汇演的大场面，不过不是独奏)，不过没坚持住发展势头，现在反而越来越平庸了。干啥啥不行，（不只是钱）一点也不富有。我这矫情，老在自己的博客说这些东西，一点都不干。不过（说出来你可能不信，我这二指禅 <em>过</em> 字就打错了8次，可怜我还数了下）好在也没人关心，哈哈哈。<br>就在我感觉要<strong>__</strong>（此处缺少主语）没戏了的时候,在简书上看到一篇安利的文章，说什么老天爷总会在关键时刻把<strong>__</strong>一脚踹到你身边。同一天，喜欢的姑娘就跟我微信了（好吧，我承认，她可能就是八卦一下，或者喝假酒了）。尽管只是随便说了几句，并且大部分时间都是我在絮絮叨叨的，我还是高兴地像尿床没被抓一样。晚上健身的时候好像兄贵附体了。然而。有不过是空欢喜一场而已。<br>说好十一要把PPT好好整理一下，HTTP协议书也到了，TCP/IP也到了。结果DOTA比赛两天，焦虑。好在身还是贱。这么下去要一事无成啊。该学的要学啊。<br>不学不会不练，可怜可笑可恨。</p>
+    <content type="html"><![CDATA[<p>我很喜欢这里面的乐器。</p>
 <a id="more"></a>
 <blockquote><p>男：唐僧取经西天还<br>一番阴谋归长安<br>棋盘为地子为天<br>唯独这猴王本性难缠</p>
 <p>女：山高自有客行路<br>水深自有渡人船<br>辱者定碌碌<br>荣者自安安</p>
@@ -423,7 +425,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;我很喜欢这里面的乐器。&lt;br&gt;我小时候也是会吹箫和笛子的（羞耻），也是上过舞台的(学校文艺汇演的大场面，不过不是独奏)，不过没坚持住发展势头，现在反而越来越平庸了。干啥啥不行，（不只是钱）一点也不富有。我这矫情，老在自己的博客说这些东西，一点都不干。不过（说出来你可能不信，我这二指禅 &lt;em&gt;过&lt;/em&gt; 字就打错了8次，可怜我还数了下）好在也没人关心，哈哈哈。&lt;br&gt;就在我感觉要&lt;strong&gt;__&lt;/strong&gt;（此处缺少主语）没戏了的时候,在简书上看到一篇安利的文章，说什么老天爷总会在关键时刻把&lt;strong&gt;__&lt;/strong&gt;一脚踹到你身边。同一天，喜欢的姑娘就跟我微信了（好吧，我承认，她可能就是八卦一下，或者喝假酒了）。尽管只是随便说了几句，并且大部分时间都是我在絮絮叨叨的，我还是高兴地像尿床没被抓一样。晚上健身的时候好像兄贵附体了。然而。有不过是空欢喜一场而已。&lt;br&gt;说好十一要把PPT好好整理一下，HTTP协议书也到了，TCP/IP也到了。结果DOTA比赛两天，焦虑。好在身还是贱。这么下去要一事无成啊。该学的要学啊。&lt;br&gt;不学不会不练，可怜可笑可恨。&lt;/p&gt;
+      &lt;p&gt;我很喜欢这里面的乐器。&lt;/p&gt;
     
     </summary>
     
@@ -798,9 +800,9 @@
     <link href="http://yoursite.com/2016/09/17/song3/"/>
     <id>http://yoursite.com/2016/09/17/song3/</id>
     <published>2016-09-17T13:46:05.000Z</published>
-    <updated>2016-12-24T14:15:16.000Z</updated>
+    <updated>2017-01-01T13:01:03.000Z</updated>
     
-    <content type="html"><![CDATA[<p>居然由于版权保护，无法生成外链。<br>达达的黄金时代，一整张专辑都很好，怎么说呢，就是年轻逼人。隔着耳机你都能感觉彭坦的喉结在随着歌曲，像一只没长毛的老鼠，在蠕动。<br>我这么比喻可能有点恶心，或者说有点GAY?毕竟一个一脸痘的粗犷老爷们听着唧唧歪歪的情歌，想像男主唱的喉结，是很奇怪的一件事。但是阳光这东西真的不是谁都有，真的，难以掩盖。歌曲鼓点响起来的时候，画面感很强，在青春的校园，男孩得意洋洋又故意扮酷的打着爵士鼓，仿佛司马相如和卓文君的凤求凰，下面是同样青春、阳光的的可爱的女孩子，阳光在她的脸上留下的是外放的情绪。你可以看得见，女孩穿的是运动鞋，不是那些个庸脂俗粉的各路妖魔鬼怪的也称之为鞋的东西；圆圆的脸蛋，不是那种审美疲劳的瓜子脸，白皙，干净，黑色镜框，头发整齐的扎在后面，阳光在侧面打过来，肉肉的脸蛋上的绒毛都一清二楚，饱满的嘴唇，干净简洁的衬衫，干净简洁的牛仔裤。这样一个午后，一个美好的，青春的校园爱情故事就要发生了，或者，已经发生了。<br>我大概学了学这歌，听起来就像我那只不争气的柯基在学狼叫，滑稽。粗糙。妈的好伤心。看来这辈子想唱点什么是没戏了。</p>
+    <content type="html"><![CDATA[<p>居然由于版权保护，无法生成外链。</p>
 <a id="more"></a>
 <blockquote><p>在那些黎明将至的山谷里<br>我急促的甚至奔跑起来<br>生命穿越过苏醒的花丛<br>让我带走这里躁动的希望<br>在那些炙热潮湿的喧嚣里<br>我急促的甚至奔跑起来<br>汗水渗透着城市的睡梦<br>让我带走这里火红的舞蹈<br>在那些插着稻草人的田野里<br>我急促的甚至奔跑起来<br>风吹拂金黄色的大地<br>让我带走这里成熟的消息<br>在那些雪花绽放的日子里<br>我急促的甚至奔跑起来<br>冰雪的花粉在脸上融化<br>让我带走这里所有的回忆<br>谁能够明白<br>爱又是什么<br>谁能告诉我<br>我该去哪里</p>
 <p>在那些雪花绽放的日子里<br>我急促的甚至奔跑起来<br>冰雪的花粉在脸上融化<br>让我带走这里所有的回忆<br>在那些插着稻草人的田野里<br>我急促的甚至奔跑起来<br>风吹拂金黄色的大地<br>让我带走这里成熟的消息<br>在那些炙热潮湿的喧嚣里<br>我急促的甚至奔跑起来<br>汗水渗透着城市的睡梦<br>让我带走这里火红的舞蹈<br>在那些黎明将至的山谷里<br>我急促的甚至奔跑起来<br>生命穿越过苏醒的花丛<br>让我带走这里躁动的希望<br>你告诉我 爱就是森林<br>我向森林奔去<br>你告诉我 爱就是海湾<br>我向海湾骑行<br>你告诉我 爱就是云朵,<br>我向云朵飞翔<br>你告诉我 爱就在你心中<br>我轻轻吻你</p>
@@ -810,7 +812,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;居然由于版权保护，无法生成外链。&lt;br&gt;达达的黄金时代，一整张专辑都很好，怎么说呢，就是年轻逼人。隔着耳机你都能感觉彭坦的喉结在随着歌曲，像一只没长毛的老鼠，在蠕动。&lt;br&gt;我这么比喻可能有点恶心，或者说有点GAY?毕竟一个一脸痘的粗犷老爷们听着唧唧歪歪的情歌，想像男主唱的喉结，是很奇怪的一件事。但是阳光这东西真的不是谁都有，真的，难以掩盖。歌曲鼓点响起来的时候，画面感很强，在青春的校园，男孩得意洋洋又故意扮酷的打着爵士鼓，仿佛司马相如和卓文君的凤求凰，下面是同样青春、阳光的的可爱的女孩子，阳光在她的脸上留下的是外放的情绪。你可以看得见，女孩穿的是运动鞋，不是那些个庸脂俗粉的各路妖魔鬼怪的也称之为鞋的东西；圆圆的脸蛋，不是那种审美疲劳的瓜子脸，白皙，干净，黑色镜框，头发整齐的扎在后面，阳光在侧面打过来，肉肉的脸蛋上的绒毛都一清二楚，饱满的嘴唇，干净简洁的衬衫，干净简洁的牛仔裤。这样一个午后，一个美好的，青春的校园爱情故事就要发生了，或者，已经发生了。&lt;br&gt;我大概学了学这歌，听起来就像我那只不争气的柯基在学狼叫，滑稽。粗糙。妈的好伤心。看来这辈子想唱点什么是没戏了。&lt;/p&gt;
+      &lt;p&gt;居然由于版权保护，无法生成外链。&lt;/p&gt;
     
     </summary>
     
