@@ -105,7 +105,7 @@ V是顶点集合，E是边集合， E ⊆ V × V
 V是顶点集合，E是边集合， E ⊆ V × V
 有向图的边有方向，是顶点的有序对，无向图边无方向。（之后的 有向边 表示为尖括号，&amp;lt; vi,vj &amp;gt; 表示vi到vj的边，无向边用圆括号表示）
 &amp;lt; vi,vj &amp;gt; ∈ E,vj为vi的邻接点(无向图的邻接点是双向的)，不考虑顶点到自身的边，无重复的边。">
-<meta property="og:updated_time" content="2016-10-10T02:18:25.000Z">
+<meta property="og:updated_time" content="2017-03-02T06:40:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图">
 <meta name="twitter:description" content="概念&amp;amp;性质&amp;amp;实现一个图是一个二元组G=(V,E),其中：
@@ -343,13 +343,6 @@ V是顶点集合，E是边集合， E ⊆ V × V
 
           
             
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/10/Graph0/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/10/Graph0/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -374,10 +367,29 @@ V是顶点集合，E是边集合， E ⊆ V × V
 <li>V是顶点集合，E是边集合， E ⊆ V × V</li>
 <li><em>有向图</em>的边有方向，是顶点的有序对，<em>无向图</em>边无方向。（之后的 <em>有向边</em> 表示为尖括号，&lt; v<sub>i</sub>,v<sub>j</sub> &gt; 表示v<sub>i</sub>到v<sub>j</sub>的边，<em>无向边</em>用圆括号表示）</li>
 <li>&lt; v<sub>i</sub>,v<sub>j</sub> &gt; ∈ E,v<sub>j</sub>为v<sub>i</sub>的邻接点(无向图的邻接点是双向的)，不考虑顶点到自身的边，无重复的边。</li>
-<li>完全图：任意两顶点之间都有边（有向图<code>n×(n-1)</code>,无向图<code>n×(n-1)/2</code>）|E|≦|V|<sup>2</sup>,即|E|=O(|V|<sup>2</sup>)</li>
+<li><strong>完全图</strong>：任意两顶点之间都有边（有向图<code>n×(n-1)</code>,无向图<code>n×(n-1)/2</code>）|E|≦|V|<sup>2</sup>,即|E|=O(|V|<sup>2</sup>)</li>
 <li>度：一个顶点邻接边的条数，有向图有入度和出度,边数等于所有顶点度数和的一半（有向图要同时算入度和出度）</li>
-<li>路径：沿着边（有向图边有方向）从一顶点v<sub>i</sub>到另一顶点v<sub>j</sub>的通路称为v<sub>i</sub>到v<sub>j</sub>的一条路径，长度为边的条数，环路指起点终点相同，若环路除了起点终点外都不同则称为<strong>简单回路</strong></li>
+<li><strong>路径</strong>：沿着边（有向图边有方向）从一顶点v<sub>i</sub>到另一顶点v<sub>j</sub>的通路称为v<sub>i</sub>到v<sub>j</sub>的一条路径，长度为边的条数，环路指起点终点相同，若环路除了起点终点外都不同则称为<strong>简单回路</strong>，<strong>简单路径</strong>。</li>
+<li><strong>有根图</strong>：图里的某一顶点到任意其他顶点都有路径，则该图为有根图，该顶点称为根</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>ADT Graph</th>
+<th>一个图的抽象数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Graph(self)</td>
+<td>图构造操作，创建一个新图</td>
+</tr>
+<tr>
+<td>is_empty(self)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <a id="more"></a>
       
     </div>
@@ -435,25 +447,6 @@ V是顶点集合，E是边集合， E ⊆ V × V
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/10/10/Graph0/"
-     data-title="图"
-     data-content=""
-     data-url="http://yoursite.com/2016/10/10/Graph0/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
-
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
-</div>
-      
     </div>
   </div>
 
@@ -464,10 +457,6 @@ V是顶点集合，E是边集合， E ⊆ V × V
 
           
   <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2016/10/10/Graph0/"
-           data-title="图" data-url="http://yoursite.com/2016/10/10/Graph0/">
-      </div>
     
   </div>
 
@@ -511,7 +500,7 @@ V是顶点集合，E是边集合， E ⊆ V × V
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-count">47</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -519,7 +508,7 @@ V是顶点集合，E是边集合， E ⊆ V × V
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -528,7 +517,7 @@ V是顶点集合，E是边集合， E ⊆ V × V
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -744,28 +733,9 @@ V是顶点集合，E是边集合， E ⊆ V × V
 
   
 
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"chufengze"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-  
 
 
+  
 
 
 

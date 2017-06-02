@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-27T12:59:54.000Z</updated>
+  <updated>2017-05-17T08:32:56.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,280 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>strace</title>
+    <link href="http://yoursite.com/2017/05/12/linux2/"/>
+    <id>http://yoursite.com/2017/05/12/linux2/</id>
+    <published>2017-05-12T02:57:49.000Z</published>
+    <updated>2017-05-17T08:32:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>strace命令是一个集诊断、调试、统计与一体的工具，我们可以使用strace对应用的系统调用和信号传递的跟踪结果来对应用进行分析，以达到解决问题或者是了解应用工作过程的目的。当然strace与专业的调试工具比如说gdb之类的是没法相比的，因为它不是一个专业的调试器。 strace的最简单的用法就是执行一个指定的命令，在指定的命令结束之后它也就退出了。在命令执行的过程中，strace会记录和解析命令进程的所有系统调用以及这个进程所接收到的所有的信号值。</p>
+<p>来自: <a href="http://man.linuxde.net/strace" target="_blank" rel="external">http://man.linuxde.net/strace</a><br><a id="more"></a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;strace命令是一个集诊断、调试、统计与一体的工具，我们可以使用strace对应用的系统调用和信号传递的跟踪结果来对应用进行分析，以达到解决问题或者是了解应用工作过程的目的。当然strace与专业的调试工具比如说gdb之类的是没法相比的，因为它不是一个专业的调试器。 strace的最简单的用法就是执行一个指定的命令，在指定的命令结束之后它也就退出了。在命令执行的过程中，strace会记录和解析命令进程的所有系统调用以及这个进程所接收到的所有的信号值。&lt;/p&gt;
+&lt;p&gt;来自: &lt;a href=&quot;http://man.linuxde.net/strace&quot;&gt;http://man.linuxde.net/strace&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="转载" scheme="http://yoursite.com/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="操作系统" scheme="http://yoursite.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 模块之 Click</title>
+    <link href="http://yoursite.com/2017/02/13/click/"/>
+    <id>http://yoursite.com/2017/02/13/click/</id>
+    <published>2017-02-13T13:15:11.000Z</published>
+    <updated>2017-02-14T00:16:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>与optparse和argparse类似，使用更方便，采用装饰器的方式生效。</p>
+<a id="more"></a>
+<h2 id="示例一"><a href="#示例一" class="headerlink" title="示例一"></a>示例一</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#! _*_coding:utf-8_*_</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> click</div><div class="line"></div><div class="line"><span class="comment">#为函数提供命令行接口</span></div><div class="line"><span class="meta">@click.command()</span></div><div class="line"><span class="comment">#选项参数，默认值，帮助文档</span></div><div class="line"><span class="meta">@click.option('--count',default=1,help='Number of greetings.')</span></div><div class="line"><span class="comment">#prompt为不提供参数时的提示</span></div><div class="line"><span class="meta">@click.option('--name',prompt='Your name',help='The person to greet.')</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">(count,name)</span>:</span></div><div class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> range(count):</div><div class="line"><span class="comment">#click.echo为了获取更好的兼容性</span></div><div class="line">        click.echo(<span class="string">'Hello %s!'</span> % name)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    hello()</div></pre></td></tr></table></figure>
+<h2 id="示例二"><a href="#示例二" class="headerlink" title="示例二"></a>示例二</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;与optparse和argparse类似，使用更方便，采用装饰器的方式生效。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python获取文件路径</title>
+    <link href="http://yoursite.com/2017/01/02/file-path/"/>
+    <id>http://yoursite.com/2017/01/02/file-path/</id>
+    <published>2017-01-02T06:31:56.000Z</published>
+    <updated>2017-01-02T12:32:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="sys-argv-0"><a href="#sys-argv-0" class="headerlink" title="sys.argv[0]"></a>sys.argv[0]</h2><p>返回值可能是一个相对路径，所以再取一下<code>abspath</code>是保险的做法。</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> sys</div><div class="line">path_to_script, filename = os.path.split(os.path.abspath(sys.argv[<span class="number">0</span>]))</div><div class="line"><span class="keyword">print</span> <span class="string">"running from"</span>, path_to_script</div><div class="line"><span class="keyword">print</span> <span class="string">"file is"</span>, filename</div></pre></td></tr></table></figure>
+<h2 id="file"><a href="#file" class="headerlink" title="__file__"></a>__file__</h2><ul>
+<li>按相对路径./test.py来执行，则打印得到的是相对路径;</li>
+<li>按绝对路径执行则得到的是绝对路径;</li>
+<li>而按用户目录来执行（~/practice/test.py），则得到的也是绝对路径（~被展开）;</li>
+<li>所以为了得到绝对路径，我们需要 os.path.realpath(<strong>file</strong>)。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;sys-argv-0&quot;&gt;&lt;a href=&quot;#sys-argv-0&quot; class=&quot;headerlink&quot; title=&quot;sys.argv[0]&quot;&gt;&lt;/a&gt;sys.argv[0]&lt;/h2&gt;&lt;p&gt;返回值可能是一个相对路径，所以再取一下&lt;code&gt;abspath&lt;/code&gt;是保险的做法。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python optparse</title>
+    <link href="http://yoursite.com/2017/01/02/CLI/"/>
+    <id>http://yoursite.com/2017/01/02/CLI/</id>
+    <published>2017-01-02T02:06:50.000Z</published>
+    <updated>2017-01-02T03:30:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>一些python程序需要在命令行执行，并接收参数，选项，optparse和argparse就是Python标准库提供的用于编写CLI执行的应用程序的工具。</p>
+<h2 id="optparse"><a href="#optparse" class="headerlink" title="optparse"></a>optparse</h2><p>适用范围：全部Python版本（Python2.6、Python3.0 ~ Python3.2只有optparse,2.7和3.3以上才有argparse）。<br>optparse已经不会有后续开发，所以应尽早迁移到argparse当中。</p>
+<h3 id="示例一："><a href="#示例一：" class="headerlink" title="示例一："></a>示例一：</h3><a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="string">"""该脚本接收任意数量的参数，并转换成大写，参数之间添加空格"""</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> optparse</div><div class="line"><span class="comment">#模块直接运行的时候__name__的值为__main__</span></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    <span class="comment">#创建一个实例</span></div><div class="line">    parser = optparse.OptionParser()</div><div class="line">    <span class="comment">#调用方法，选项（以-或者--开头）被置于options中，剩下的为位置参数</span></div><div class="line">    <span class="comment">#置于args中。类型为列表，以连字符开头的都被识别为选项，无法识别时会</span></div><div class="line">    <span class="comment">#导致异常，并且无法捕获</span></div><div class="line">    options,args = parser.parse_args()</div><div class="line">    <span class="keyword">print</span> <span class="string">' '</span>.join(args).upper()</div></pre></td></tr></table></figure>
+<h3 id="示例二：带有选项的脚本"><a href="#示例二：带有选项的脚本" class="headerlink" title="示例二：带有选项的脚本"></a>示例二：带有选项的脚本</h3><p>位置参数太多时候，信息并不直观，选项是一个很好的方案。并且：</p>
+<ul>
+<li>可以设置为可选，默认值</li>
+<li>选项可以设置名称，说明，提升可读性</li>
+<li>多个选项可以任意顺序排列组合</li>
+</ul>
+<p>选项有两种类型</p>
+<ol>
+<li>开关（标记）如–verbose和–quiet，这种类型不需要接收值</li>
+<li>参数赋值，如–host，–port等</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> optparse</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    parser = optparse.OptionParser()</div><div class="line">    <span class="comment">#使用add_option为实例添加选项，分别追加了长格式和短格式选项；</span></div><div class="line">    <span class="comment">#action不设置则脚本接收值，设置为store_true或者store_false则意味不需要值</span></div><div class="line">    <span class="comment">#如果提供了值，则为True或者False；</span></div><div class="line">    <span class="comment">#dest设置选项的名称；help设置帮助文本，默认自动添加了--help选项，可以查看帮助信息</span></div><div class="line">    parser.add_option(<span class="string">'-q'</span>,<span class="string">'--quiet'</span>,</div><div class="line">                      action=<span class="string">'store_true'</span>,</div><div class="line">                      dest=<span class="string">'quiet'</span>,</div><div class="line">                      help=<span class="string">'Suppress output.'</span>,</div><div class="line">                     )</div><div class="line">    options,args = parser.parse_args()</div><div class="line">    <span class="keyword">print</span> <span class="string">' '</span>.join(args).upper()</div></pre></td></tr></table></figure>
+<h3 id="另一个例子"><a href="#另一个例子" class="headerlink" title="另一个例子"></a>另一个例子</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> optparse</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    parser = optparse.OptionParser()</div><div class="line">    parser.add_option(<span class="string">'-H'</span>,<span class="string">'--host'</span>,default=<span class="string">'localhost'</span>,dest=<span class="string">'host'</span>,help=<span class="string">'The host to connect to.Defaults to localhost.'</span>,type=str,)</div><div class="line">    parser.add_option(<span class="string">'-p'</span>,<span class="string">'--port'</span>,default=<span class="number">5432</span>,dest=<span class="string">'port'</span>,help=<span class="string">'The port to connect to.Defaults to 5432.'</span>,type=int,)</div><div class="line">    options,args = parser.parse_args()</div><div class="line">    <span class="keyword">print</span> <span class="string">'The host is %s.\nThe port is %d.'</span> % (options.host,options.port)</div></pre></td></tr></table></figure>
+<h3 id="短格式和长格式语法"><a href="#短格式和长格式语法" class="headerlink" title="短格式和长格式语法"></a>短格式和长格式语法</h3><p><em>短格式</em> 值和选项可以紧挨着也可以有空格，并且可以把值包在引号内。<br>以下四种都是合法的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ python script.py -H localhost</div><div class="line">$ python script.py -H <span class="string">"localhost"</span></div><div class="line">$ python script.py -Hlocalhost</div><div class="line">$ python script.py -H<span class="string">"localhost"</span></div></pre></td></tr></table></figure></p>
+<p><em>长格式</em> 选项和值之间必须有分隔符（空格或者等号）。<br>以下四种都是合法的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ python script.py --host localhost</div><div class="line">$ python script.py --host=localhost</div><div class="line">$ python script.py --host <span class="string">"localhost"</span></div><div class="line">$ python script.py --host=<span class="string">"localhost"</span></div></pre></td></tr></table></figure></p>
+<h3 id="位置参数"><a href="#位置参数" class="headerlink" title="位置参数"></a>位置参数</h3><p>没有附加选项的参数均被认为是位置参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="string">"""对所有提供的位置参数求和"""</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> optparse</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    parser = optparse.OptionParser()</div><div class="line">    options,args = parser.parse_args()</div><div class="line">    <span class="keyword">print</span> <span class="string">'The sum of the numbers sent is : %d '</span> % sum([int(i) <span class="keyword">for</span> i <span class="keyword">in</span> args])</div></pre></td></tr></table></figure>
+<h3 id="计数器"><a href="#计数器" class="headerlink" title="计数器"></a>计数器</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="string">"""计算特定选项的次数"""</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> optparse</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    parser = optparse.OptionParser()</div><div class="line">    <span class="comment">#-c -c 和-cc是一样的</span></div><div class="line">    parser.add_option(<span class="string">'-c'</span>,action=<span class="string">'count'</span>,default=<span class="number">0</span>,dest=<span class="string">'count'</span>,help=<span class="string">'Just count the numbers of the options "-c".'</span>)</div><div class="line">    options,args = parser.parse_args()</div><div class="line">    <span class="keyword">print</span> <span class="string">'The total number is %d'</span> % options.count</div></pre></td></tr></table></figure>
+<h3 id="列表值"><a href="#列表值" class="headerlink" title="列表值"></a>列表值</h3><p>对同一个选项，接收多个值并以列表方式提供给脚本。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="string">"""打印用户名，每次一个"""</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> optparse</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    parser = optparse.OptionParser()</div><div class="line">    parser.add_option(<span class="string">'-u'</span>,<span class="string">'--user'</span>,action=<span class="string">'append'</span>,default=[],dest=<span class="string">'users'</span>,help=<span class="string">'The username to printed.Provide this multiple times to print the username for multiple users.'</span>)</div><div class="line">    options,args = parser.parse_args()</div><div class="line">    <span class="keyword">for</span> user <span class="keyword">in</span> options.users:</div><div class="line">        <span class="keyword">print</span> <span class="string">'Username: %s'</span> % user</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一些python程序需要在命令行执行，并接收参数，选项，optparse和argparse就是Python标准库提供的用于编写CLI执行的应用程序的工具。&lt;/p&gt;
+&lt;h2 id=&quot;optparse&quot;&gt;&lt;a href=&quot;#optparse&quot; class=&quot;headerlink&quot; title=&quot;optparse&quot;&gt;&lt;/a&gt;optparse&lt;/h2&gt;&lt;p&gt;适用范围：全部Python版本（Python2.6、Python3.0 ~ Python3.2只有optparse,2.7和3.3以上才有argparse）。&lt;br&gt;optparse已经不会有后续开发，所以应尽早迁移到argparse当中。&lt;/p&gt;
+&lt;h3 id=&quot;示例一：&quot;&gt;&lt;a href=&quot;#示例一：&quot; class=&quot;headerlink&quot; title=&quot;示例一：&quot;&gt;&lt;/a&gt;示例一：&lt;/h3&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx基本配置</title>
+    <link href="http://yoursite.com/2017/01/01/nginx/"/>
+    <id>http://yoursite.com/2017/01/01/nginx/</id>
+    <published>2017-01-01T14:32:10.000Z</published>
+    <updated>2017-01-02T03:21:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="高层配置"><a href="#高层配置" class="headerlink" title="高层配置"></a>高层配置</h2><p>这部分处在配置文件模块前方，属于全局配置</p>
+<ul>
+<li><code>user</code>和<code>pid</code>基本不修改;</li>
+<li><code>worker_processes</code>,设置为自动，最优值取决于许多因素（CPU核的数量、存储数据的硬盘数量及负载模式）等。<br>可将其设置为可用的CPU内核数（设置为“auto”将尝试自动检测它）;</li>
+<li><code>worker_rlimit_nofile</code>更改worker进程的最大打开文件数限制。如果没设置的话，这个值为操作系统的默认值。设置后Nginx可以处理更多的文件，这样nginx就不会有“too many open files”问题了。<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">user www-data;</div><div class="line">pid /var/run/nginx.pid;</div><div class="line">worker_processes auto;</div><div class="line">worker_rlimit_nofile 100000;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="events"><a href="#events" class="headerlink" title="events"></a>events</h2><ul>
+<li><code>worker_connections</code>设置可由一个worker进程同时打开的最大连接数。如果设置了上面提到的worker_rlimit_nofile，我们可以将这个值设得很高,但是该数值也由系统的可用socket连接数限制（~ 64K），所以设置不切实际的高没有用处；</li>
+<li><code>multi_accept</code>告诉nginx收到一个新连接通知后接受尽可能多的连接。</li>
+<li><code>use</code>设置用于复用客户端线程的轮询方法。如果你使用Linux 2.6+，你应该使用<code>epoll</code>。如果你使用*BSD，你应该使用<code>kqueue</code>。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">worker_connections 2048;</div><div class="line">multi_accept on;</div><div class="line">use epoll;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="http"><a href="#http" class="headerlink" title="http"></a>http</h2><ul>
+<li><code>server_tokens</code> `并不会让nginx执行的速度更快，它会关闭在错误页面中的nginx版本数字，这样对于安全性是有好处的；</li>
+<li><code>sendfile</code>可以让sendfile()发挥作用。sendfile()可以在磁盘和TCP socket之间互相拷贝数据(或任意两个文件描述符)。Pre-sendfile是传送数据之前在用户空间申请数据缓冲区。之后用read()将数据从文件拷贝到这个缓冲区，write()将缓冲区数据写入网络。sendfile()是立即将数据从磁盘读到OS缓存。因为这种拷贝是在内核完成的，sendfile()要比组合read()和write()以及打开关闭丢弃缓冲更加有效;</li>
+<li><p><code>tcp_nopush</code>使得nginx在一个数据包里发送所有头文件，而不一个接一个的发送;</p>
+</li>
+<li><p><code>tcp_nodelay</code>告诉nginx不要缓存数据，而是一段一段的发送：当需要及时发送数据时，就应该给应用设置这个属性，这样发送一小块数据信息时就不能立即得到返回值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">server_tokens off;</div><div class="line">sendfile on;</div><div class="line">tcp_nopush on;</div><div class="line">tcp_nodelay on;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li><code>access_log</code>设置nginx是否将存储访问日志。关闭这个选项可以让读取磁盘IO操作更快;</li>
+<li><code>error_log</code>告诉nginx只能记录严重的错误。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">access_log off;</div><div class="line">error_log /var/log/nginx/error.log crit;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li><code>keepalive_timeout</code>给客户端分配keep-alive链接超时时间。服务器将在这个超时时间过后关闭链接。我们将它设置低些可以让ngnix持续工作的时间更长;</li>
+<li><code>client_header_timeout</code>和<code>client_body_timeout</code>设置请求头和请求体(各自)的超时时间。我们也可以把这个设置低些;</li>
+<li><code>reset_timeout_connection</code>告诉nginx关闭不响应的客户端连接。这将会释放那个客户端所占有的内存空间;</li>
+<li><code>send_timeout</code>指定客户端的响应超时时间。这个设置不会用于整个转发器，而是在两次客户端读取操作之间。如果在这段时间内，客户端没有读取任何数据，nginx就会关闭连接。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">keepalive_timeout 10;</div><div class="line">client_header_timeout 10;</div><div class="line">client_body_timeout 10;</div><div class="line">reset_timedout_connection on;</div><div class="line">send_timeout 10;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<p>limit_conn为给定的key设置最大连接数。这里key是addr，我们设置的值是100，也就是说我们允许每一个IP地址最多同时打开有100个连接。</p>
+<p>limit_conn_zone设置用于保存各种key（比如当前连接数）的共享内存的参数。5m就是5兆字节，这个值应该被设置的足够大以存储（32K<em>5）32byte状态或者（16K</em>5）64byte状态。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">limit_conn_zone $binary_remote_addr zone=addr:5m;</div><div class="line">limit_conn addr 100;</div></pre></td></tr></table></figure></p>
+<hr>
+<ul>
+<li><code>include</code>只是一个在当前文件中包含另一个文件内容的指令。这里我们使用它来加载稍后会用到的一系列的MIME类型;</li>
+<li><code>default_type</code>设置文件使用的默认的MIME-type;</li>
+<li><code>charset</code>设置我们的头文件中的默认的字符集。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">include /etc/nginx/mime.types;</div><div class="line">default_type text/html;</div><div class="line">charset UTF-8;</div></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><code>gzip</code>是告诉nginx采用gzip压缩的形式发送数据,这将会减少发送的数据量;</li>
+<li><code>gzip_disable</code>为指定的客户端禁用gzip功能。我们设置成IE6或者更低版本以使我们的方案能够广泛兼容;</li>
+<li><code>gzip_static</code>告诉nginx在压缩资源之前，先查找是否有预先gzip处理过的资源。这要求你预先压缩你的文件（在这个例子中被注释掉了）,这样nginx就不用再压缩这些文件了;(static_gzip模块的作用就是在接到请求后，会到url相同的路径的文件系统去找扩展名为“.gz”的文件比如<code>http://www.chufengze.cn/stylesheets/homepage.css</code>,nginx就会先查找stylesheets/homepage.css.gz 这个文件，如果存在直接把它发送出去，如果不存在，再将stylesheets/homepage.css文件进行gzip压缩，再发送出去，这样可以避免重复的压缩无谓的消耗资源，这个模块不受gzip_types限制，会对所有请求有效。所以建议不要在全局上使用，因为一般来说大部分都是动态请求，是不会有.gz这个文件的，建议只在局部我们确认有.gz的目录中使用。Nginx不会自动的将压缩结果写入文件系统，这点不同于lighttpd，所以如果想使用static_gzip模块，需要自己写脚本生成.gz文件。)</li>
+<li><code>gzip_proxied</code>允许或者禁止压缩基于请求和响应的响应流。我们设置为any，意味着将会压缩所有的请求;</li>
+<li><code>gzip_min_length</code>设置对数据启用压缩的最少字节数。如果一个请求小于1000字节，我们最好不要压缩它，小于1k可能会越压越大,压缩这些小的数据会降低处理此请求的所有进程的速度;</li>
+<li><code>gzip_comp_level</code>设置数据的压缩等级。这个等级可以是1-9之间的任意数值，9是最慢但是压缩比最大的。我们设置为4，这是一个比较折中的设置;</li>
+<li><code>gzip_type</code>匹配MIME类型,设置需要压缩的数据格式。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">gzip_disable &quot;msie6&quot;;</div><div class="line"># gzip_static on;</div><div class="line">gzip_proxied any;</div><div class="line">gzip_min_length 1000;</div><div class="line">gzip_comp_level 4;</div><div class="line">gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li><code>open_file_cache</code>打开缓存的同时也指定了缓存最大数目，以及缓存的时间。我们可以设置一个相对高的最大时间，这样我们可以在它们不活动超过20秒后清除掉;</li>
+<li><code>open_file_cache_valid</code>在open_file_cache中指定检测正确信息的间隔时间;</li>
+<li><code>open_file_cache_min_uses</code>定义了open_file_cache中指令参数不活动时间期间里最小的文件数;</li>
+<li><code>open_file_cache_errors</code>指定了当搜索一个文件时是否缓存错误信息，也包括再次给配置中添加文件。我们也包括了服务器模块，这些是在不同文件中定义的。如果你的服务器模块不在这些位置，你就得修改这一行来指定正确的位置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># cache informations about file descriptors, frequently accessed files</div><div class="line"># can boost performance, but you need to test those values</div><div class="line">open_file_cache max=100000 inactive=20s;</div><div class="line">open_file_cache_valid 30s;</div><div class="line">open_file_cache_min_uses 2;</div><div class="line">open_file_cache_errors on;</div><div class="line">##</div><div class="line"># Virtual Host Configs</div><div class="line"># aka our settings for specific servers</div><div class="line">##</div><div class="line">include /etc/nginx/conf.d/*.conf;</div><div class="line">include /etc/nginx/sites-enabled/*;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;高层配置&quot;&gt;&lt;a href=&quot;#高层配置&quot; class=&quot;headerlink&quot; title=&quot;高层配置&quot;&gt;&lt;/a&gt;高层配置&lt;/h2&gt;&lt;p&gt;这部分处在配置文件模块前方，属于全局配置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;user&lt;/code&gt;和&lt;code&gt;pid&lt;/code&gt;基本不修改;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;worker_processes&lt;/code&gt;,设置为自动，最优值取决于许多因素（CPU核的数量、存储数据的硬盘数量及负载模式）等。&lt;br&gt;可将其设置为可用的CPU内核数（设置为“auto”将尝试自动检测它）;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;worker_rlimit_nofile&lt;/code&gt;更改worker进程的最大打开文件数限制。如果没设置的话，这个值为操作系统的默认值。设置后Nginx可以处理更多的文件，这样nginx就不会有“too many open files”问题了。
+    
+    </summary>
+    
+      <category term="服务器" scheme="http://yoursite.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="Nginx" scheme="http://yoursite.com/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python copy和deepcopy</title>
+    <link href="http://yoursite.com/2017/01/01/python2/"/>
+    <id>http://yoursite.com/2017/01/01/python2/</id>
+    <published>2017-01-01T13:52:30.000Z</published>
+    <updated>2017-01-02T02:09:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>面试总是问，所以记录一下。</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> copy</div><div class="line"><span class="comment">#分别查看赋值，copy,deepcopy和切片</span></div><div class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,[<span class="number">6</span>,<span class="number">7</span>]]</div><div class="line"><span class="keyword">print</span> <span class="string">'原始的a\t\t'</span>,a,<span class="string">'\t'</span>,id(a)</div><div class="line">b = a</div><div class="line">c = copy.copy(a)</div><div class="line">d = copy.deepcopy(a)</div><div class="line">e = a[:]</div><div class="line"><span class="comment">#更改原始a</span></div><div class="line">a.append(<span class="string">'BINGO!'</span>)</div><div class="line">a[<span class="number">5</span>].append(<span class="string">'BINGO!'</span>)</div><div class="line"><span class="comment">#输出显示</span></div><div class="line"><span class="keyword">print</span> <span class="string">'改变的a\t\t'</span>,a,<span class="string">'\t'</span>,id(a)</div><div class="line"><span class="keyword">print</span> <span class="string">'赋值操作\t'</span>,b,<span class="string">'\t'</span>,id(b)</div><div class="line"><span class="keyword">print</span> <span class="string">'copy操作\t'</span>,c,<span class="string">'\t'</span>,id(c)</div><div class="line"><span class="keyword">print</span> <span class="string">'deepcopy\t'</span>,d,<span class="string">'\t'</span>,id(d)</div><div class="line"><span class="keyword">print</span> <span class="string">'切片操作\t'</span>,e,<span class="string">'\t'</span>,id(e)</div></pre></td></tr></table></figure>
+<p><strong>赋值</strong> 的操作，ID是一样的；<br><strong>deepcopy</strong> 会保留最初始的a的信息，包括a的子对象（内嵌的list）；<br><strong>切片</strong> 与 <strong>copy</strong> 相同，子对象的信息会和原始列表a保持一致，也就是说会随之改变。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">原始的a         [1, 2, 3, 4, 5, [6, 7]]         4303299432</div><div class="line">改变的a         [1, 2, 3, 4, 5, [6, 7, &apos;BINGO!&apos;], &apos;BINGO!&apos;]     4303299432</div><div class="line">赋值操作        [1, 2, 3, 4, 5, [6, 7, &apos;BINGO!&apos;], &apos;BINGO!&apos;]     4303299432</div><div class="line">copy操作        [1, 2, 3, 4, 5, [6, 7, &apos;BINGO!&apos;]]       4303300944</div><div class="line">deepcopy        [1, 2, 3, 4, 5, [6, 7]]         4303300800</div><div class="line">切片操作        [1, 2, 3, 4, 5, [6, 7, &apos;BINGO!&apos;]]       4303301160</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;面试总是问，所以记录一下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python生成器生产者消费者</title>
+    <link href="http://yoursite.com/2017/01/01/python1/"/>
+    <id>http://yoursite.com/2017/01/01/python1/</id>
+    <published>2017-01-01T13:16:59.000Z</published>
+    <updated>2017-01-01T13:51:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>通过生成器实现的生产者消费者模型。<br>没有用到多线程与多进程，协程异步就更没用到了。</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#_*_ coding:utf-8 _*_</span></div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">consumer</span><span class="params">()</span>:</span></div><div class="line">    msg = <span class="string">'Here'</span></div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">        info = <span class="keyword">yield</span> msg</div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> info:</div><div class="line">            <span class="keyword">return</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'[顾客] 吃第%s个煎饼，RUA！RUA!RUA!'</span> % info</div><div class="line">        time.sleep(<span class="number">2</span>)</div><div class="line">        msg = <span class="string">'吃完第%s个了。。'</span> % str(info)</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">producer</span><span class="params">(c)</span>:</span></div><div class="line">  start_consumer = c.next()</div><div class="line">  n = <span class="number">0</span></div><div class="line">  <span class="keyword">while</span> n &lt; <span class="number">5</span>:</div><div class="line">    n = n + <span class="number">1</span></div><div class="line">    <span class="keyword">if</span> n == <span class="number">5</span>:</div><div class="line">        <span class="keyword">print</span> <span class="string">'[厨师] 有完没完啊。不玩了！'</span></div><div class="line">        <span class="keyword">break</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'[厨师] 开始做第%s个煎饼...'</span> % n</div><div class="line">    time.sleep(<span class="number">1</span>)</div><div class="line">    <span class="keyword">print</span> <span class="string">'小伙子等一会啊。。。'</span></div><div class="line">    time.sleep(<span class="number">2</span>)</div><div class="line">    <span class="keyword">print</span> <span class="string">'做好嘞！接着！'</span></div><div class="line">    time.sleep(<span class="number">1</span>)</div><div class="line">    info = c.send(n)</div><div class="line">    <span class="keyword">print</span> <span class="string">'[顾客]说: %s'</span> % info</div><div class="line">    time.sleep(<span class="number">2</span>)</div><div class="line">  c.close()</div><div class="line">producer(consumer())</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;通过生成器实现的生产者消费者模型。&lt;br&gt;没有用到多线程与多进程，协程异步就更没用到了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>莲花</title>
@@ -279,17 +553,36 @@
     <link href="http://yoursite.com/2016/10/10/Graph0/"/>
     <id>http://yoursite.com/2016/10/10/Graph0/</id>
     <published>2016-10-10T00:46:20.000Z</published>
-    <updated>2016-10-10T02:18:25.000Z</updated>
+    <updated>2017-03-02T06:40:56.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="概念-amp-性质-amp-实现"><a href="#概念-amp-性质-amp-实现" class="headerlink" title="概念&amp;性质&amp;实现"></a>概念&amp;性质&amp;实现</h2><p>一个图是一个二元组<code>G=(V,E)</code>,其中：</p>
 <ul>
 <li>V是顶点集合，E是边集合， E ⊆ V × V</li>
 <li><em>有向图</em>的边有方向，是顶点的有序对，<em>无向图</em>边无方向。（之后的 <em>有向边</em> 表示为尖括号，&lt; v<sub>i</sub>,v<sub>j</sub> &gt; 表示v<sub>i</sub>到v<sub>j</sub>的边，<em>无向边</em>用圆括号表示）</li>
 <li>&lt; v<sub>i</sub>,v<sub>j</sub> &gt; ∈ E,v<sub>j</sub>为v<sub>i</sub>的邻接点(无向图的邻接点是双向的)，不考虑顶点到自身的边，无重复的边。</li>
-<li>完全图：任意两顶点之间都有边（有向图<code>n×(n-1)</code>,无向图<code>n×(n-1)/2</code>）|E|≦|V|<sup>2</sup>,即|E|=O(|V|<sup>2</sup>)</li>
+<li><strong>完全图</strong>：任意两顶点之间都有边（有向图<code>n×(n-1)</code>,无向图<code>n×(n-1)/2</code>）|E|≦|V|<sup>2</sup>,即|E|=O(|V|<sup>2</sup>)</li>
 <li>度：一个顶点邻接边的条数，有向图有入度和出度,边数等于所有顶点度数和的一半（有向图要同时算入度和出度）</li>
-<li>路径：沿着边（有向图边有方向）从一顶点v<sub>i</sub>到另一顶点v<sub>j</sub>的通路称为v<sub>i</sub>到v<sub>j</sub>的一条路径，长度为边的条数，环路指起点终点相同，若环路除了起点终点外都不同则称为<strong>简单回路</strong></li>
+<li><strong>路径</strong>：沿着边（有向图边有方向）从一顶点v<sub>i</sub>到另一顶点v<sub>j</sub>的通路称为v<sub>i</sub>到v<sub>j</sub>的一条路径，长度为边的条数，环路指起点终点相同，若环路除了起点终点外都不同则称为<strong>简单回路</strong>，<strong>简单路径</strong>。</li>
+<li><strong>有根图</strong>：图里的某一顶点到任意其他顶点都有路径，则该图为有根图，该顶点称为根</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>ADT Graph</th>
+<th>一个图的抽象数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Graph(self)</td>
+<td>图构造操作，创建一个新图</td>
+</tr>
+<tr>
+<td>is_empty(self)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <a id="more"></a>]]></content>
     
     <summary type="html">
@@ -299,10 +592,29 @@
 &lt;li&gt;V是顶点集合，E是边集合， E ⊆ V × V&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;有向图&lt;/em&gt;的边有方向，是顶点的有序对，&lt;em&gt;无向图&lt;/em&gt;边无方向。（之后的 &lt;em&gt;有向边&lt;/em&gt; 表示为尖括号，&amp;lt; v&lt;sub&gt;i&lt;/sub&gt;,v&lt;sub&gt;j&lt;/sub&gt; &amp;gt; 表示v&lt;sub&gt;i&lt;/sub&gt;到v&lt;sub&gt;j&lt;/sub&gt;的边，&lt;em&gt;无向边&lt;/em&gt;用圆括号表示）&lt;/li&gt;
 &lt;li&gt;&amp;lt; v&lt;sub&gt;i&lt;/sub&gt;,v&lt;sub&gt;j&lt;/sub&gt; &amp;gt; ∈ E,v&lt;sub&gt;j&lt;/sub&gt;为v&lt;sub&gt;i&lt;/sub&gt;的邻接点(无向图的邻接点是双向的)，不考虑顶点到自身的边，无重复的边。&lt;/li&gt;
-&lt;li&gt;完全图：任意两顶点之间都有边（有向图&lt;code&gt;n×(n-1)&lt;/code&gt;,无向图&lt;code&gt;n×(n-1)/2&lt;/code&gt;）|E|≦|V|&lt;sup&gt;2&lt;/sup&gt;,即|E|=O(|V|&lt;sup&gt;2&lt;/sup&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;完全图&lt;/strong&gt;：任意两顶点之间都有边（有向图&lt;code&gt;n×(n-1)&lt;/code&gt;,无向图&lt;code&gt;n×(n-1)/2&lt;/code&gt;）|E|≦|V|&lt;sup&gt;2&lt;/sup&gt;,即|E|=O(|V|&lt;sup&gt;2&lt;/sup&gt;)&lt;/li&gt;
 &lt;li&gt;度：一个顶点邻接边的条数，有向图有入度和出度,边数等于所有顶点度数和的一半（有向图要同时算入度和出度）&lt;/li&gt;
-&lt;li&gt;路径：沿着边（有向图边有方向）从一顶点v&lt;sub&gt;i&lt;/sub&gt;到另一顶点v&lt;sub&gt;j&lt;/sub&gt;的通路称为v&lt;sub&gt;i&lt;/sub&gt;到v&lt;sub&gt;j&lt;/sub&gt;的一条路径，长度为边的条数，环路指起点终点相同，若环路除了起点终点外都不同则称为&lt;strong&gt;简单回路&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;路径&lt;/strong&gt;：沿着边（有向图边有方向）从一顶点v&lt;sub&gt;i&lt;/sub&gt;到另一顶点v&lt;sub&gt;j&lt;/sub&gt;的通路称为v&lt;sub&gt;i&lt;/sub&gt;到v&lt;sub&gt;j&lt;/sub&gt;的一条路径，长度为边的条数，环路指起点终点相同，若环路除了起点终点外都不同则称为&lt;strong&gt;简单回路&lt;/strong&gt;，&lt;strong&gt;简单路径&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;有根图&lt;/strong&gt;：图里的某一顶点到任意其他顶点都有路径，则该图为有根图，该顶点称为根&lt;/li&gt;
 &lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;ADT Graph&lt;/th&gt;
+&lt;th&gt;一个图的抽象数据类型&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Graph(self)&lt;/td&gt;
+&lt;td&gt;图构造操作，创建一个新图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;is_empty(self)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
     
     </summary>
     
@@ -498,383 +810,6 @@
       <category term="私人" scheme="http://yoursite.com/tags/%E7%A7%81%E4%BA%BA/"/>
     
       <category term="自欺欺人" scheme="http://yoursite.com/tags/%E8%87%AA%E6%AC%BA%E6%AC%BA%E4%BA%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django获取数据库模型相关</title>
-    <link href="http://yoursite.com/2016/09/21/django1/"/>
-    <id>http://yoursite.com/2016/09/21/django1/</id>
-    <published>2016-09-21T07:54:58.000Z</published>
-    <updated>2016-09-26T02:18:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>1.获取数据库模型字段<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">params = yourmodel._meta.fields</div><div class="line"></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(params)):</div><div class="line">    <span class="keyword">print</span> params[i],params[i].verbose_name</div></pre></td></tr></table></figure></p>
-<p>2.获取数据库名称<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yourmodel._meta.object_name</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1.获取数据库模型字段&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div
-    
-    </summary>
-    
-      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
-    
-    
-      <category term="栈和队列" scheme="http://yoursite.com/tags/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"/>
-    
-      <category term="Django" scheme="http://yoursite.com/tags/Django/"/>
-    
-      <category term="WEB框架" scheme="http://yoursite.com/tags/WEB%E6%A1%86%E6%9E%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MongoDB备份策略和Backup服务简介</title>
-    <link href="http://yoursite.com/2016/09/21/mongodb3/"/>
-    <id>http://yoursite.com/2016/09/21/mongodb3/</id>
-    <published>2016-09-21T02:02:23.000Z</published>
-    <updated>2016-09-26T02:18:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="冗余-versus-备份"><a href="#冗余-versus-备份" class="headerlink" title="冗余 versus 备份"></a>冗余 versus 备份</h2><blockquote>
-<p><strong>冗余 ！= 备份</strong></p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>冗余</th>
-<th>备份</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><ul><li>Replica Set</li><li>7*24可用</li><li>故障发生无需干预<ul><li>秒级自动failover</li><li>多数据中心部署</li></ul></li><li>系统升级维护对用户透明</li></ul></td>
-<td><ul><li>灾难恢复</li><li>程序Bug损坏数据</li><li>人工误操作</li></ul></td>
-</tr>
-<tr>
-<td>可以离线多少时间？</td>
-<td>可以丢失多少数据？</td>
-</tr>
-</tbody>
-</table>
-<h2 id="备份策略"><a href="#备份策略" class="headerlink" title="备份策略"></a>备份策略</h2><h3 id="mongodump-mongorestore"><a href="#mongodump-mongorestore" class="headerlink" title="mongodump / mongorestore"></a>mongodump / mongorestore</h3><ul>
-<li>导出BSON文件</li>
-<li>可以选择备份Namespace</li>
-<li>可以通过Oplog实现时间点恢复（Point-in-time）</li>
-<li>缺点<ul>
-<li>速度较慢</li>
-<li>分片集群需同步</li>
-</ul>
-</li>
-</ul>
-<h3 id="文件系统备份"><a href="#文件系统备份" class="headerlink" title="文件系统备份"></a>文件系统备份</h3><ul>
-<li>常见方式<ul>
-<li>文件复制</li>
-<li>文件系统或块存储快照，如LVM 或AWS EBS</li>
-</ul>
-</li>
-<li>速度最快</li>
-<li><p>缺点</p>
-<ul>
-<li>日志文件（journal）落盘</li>
-<li>无法选择性备份</li>
-<li>备份文件占用空间较大</li>
-<li>分片同步问题</li>
-</ul>
-<h3 id="Backup服务"><a href="#Backup服务" class="headerlink" title="Backup服务"></a>Backup服务</h3><ul>
-<li>MongoDB开发</li>
-<li>操作简单</li>
-<li>选择性备份</li>
-<li>时间点恢复</li>
-<li>缺点</li>
-<li>无法备份Standalone mongod</li>
-</ul>
-</li>
-</ul>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
-<li>分片集群备份时的同步问题</li>
-<li>若无法恢复，失去备份意义<ul>
-<li>持续恢复？</li>
-</ul>
-</li>
-</ul>
-<h2 id="Backup服务-1"><a href="#Backup服务-1" class="headerlink" title="Backup服务"></a>Backup服务</h2><h3 id="Backup-amp-Restore系统"><a href="#Backup-amp-Restore系统" class="headerlink" title="Backup &amp; Restore系统"></a>Backup &amp; Restore系统</h3><p>是MongoDB云服务系统的主要组件之一，目标是降低备份难度（只需要安装agent）</p>
-<table>
-<thead>
-<tr>
-<th>类似Secondary</th>
-<th>又不是Secondary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><ul><li>复制数据</li><li>更新数据，采用MongoDB Replication机制</li><li>Tail Oplog</li><li>回访Oplog</li><li>离线维护时不影响用户生产环境</li></ul></td>
-<td><ul><li>不是Replica Set组成部分</li><li>不参与选举</li><li>不参与Write Concern</li><li>无状态，没有磁盘I/O</li></ul></td>
-</tr>
-</tbody>
-</table>
-<div align="center"><img src="/img/image1.png" alt="主要组件"></div>
-
-<h4 id="Backup-Agent"><a href="#Backup-Agent" class="headerlink" title="Backup Agent"></a>Backup Agent</h4><ul>
-<li>可执行文件，用GO语言编写</li>
-<li>无状态，从Ingestion获得配置命令</li>
-<li>发送InitialSync数据</li>
-<li>传输Oplog流</li>
-<li>对于Sharded Cluster快照，试图同步Shards和Config servers</li>
-<li>序列化BSON，压缩，网络传输</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;冗余-versus-备份&quot;&gt;&lt;a href=&quot;#冗余-versus-备份&quot; class=&quot;headerlink&quot; title=&quot;冗余 versus 备份&quot;&gt;&lt;/a&gt;冗余 versus 备份&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;冗余 ！= 备份&lt;
-    
-    </summary>
-    
-      <category term="MongoDB" scheme="http://yoursite.com/categories/MongoDB/"/>
-    
-    
-      <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-      <category term="NoSQL" scheme="http://yoursite.com/tags/NoSQL/"/>
-    
-      <category term="转载" scheme="http://yoursite.com/tags/%E8%BD%AC%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>xwlt模块</title>
-    <link href="http://yoursite.com/2016/09/19/xwlt/"/>
-    <id>http://yoursite.com/2016/09/19/xwlt/</id>
-    <published>2016-09-19T05:43:27.000Z</published>
-    <updated>2016-09-20T14:27:21.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="xwlt"><a href="#xwlt" class="headerlink" title="xwlt"></a>xwlt</h2><blockquote>
-<p>生成兼容MS Excel 97/2000/XP/2003 XLS的电子表格文件，Python2.6+均支持该模块，平台不限。无需任何Python自带库外的文件依赖。</p>
-</blockquote>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install xwlt</div></pre></td></tr></table></figure>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> xlwt</div><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div><div class="line"><span class="comment">#创建两种显示样式</span></div><div class="line">style0 = xlwt.easyxf(<span class="string">'font:name Times New Roman,color-index red,bold on'</span>,num_format_str=<span class="string">'#,##0.00'</span>)</div><div class="line">style1 = xlwt.easyxf(num_format_str=<span class="string">'D-MMM-YY'</span>)</div><div class="line"><span class="comment">#创建表格，表格名称（非文件名）</span></div><div class="line">wb = xlwt.Workbook()</div><div class="line">ws = wb.add_sheet(<span class="string">'A Test Sheet'</span>)</div><div class="line"><span class="comment">#表格里输入，选项依次为行，列，内容，样式（从0开始算起）</span></div><div class="line">ws.write(<span class="number">0</span>,<span class="number">0</span>,<span class="number">1234.56</span>,style0)</div><div class="line">ws.write(<span class="number">1</span>,<span class="number">0</span>,datetime.now(),style1)</div><div class="line">ws.write(<span class="number">2</span>,<span class="number">0</span>,<span class="number">1</span>)</div><div class="line">ws.write(<span class="number">2</span>,<span class="number">1</span>,<span class="number">1</span>)</div><div class="line">ws.write(<span class="number">2</span>,<span class="number">2</span>,xlwt.Formula(<span class="string">'A3+B3'</span>))</div><div class="line"><span class="comment">#此处保存为文件名称</span></div><div class="line">wb.save(<span class="string">'Example.xls'</span>)</div></pre></td></tr></table></figure>
-<h2 id="API参考"><a href="#API参考" class="headerlink" title="API参考"></a>API参考</h2><hr>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">xlwt</span>.<span class="title">Workbook</span>.<span class="title">Workbook</span><span class="params">(encoding=<span class="string">'ascii'</span>,style_compression=<span class="number">0</span>)</span></span></div></pre></td></tr></table></figure>
-<p>该类代表了工作簿的全部内容，使用<code>xlwt</code>模块创建一个Excel文件就是使用该类实例化一个对象。</p>
-<ul>
-<li><span style="color: blue;background-color: #eeeeee">add_sheet(sheetname,cell_overwrite_ok=False)</span></li>
-</ul>
-<p>该方法用于在工作簿中创建表格（可以理解为Excel文件当中的一个个Tab）。</p>
-<blockquote>
-<p>参数：</p>
-<ul>
-<li><code>sheetname</code>:表格Tab名称（通常显示在Excel程序底部）</li>
-<li><code>cell_overwrite_ok</code>:如果设置为<code>True</code>，表格内容被写入超过一次时不会报错（exception）<br>返回值：Excel中将添加一个Tab</li>
-</ul>
-</blockquote>
-<ul>
-<li><span style="color: blue;background-color: #eeeeee">save(filename_or_stream)</span></li>
-</ul>
-<p>顾名思义就是保存成一个Excel文件喽。</p>
-<blockquote>
-<p>参数：<code>filename_or_stream</code>:要保存的文件名称字符串。参数也可以是拥有<code>write</code>方法的流对象（stream object），例如<code>StringIO</code>,此时数据将写入文件流中。</p>
-</blockquote>
-<hr>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">xlwt</span>.<span class="title">Worksheet</span>.<span class="title">Worksheet</span><span class="params">(sheetname,parent_book,cell_overwrite_ok=False)</span></span></div></pre></td></tr></table></figure>
-<p>该类表示工作簿中的一个Tab表格。</p>
-<blockquote>
-<p>通常你是在实例化<code>Workbook</code>类时调用<code>add_sheet</code>方法创建该类的实例对象的。</p>
-</blockquote>
-<ul>
-<li><span style="color: blue;background-color: #eeeeee">write(r,c,label=’’,style=[xlwt.XFStyle object])</span><br>该方法用于在表格的某个小格子写东西。</li>
-</ul>
-<blockquote>
-<p>参数：</p>
-<ul>
-<li>r:行，从零开始</li>
-<li>c:列，从零开始</li>
-<li>label:写入的内容。简而言之，数都写成浮点数，Unicode对象保持原样，字节转化成Unicode对象，使用默认的ascii编码。时间类对象转化成距离1900年开始的天数。布尔对象显示为TRUE和FALSE,None将内容置空，xlwt.Formula用来创建Excel公式。</li>
-<li>style:XF(扩展格式)，具体就是表格内容的表现形式（颜色等）</li>
-</ul>
-</blockquote>
-<h2 id="扩展格式"><a href="#扩展格式" class="headerlink" title="扩展格式"></a>扩展格式</h2><p>扩展格式用来记录单元格的显示样式，主要包括六组：数字格式，字体，对齐（水平，垂直，居中，缩进，换行等），边界样式，背景，保护内容。</p>
-<ul>
-<li><span style="color: blue;background-color: #eeeeee">xlwt.Style.easyxf(strg_to_parse=’’,num_format_str=None,field_sep=’,’,line_sep=’;’,intro_sep=’:’,esc_char=’\\’,debug=False)</span></li>
-</ul>
-<p>该函数用处创建扩展格式对象（XFStyle）。</p>
-<hr>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;xwlt&quot;&gt;&lt;a href=&quot;#xwlt&quot; class=&quot;headerlink&quot; title=&quot;xwlt&quot;&gt;&lt;/a&gt;xwlt&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;生成兼容MS Excel 97/2000/XP/2003 XLS的电子表格文件，Python2.6
-    
-    </summary>
-    
-      <category term="翻译" scheme="http://yoursite.com/categories/%E7%BF%BB%E8%AF%91/"/>
-    
-    
-      <category term="模块" scheme="http://yoursite.com/tags/%E6%A8%A1%E5%9D%97/"/>
-    
-      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何用十条命令在一分钟内检查Linux服务器性能</title>
-    <link href="http://yoursite.com/2016/09/18/linux0/"/>
-    <id>http://yoursite.com/2016/09/18/linux0/</id>
-    <published>2016-09-18T13:43:40.000Z</published>
-    <updated>2016-09-18T14:05:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>通过执行以下命令，可以在1分钟内对系统资源使用情况有个大致的了解。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">uptime</div><div class="line">dmesg | tail</div><div class="line">vmstat 1</div><div class="line">mpstat -P ALL 1</div><div class="line">pidstat 1</div><div class="line">iostat -xz 1</div><div class="line">free -m</div><div class="line">sar -n DEV 1</div><div class="line">sar -n TCP,ETCP 1</div><div class="line">top</div></pre></td></tr></table></figure></p>
-<p>其中一些命令需要安装<code>sysstat</code>包，有一些由<code>procps</code>包提供。这些命令的输出，有助于快速定位性能瓶颈，检查出所有资源（CPU、内存、磁盘IO等）的利用率（<em>utilization</em>）、饱和度（<em>saturation</em>）和错误（<em>error</em>）度量，也就是所谓的USE方法。<br>下面我们来逐一介绍下这些命令，有关这些命令更多的参数和说明，请参照命令的手册。</p>
-<hr>
-<h2 id="uptime"><a href="#uptime" class="headerlink" title="uptime"></a>uptime</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ uptime</div><div class="line">23:51:26 up 21:31,  1 user,  load average: 30.02, 26.43, 19.02</div></pre></td></tr></table></figure>
-<p>这个命令可以快速查看机器的负载情况。在Linux系统中，这些数据表示等待CPU资源的进程和阻塞在不可中断IO进程（进程状态为D）的数量。这些数据可以让我们对系统资源使用有一个宏观的了解。<br>命令的输出分别表示1分钟、5分钟、15分钟的平均负载情况。通过这三个数据，可以了解服务器负载是在趋于紧张还是区域缓解。如果1分钟平均负载很高，而15分钟平均负载很低，说明服务器正在命令高负载情况，需要进一步排查CPU资源都消耗在了哪里。反之，如果15分钟平均负载很高，1分钟平均负载较低，则有可能是CPU资源紧张时刻已经过去。<br>上面例子中的输出，可以看见最近1分钟的平均负载非常高，且远高于最近15分钟负载，因此我们需要继续排查当前系统中有什么进程消耗了大量的资源。可以通过下文将会介绍的vmstat、mpstat等命令进一步排查。</p>
-<hr>
-<h2 id="dmesg丨tail"><a href="#dmesg丨tail" class="headerlink" title="dmesg丨tail"></a>dmesg丨tail</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ dmesg | tail</div><div class="line">[1880957.563150] perl invoked oom-killer: gfp_mask=0x280da, order=0, oom_score_adj=0</div><div class="line">[...]</div><div class="line">[1880957.563400] Out of memory: Kill process 18694 (perl) score 246 or sacrifice child</div><div class="line">[1880957.563408] Killed process 18694 (perl) total-vm:1972392kB, anon-rss:1953348kB, file-rss:0kB</div><div class="line">[2320864.954447] TCP: Possible SYN flooding on port 7001. Dropping request.  Check SNMP counters.</div></pre></td></tr></table></figure>
-<p>该命令会输出系统日志的最后10行。示例中的输出，可以看见一次内核的oom kill和一次TCP丢包。这些日志可以帮助排查性能问题。千万不要忘了这一步。</p>
-<hr>
-<h2 id="vmstat-1"><a href="#vmstat-1" class="headerlink" title="vmstat 1"></a>vmstat 1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ vmstat 1</div><div class="line">procs ---------memory---------- ---swap-- -----io---- -system-- ------cpu-----</div><div class="line"> r  b swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st</div><div class="line">34  0    0 200889792  73708 591828    0    0     0     5    6   10 96  1  3  0  0</div><div class="line">32  0    0 200889920  73708 591860    0    0     0   592 13284 4282 98  1  1  0  0</div><div class="line">32  0    0 200890112  73708 591860    0    0     0     0 9501 2154 99  1  0  0  0</div><div class="line">32  0    0 200889568  73712 591856    0    0     0    48 11900 2459 99  0  0  0  0</div><div class="line">32  0    0 200890208  73712 591860    0    0     0     0 15898 4840 98  1  1  0  0</div><div class="line">^C</div></pre></td></tr></table></figure>
-<p>vmstat(8) 命令，每行会输出一些系统核心指标，这些指标可以让我们更详细的了解系统状态。后面跟的参数1，表示每秒输出一次统计信息，表头提示了每一列的含义，这几介绍一些和性能调优相关的列：</p>
-<ul>
-<li>r：等待在CPU资源的进程数。这个数据比平均负载更加能够体现CPU负载情况，数据中不包含等待IO的进程。如果这个数值大于机器CPU核数，那么机器的CPU资源已经饱和。</li>
-<li>free：系统可用内存数（以千字节为单位），如果剩余内存不足，也会导致系统性能问题。下文介绍到的free命令，可以更详细的了解系统内存的使用情况。</li>
-<li>si, so：交换区写入和读取的数量。如果这个数据不为0，说明系统已经在使用交换区（swap），机器物理内存已经不足。</li>
-<li>us, sy, id, wa, st：这些都代表了CPU时间的消耗，它们分别表示用户时间（user）、系统（内核）时间（sys）、空闲时间（idle）、IO等待时间（wait）和被偷走的时间（stolen，一般被其他虚拟机消耗）。<br>上述这些CPU时间，可以让我们很快了解CPU是否出于繁忙状态。一般情况下，如果用户时间和系统时间相加非常大，CPU出于忙于执行指令。如果IO等待时间很长，那么系统的瓶颈可能在磁盘IO。<br>示例命令的输出可以看见，大量CPU时间消耗在用户态，也就是用户应用程序消耗了CPU时间。这不一定是性能问题，需要结合r队列，一起分析。</li>
-</ul>
-<hr>
-<h2 id="mpstat-P-ALL-1"><a href="#mpstat-P-ALL-1" class="headerlink" title="mpstat-P ALL 1"></a>mpstat-P ALL 1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ mpstat -P ALL 1</div><div class="line">Linux 3.13.0-49-generic (titanclusters-xxxxx)  07/14/2015  _x86_64_ (32 CPU)</div><div class="line">07:38:49 PM  CPU   %usr  %nice   %sys %iowait   %irq  %soft  %steal  %guest  %gnice  %idle</div><div class="line">07:38:50 PM  all  98.47   0.00   0.75    0.00   0.00   0.00    0.00    0.00    0.00   0.78</div><div class="line">07:38:50 PM    0  96.04   0.00   2.97    0.00   0.00   0.00    0.00    0.00    0.00   0.99</div><div class="line">07:38:50 PM    1  97.00   0.00   1.00    0.00   0.00   0.00    0.00    0.00    0.00   2.00</div><div class="line">07:38:50 PM    2  98.00   0.00   1.00    0.00   0.00   0.00    0.00    0.00    0.00   1.00</div><div class="line">07:38:50 PM    3  96.97   0.00   0.00    0.00   0.00   0.00    0.00    0.00    0.00   3.03</div><div class="line">[...]</div></pre></td></tr></table></figure>
-<p>该命令可以显示每个CPU的占用情况，如果有一个CPU占用率特别高，那么有可能是一个单线程应用程序引起的。</p>
-<hr>
-<h2 id="pidstat-1"><a href="#pidstat-1" class="headerlink" title="pidstat 1"></a>pidstat 1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$ pidstat 1</div><div class="line">Linux 3.13.0-49-generic (titanclusters-xxxxx)  07/14/2015    _x86_64_    (32 CPU)</div><div class="line">07:41:02 PM   UID       PID    %usr %system  %guest    %CPU   CPU  Command</div><div class="line">07:41:03 PM     0         9    0.00    0.94    0.00    0.94     1  rcuos/0</div><div class="line">07:41:03 PM     0      4214    5.66    5.66    0.00   11.32    15  mesos-slave</div><div class="line">07:41:03 PM     0      4354    0.94    0.94    0.00    1.89     8  java</div><div class="line">07:41:03 PM     0      6521 1596.23    1.89    0.00 1598.11    27  java</div><div class="line">07:41:03 PM     0      6564 1571.70    7.55    0.00 1579.25    28  java</div><div class="line">07:41:03 PM 60004     60154    0.94    4.72    0.00    5.66     9  pidstat</div><div class="line">07:41:03 PM   UID       PID    %usr %system  %guest    %CPU   CPU  Command</div><div class="line">07:41:04 PM     0      4214    6.00    2.00    0.00    8.00    15  mesos-slave</div><div class="line">07:41:04 PM     0      6521 1590.00    1.00    0.00 1591.00    27  java07:41:04 PM     0      6564 1573.00   10.00    0.00 1583.00    28  java</div><div class="line">07:41:04 PM   108      6718    1.00    0.00    0.00    1.00     0  snmp-pass</div><div class="line">07:41:04 PM 60004     60154    1.00    4.00    0.00    5.00     9  pidstat</div><div class="line">^C</div></pre></td></tr></table></figure>
-<p>pidstat命令输出进程的CPU占用率，该命令会持续输出，并且不会覆盖之前的数据，可以方便观察系统动态。如上的输出，可以看见两个JAVA进程占用了将近1600%的CPU时间，既消耗了大约16个CPU核心的运算资源。</p>
-<hr>
-<h2 id="iostat-xz-1"><a href="#iostat-xz-1" class="headerlink" title="iostat-xz 1"></a>iostat-xz 1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$ iostat -xz 1</div><div class="line">Linux 3.13.0-49-generic (titanclusters-xxxxx)  07/14/2015  _x86_64_ (32 CPU)</div><div class="line">avg-cpu:  %user   %nice %system %iowait  %steal   %idle</div><div class="line">          73.96    0.00    3.73    0.03    0.06   22.21</div><div class="line">Device:   rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util</div><div class="line">xvda        0.00     0.23    0.21    0.18     4.52     2.08    34.37     0.00    9.98   13.80    5.42   2.44   0.09</div><div class="line">xvdb        0.01     0.00    1.02    8.94   127.97   598.53   145.79     0.00    0.43    1.78    0.28   0.25   0.25</div><div class="line">xvdc        0.01     0.00    1.02    8.86   127.79   595.94   146.50     0.00    0.45    1.82    0.30   0.27   0.26</div><div class="line">dm-0        0.00     0.00    0.69    2.32    10.47    31.69    28.01     0.01    3.23    0.71    3.98   0.13   0.04</div><div class="line">dm-1        0.00     0.00    0.00    0.94     0.01     3.78     8.00     0.33  345.84    0.04  346.81   0.01   0.00</div><div class="line">dm-2        0.00     0.00    0.09    0.07     1.35     0.36    22.50     0.00    2.55    0.23    5.62   1.78   0.03</div><div class="line">[...]</div><div class="line">^C</div></pre></td></tr></table></figure>
-<p>iostat命令主要用于查看机器磁盘IO情况。该命令输出的列，主要含义是：</p>
-<ul>
-<li>r/s, w/s, rkB/s, wkB/s：分别表示每秒读写次数和每秒读写数据量（千字节）。读写量过大，可能会引起性能问题。</li>
-<li>await：IO操作的平均等待时间，单位是毫秒。这是应用程序在和磁盘交互时，需要消耗的时间，包括IO等待和实际操作的耗时。如果这个数值过大，可能是硬件设备遇到了瓶颈或者出现故障。</li>
-<li>avgqu-sz：向设备发出的请求平均数量。如果这个数值大于1，可能是硬件设备已经饱和（部分前端硬件设备支持并行写入）。</li>
-<li>%util：设备利用率。这个数值表示设备的繁忙程度，经验值是如果超过60，可能会影响IO性能（可以参照IO操作平均等待时间）。如果到达100%，说明硬件设备已经饱和。<br>如果显示的是逻辑设备的数据，那么设备利用率不代表后端实际的硬件设备已经饱和。值得注意的是，即使IO性能不理想，也不一定意味这应用程序性能会不好，可以利用诸如预读取、写缓存等策略提升应用性能。</li>
-</ul>
-<hr>
-<h2 id="free-m"><a href="#free-m" class="headerlink" title="free -m"></a>free -m</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ free -m</div><div class="line">             total       used       free     shared    buffers     cached</div><div class="line">Mem:        245998      24545     221453         83         59        541</div><div class="line">-/+ buffers/cache:      23944     222053</div><div class="line">Swap:            0          0          0</div></pre></td></tr></table></figure>
-<p>free命令可以查看系统内存的使用情况，-m参数表示按照兆字节展示。最后两列分别表示用于IO缓存的内存数，和用于文件系统页缓存的内存数。需要注意的是，第二行-/+ buffers/cache，看上去缓存占用了大量内存空间。这是Linux系统的内存使用策略，尽可能的利用内存，如果应用程序需要内存，这部分内存会立即被回收并分配给应用程序。因此，这部分内存一般也被当成是可用内存。<br>如果可用内存非常少，系统可能会动用交换区（如果配置了的话），这样会增加IO开销（可以在iostat命令中提现），降低系统性能。</p>
-<hr>
-<h2 id="sar-n-DEV-1"><a href="#sar-n-DEV-1" class="headerlink" title="sar -n DEV 1"></a>sar -n DEV 1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$ sar -n DEV 1</div><div class="line">Linux 3.13.0-49-generic (titanclusters-xxxxx)  07/14/2015     _x86_64_    (32 CPU)</div><div class="line">12:16:48 AM     IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s   %ifutil</div><div class="line">12:16:49 AM      eth0  18763.00   5032.00  20686.42    478.30      0.00      0.00      0.00      0.00</div><div class="line">12:16:49 AM        lo     14.00     14.00      1.36      1.36      0.00      0.00      0.00      0.00</div><div class="line">12:16:49 AM   docker0      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00</div><div class="line">12:16:49 AM     IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s   %ifutil</div><div class="line">12:16:50 AM      eth0  19763.00   5101.00  21999.10    482.56      0.00      0.00      0.00      0.00</div><div class="line">12:16:50 AM        lo     20.00     20.00      3.25      3.25      0.00      0.00      0.00      0.00</div><div class="line">12:16:50 AM   docker0      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00</div><div class="line">^C</div></pre></td></tr></table></figure>
-<p>sar命令在这里可以查看网络设备的吞吐率。在排查性能问题时，可以通过网络设备的吞吐量，判断网络设备是否已经饱和。如示例输出中，eth0网卡设备，吞吐率大概在22 Mbytes/s，既176 Mbits/sec，没有达到1Gbit/sec的硬件上限。</p>
-<hr>
-<h2 id="sar-n-TCP-ETCP-1"><a href="#sar-n-TCP-ETCP-1" class="headerlink" title="sar -n TCP,ETCP 1"></a>sar -n TCP,ETCP 1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$ sar -n TCP,ETCP 1</div><div class="line">Linux 3.13.0-49-generic (titanclusters-xxxxx)  07/14/2015    _x86_64_    (32 CPU)</div><div class="line">12:17:19 AM  active/s passive/s    iseg/s    oseg/s</div><div class="line">12:17:20 AM      1.00      0.00  10233.00  18846.00</div><div class="line">12:17:19 AM  atmptf/s  estres/s retrans/s isegerr/s   orsts/s</div><div class="line">12:17:20 AM      0.00      0.00      0.00      0.00      0.00</div><div class="line">12:17:20 AM  active/s passive/s    iseg/s    oseg/s</div><div class="line">12:17:21 AM      1.00      0.00   8359.00   6039.00</div><div class="line">12:17:20 AM  atmptf/s  estres/s retrans/s isegerr/s   orsts/s</div><div class="line">12:17:21 AM      0.00      0.00      0.00      0.00      0.00</div><div class="line">^C</div></pre></td></tr></table></figure>
-<p>sar命令在这里用于查看TCP连接状态，其中包括：</p>
-<ul>
-<li>active/s：每秒本地发起的TCP连接数，既通过connect调用创建的TCP连接；</li>
-<li>passive/s：每秒远程发起的TCP连接数，即通过accept调用创建的TCP连接；</li>
-<li>retrans/s：每秒TCP重传数量；<br>TCP连接数可以用来判断性能问题是否由于建立了过多的连接，进一步可以判断是主动发起的连接，还是被动接受的连接。TCP重传可能是因为网络环境恶劣，或者服务器压力过大导致丢包。</li>
-</ul>
-<hr>
-<h2 id="top"><a href="#top" class="headerlink" title="top"></a>top</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">$ top</div><div class="line">top - 00:15:40 up 21:56,  1 user,  load average: 31.09, 29.87, 29.92</div><div class="line">Tasks: 871 total,   1 running, 868 sleeping,   0 stopped,   2 zombie</div><div class="line">%Cpu(s): 96.8 us,  0.4 sy,  0.0 ni,  2.7 id,  0.1 wa,  0.0 hi,  0.0 si,  0.0 st</div><div class="line">KiB Mem:  25190241+total, 24921688 used, 22698073+free,    60448 buffers</div><div class="line">KiB Swap:        0 total,        0 used,        0 free.   554208 cached Mem</div><div class="line">   PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND</div><div class="line"> 20248 root      20   0  0.227t 0.012t  18748 S  3090  5.2  29812:58 java</div><div class="line">  4213 root      20   0 2722544  64640  44232 S  23.5  0.0 233:35.37 mesos-slave</div><div class="line"> 66128 titancl+  20   0   24344   2332   1172 R   1.0  0.0   0:00.07 top</div><div class="line">  5235 root      20   0 38.227g 547004  49996 S   0.7  0.2   2:02.74 java</div><div class="line">  4299 root      20   0 20.015g 2.682g  16836 S   0.3  1.1  33:14.42 java     1 root      20   0   33620   2920   1496 S   0.0  0.0   0:03.82 init</div><div class="line">     2 root      20   0       0      0      0 S   0.0  0.0   0:00.02 kthreadd</div><div class="line">     3 root      20   0       0      0      0 S   0.0  0.0   0:05.35 ksoftirqd/0</div><div class="line">     5 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/0:0H</div><div class="line">     6 root      20   0       0      0      0 S   0.0  0.0   0:06.94 kworker/u256:0</div><div class="line">     8 root      20   0       0      0      0 S   0.0  0.0   2:38.05 rcu_sched</div></pre></td></tr></table></figure>
-<p>top命令包含了前面好几个命令的检查的内容。比如系统负载情况（uptime）、系统内存使用情况（free）、系统CPU使用情况（vmstat）等。因此通过这个命令，可以相对全面的查看系统负载的来源。同时，top命令支持排序，可以按照不同的列排序，方便查找出诸如内存占用最多的进程、CPU占用率最高的进程等。<br>但是，top命令相对于前面一些命令，输出是一个瞬间值，如果不持续盯着，可能会错过一些线索。这时可能需要暂停top命令刷新，来记录和比对数据。</p>
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>排查Linux服务器性能问题还有很多工具，上面介绍的一些命令，可以帮助我们快速的定位问题。例如前面的示例输出，多个证据证明有JAVA进程占用了大量CPU资源，之后的性能调优就可以针对应用程序进行。</p>
-<hr>
-<p>文章出自<a href="http://chuansong.me/n/2293468" target="_blank" rel="external">InfoQ</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;通过执行以下命令，可以在1分钟内对系统资源使用情况有个大致的了解。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;
-    
-    </summary>
-    
-      <category term="转载" scheme="http://yoursite.com/categories/%E8%BD%AC%E8%BD%BD/"/>
-    
-    
-      <category term="操作系统" scheme="http://yoursite.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Song F</title>
-    <link href="http://yoursite.com/2016/09/17/song3/"/>
-    <id>http://yoursite.com/2016/09/17/song3/</id>
-    <published>2016-09-17T13:46:05.000Z</published>
-    <updated>2017-01-01T13:01:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>居然由于版权保护，无法生成外链。</p>
-<a id="more"></a>
-<blockquote><p>在那些黎明将至的山谷里<br>我急促的甚至奔跑起来<br>生命穿越过苏醒的花丛<br>让我带走这里躁动的希望<br>在那些炙热潮湿的喧嚣里<br>我急促的甚至奔跑起来<br>汗水渗透着城市的睡梦<br>让我带走这里火红的舞蹈<br>在那些插着稻草人的田野里<br>我急促的甚至奔跑起来<br>风吹拂金黄色的大地<br>让我带走这里成熟的消息<br>在那些雪花绽放的日子里<br>我急促的甚至奔跑起来<br>冰雪的花粉在脸上融化<br>让我带走这里所有的回忆<br>谁能够明白<br>爱又是什么<br>谁能告诉我<br>我该去哪里</p>
-<p>在那些雪花绽放的日子里<br>我急促的甚至奔跑起来<br>冰雪的花粉在脸上融化<br>让我带走这里所有的回忆<br>在那些插着稻草人的田野里<br>我急促的甚至奔跑起来<br>风吹拂金黄色的大地<br>让我带走这里成熟的消息<br>在那些炙热潮湿的喧嚣里<br>我急促的甚至奔跑起来<br>汗水渗透着城市的睡梦<br>让我带走这里火红的舞蹈<br>在那些黎明将至的山谷里<br>我急促的甚至奔跑起来<br>生命穿越过苏醒的花丛<br>让我带走这里躁动的希望<br>你告诉我 爱就是森林<br>我向森林奔去<br>你告诉我 爱就是海湾<br>我向海湾骑行<br>你告诉我 爱就是云朵,<br>我向云朵飞翔<br>你告诉我 爱就在你心中<br>我轻轻吻你</p>
-<p>让我带走 这里躁动的希望<br>让我带走 这里火红的舞蹈<br>让我带走 这里成熟的消息<br>让我带走 这里所有的回忆<br>Ah~</p>
-<footer><strong>达达</strong><cite>Song F</cite></footer></blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;居然由于版权保护，无法生成外链。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Tips" scheme="http://yoursite.com/categories/Tips/"/>
-    
-    
-      <category term="私人" scheme="http://yoursite.com/tags/%E7%A7%81%E4%BA%BA/"/>
-    
-      <category term="自欺欺人" scheme="http://yoursite.com/tags/%E8%87%AA%E6%AC%BA%E6%AC%BA%E4%BA%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django</title>
-    <link href="http://yoursite.com/2016/09/17/something4/"/>
-    <id>http://yoursite.com/2016/09/17/something4/</id>
-    <published>2016-09-17T13:10:24.000Z</published>
-    <updated>2016-09-17T13:21:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<p> 中秋节，利用Django做一个数据库后台，数据库是现成的，结果由于建库不太规范，各种奇怪的问题，网络上一顿找资料。稀里糊涂的还是。无外乎建库的主键设置，元组的一些详细参数，防止MySQL出错column名称的选择，找来找去还是官方文档和stackoverflow比较靠谱些。妈的代码都用不了搞个毛线啊。什么时候编程就应该像搭积木一样，我什么需求，拼到一起来，不关心底层的实现。</p>
-<p> 数据库的东西要接着看，接着整理资料。Django还是老老实实的把官方文档看的明白点。其实那些queryset什么东西的，国际化序列化都挺乱的。或者是我笨。数据结构和算法还是得继续敲。</p>
-<p> 感觉时间不够用呢怎么。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt; 中秋节，利用Django做一个数据库后台，数据库是现成的，结果由于建库不太规范，各种奇怪的问题，网络上一顿找资料。稀里糊涂的还是。无外乎建库的主键设置，元组的一些详细参数，防止MySQL出错column名称的选择，找来找去还是官方文档和stackoverflow比较靠谱些
-    
-    </summary>
-    
-      <category term="Tips" scheme="http://yoursite.com/categories/Tips/"/>
-    
-    
-      <category term="私人" scheme="http://yoursite.com/tags/%E7%A7%81%E4%BA%BA/"/>
-    
-      <category term="自欺欺人" scheme="http://yoursite.com/tags/%E8%87%AA%E6%AC%BA%E6%AC%BA%E4%BA%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MongoDB-3</title>
-    <link href="http://yoursite.com/2016/09/15/mongodb2/"/>
-    <id>http://yoursite.com/2016/09/15/mongodb2/</id>
-    <published>2016-09-15T13:07:01.000Z</published>
-    <updated>2016-09-17T13:45:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="MongoDB实战3"><a href="#MongoDB实战3" class="headerlink" title="MongoDB实战3"></a>MongoDB实战3</h2><hr>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;MongoDB实战3&quot;&gt;&lt;a href=&quot;#MongoDB实战3&quot; class=&quot;headerlink&quot; title=&quot;MongoDB实战3&quot;&gt;&lt;/a&gt;MongoDB实战3&lt;/h2&gt;&lt;hr&gt;
-
-    
-    </summary>
-    
-      <category term="MongoDB" scheme="http://yoursite.com/categories/MongoDB/"/>
-    
-    
-      <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-      <category term="NoSQL" scheme="http://yoursite.com/tags/NoSQL/"/>
     
   </entry>
   
